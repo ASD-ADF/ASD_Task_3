@@ -1,0 +1,49 @@
+void insert_after(node  *p, node *prec)
+{
+    p = allocate();
+    prec = allocate();
+    int x;
+    cout<<"Insert After"<<endl<<endl;
+    cout<<"Insert Data After Data ID : ";
+    cin>>x; cout<<endl<<endl;
+    prec = search_Element_ID(x);
+    if (prec == NULL)
+    {
+        cout<<"ID was not found!"<<endl;
+    }
+    else
+    {
+        inserting(p);
+        p->next = prec->next;
+        prec->next = p;
+        cout<<endl<<"Insert Success!"<<endl;
+    }
+    _getch();
+}
+
+void delete_first(node *p)
+{
+    if(head == NULL)
+    {
+        cout<<"Data is Empty!"<<endl;
+        _getch();
+    }
+    else
+    {
+        p = allocate();
+        p = head;
+        if(p->next == NULL)
+        {
+            head = NULL;
+            delete p;
+        }
+        else
+        {
+            head = p->next;
+            p->next = NULL;
+            delete p;
+        }
+        cout<<"Delete Success!"<<endl;
+        _getch();
+    }
+}

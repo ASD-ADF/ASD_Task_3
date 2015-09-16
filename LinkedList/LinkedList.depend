@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1442427611 source:d:\programming\git\task_3\linkedlist\list.cpp
+	"list.h"
+
+1442427943 d:\programming\git\task_3\linkedlist\list.h
+	<iostream>
+	<conio.h>
+	<windows.h>
+
+1442427467 source:d:\programming\git\task_3\linkedlist\main.cpp
+	"list.h"
+

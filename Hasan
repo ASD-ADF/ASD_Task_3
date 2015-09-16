@@ -1,0 +1,65 @@
+void delete_after(node *p, node *prec)
+{
+    if(head == NULL)
+    {
+        cout<<"Data is Empty!"<<endl;
+        _getch();
+    }
+    else
+    {
+        int x;
+        p = allocate();
+        prec = allocate();
+        cout<<"Delete After"<<endl<<endl;
+        cout<<"Delete Data After Data ID : "<<endl;
+        cin>>x;
+        prec = search_Element_ID(x);
+        if (prec == NULL)
+        {
+            cout<<"Data was not found!"<<endl;
+        }
+        else
+        {
+            if (prec->next == NULL)
+            {
+                cout<<"The Data you choose is the Last Data!"<<endl;
+            }
+            else
+            {
+                p = prec->next;
+                prec->next = p->next;
+                p->next = NULL;
+                cout<<"Delete Success!"<<endl;
+            }
+        }
+        _getch();
+    }
+}
+
+void view_data(node *p)
+{
+    p = new node;
+    p = head;
+    if (head == NULL)
+    {
+        cout<<"Data Mahasiswa is Empty!"<<endl;
+    }
+    else
+    {
+        cout<<"ID       : "<<p->info.id<<endl;
+        cout<<"Name     : "<<p->info.nama<<endl;
+        cout<<"Born     : "<<p->info.lahir<<endl;
+        cout<<"Class    : "<<p->info.kelas<<endl;
+        cout<<"Phone    : "<<p->info.telpon<<endl<<endl;
+        while (p->next != NULL)
+        {
+            p = p->next;
+            cout<<"ID       : "<<p->info.id<<endl;
+            cout<<"Name     : "<<p->info.nama<<endl;
+            cout<<"Born     : "<<p->info.lahir<<endl;
+            cout<<"Class    : "<<p->info.kelas<<endl;
+            cout<<"Phone    : "<<p->info.telpon<<endl<<endl;
+        }
+    }
+    _getch();
+}
