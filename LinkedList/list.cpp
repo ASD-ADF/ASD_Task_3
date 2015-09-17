@@ -10,6 +10,25 @@ address allocate (infotype a)
     return p;
 }
 
+void create_new (infotype *a)
+{
+    infotype b;
+
+    cout<<"MENU INPUT DATA"<<endl;
+    cout<<"==============="<<endl;
+    cout<<"Nama MK : ";
+    cin>>b.name;
+    cout<<"Kode MK (5 digit) : ";
+    cin>>b.id;
+    cout<<"Nama Dosen MK : ";
+    cin>>b.namelec;
+    cout<<"SKS : ";
+    cin>>b.sks;
+    cout<<"Shift : ";
+    cin>>b.shift;
+    *a=b;
+}
+
 void insert_first (list *L, address p)
 {
     if((*L).first==NULL)
@@ -60,6 +79,20 @@ void delete_first(list *L,address *p)
     delete p;
 }
 
+void delete_after(list *L, address *p, address*s)
+{
+    address q;
+
+    q=(*L).first;
+    while(q!=*s)
+    {
+        q=next(q);
+    }
+    *p=next(q);
+    next(q)=NULL;
+    delete p;
+}
+
 void delete_last(list *L,address *p)
 {
     address q;
@@ -103,4 +136,12 @@ address search_data(list L, infotype a)
         q=next(q);
     }
     return q;
+}
+
+void find_data (infotype *a)
+{
+    cout<<"CARI DATA MATA KULIAH"<<endl;
+    cout<<"====================="<<endl;
+    cout<<"Masukkan Kode MK : ";
+    cin>>(*a).id;
 }
