@@ -10,7 +10,9 @@ using namespace std;
 
 void InsertFirst(list *L, address P);
 void InsertLast(list *L, address P);
+void InsertAfter(list *L, address P);
 void deleteFirst(list *L, address P);
 void deleteLast(list *L, address P);
+void deleteAfter(list *L, address P);
 
 #endif // LIST_H_INCLUDED
