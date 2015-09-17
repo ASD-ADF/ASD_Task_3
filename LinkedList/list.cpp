@@ -2,6 +2,44 @@
 #include"list.h"
 
 using namespace std;
+address BuatData (absen Buat_absen){
+    address P;
+    P= new elmlist;
+    p->next = NIL;
+    p->info.pgw.id_pegawai=Input_absen.pgw.id_pegawai;
+    p->info.pgw.nama_pegawai=Input_absen.pgw.nama_pegawai;
+    p->info.pgw.jabatan = Input_absen.pgw.jabatan;
+    p->info.jam_masuk.hh = Input_absen.jam_masuk.hh;
+    p->info.jam_masuk.mm = Input_absen.jam_masuk.mm;
+    p->info.jam_masuk.ss = Input_absen.jam_masuk.ss;
+    return p;
+}
+
+void InputData (absen *Buat_absen) {
+    cout<<"Masukkan id. pegawai : ";getline(cin, Buat_absen->pgw.id_pegawai);
+    cout<<"Masukkan nama anda   : ";getline(cin, Buat_absen->pgw.nama_pegawai);
+    cout<<"Masukkan jabatan anda: ";getline(cin, Buat_absen->pgw.jabatan);
+    cout<<"Masukkan jam masuk   : ";getline(cin, Buat_absen->jam_masuk.hh);
+    cout<<"Masukkan menit masuk : ";getline(cin, Buat_absen->jam_masuk.mm);
+    cout<<"Masukkan detik masuk : ";getline(cin, Buat_absen->jam_masuk.ss);
+    cout<<endl<<endl;
+}
+
+void Jumlah (list *L) {
+    int j=1;
+    address Q;
+    Q= first(L);
+    if(first(L)!= Nil) {
+        while (next(Q) != NULL){
+            Q=next(Q);
+            j+=1;
+        }
+        return j;
+    }
+    else return 0;
+}
+
+
 void InsertFirst(list *L, address P) {
     next(P) = (*L).first;
     (*L).first = P;
@@ -85,5 +123,37 @@ void deleteLast (list *L, address P) {
         }
         Q->next=NULL;
         delete P;
+    }
+}
+
+address searchElement(list *L) {
+    P=L->first;
+    int searchID;
+    cout<<"Masukkan id pegawai yang ingin anda cari : ";
+    cin>>
+    while (P!=Nil) {
+        if (P->info.pgw.id_pegawai == searchID)
+            return P;
+        P=P->next;
+    }
+    return Nil;
+}
+
+void searchData (list *L, address P) {
+    int searchID;
+    if (L->first == Nil) {
+        cout<<"Data kosong";
+    }
+    else {
+        P=searchElement(L);
+        cout<<P<<endl<<endl;
+        if (P != Nil) {
+            cout<<"id pegawai   : ";<<P->info.pgw.id_pegawai<<endl;
+            cout<<"Nama Pegawai : ";<<P->info.pgw.nama_pegawai<<endl;
+            cout<<"Jabatan      : ";<<P->info.pgw.jabatan;
+            cout<<"Jam Masuk    : ";<<P->info.pgw.jam_masuk.hh;
+            cout<<"Menit Masuk  : ";<<P->info.pgw.jam_masuk.mm;
+            cout<<"Detik Masuk  : ";<<P->info.pgw.jam_jasuk.ss;
+        }
     }
 }
