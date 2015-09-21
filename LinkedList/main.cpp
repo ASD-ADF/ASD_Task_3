@@ -1,6 +1,5 @@
 #include <iostream>
 #include <windows.h>
-#include <conio.h>
 #include <stdlib.h>
 #include "list.h"
 
@@ -59,15 +58,22 @@ int main()
                 break;
 
         case 4:
-           //Ulya
+            deleteFirst (&l,p);
             break;
-
         case 5:
-         //Ulya
+            deleteLast (&l,p);
             break;
 
         case 6:
-         //Ulya
+            cout<<"ID sebelum delete : ";
+            cin>>x.ID;
+            q = searchelement(l,x);
+            if (c!=NULL)
+            {
+                deleteAfter(q,p);
+            }
+            else
+                cout<<"Element terakhir, tidak dapat dihapus dengan delete After"
             break;
 
         case 7:
