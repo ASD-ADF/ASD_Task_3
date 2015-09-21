@@ -12,11 +12,11 @@ using namespace std;
 
 struct infotype
 {
-    char id[30];
+    char nim[30];
     char nama[30];
-    char merk[30];
-    char warna [30];
-    char napem [20] ;
+    char kelas[30];
+    char jrsn [30];
+    char angkatan [20] ;
 };
 
 typedef struct elmlist *address;
@@ -34,6 +34,8 @@ typedef struct list
 
 void insertfirst(list *l, address p);
 void insertafter(list *l, address p, address prec);
+void printinfo(list *l);
+void mahasiswa (infotype *x);
 
 
 #endif // LIST_H_INCLUDED
