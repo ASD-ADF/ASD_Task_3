@@ -69,3 +69,28 @@ void deleteafter (list *l, address *p, address prec)
     next(*p) = nil;
     dealokasi(*p);
 }
+
+void viewlist (list l)
+{
+    address p;
+
+    p = first(l);
+    if (p == nil)
+    {
+        cout<<"List masih kosong";
+    }
+    else
+    {
+        while (p != nil)
+        {
+            cout<<"\nID : "<<info(p).id<<endl;
+            cout<<"Nama : "<<info(p).nama<<endl;
+            cout<<"Alamat : "<<info(p).alamat<<endl;
+            cout<<"Jabatan : "<<info(p).jab<<endl;
+            cout<<"Hobi : "<<info(p).hobi<<endl;
+            p = next(p);
+        }
+    }
+
+
+}
