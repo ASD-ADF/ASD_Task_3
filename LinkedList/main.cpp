@@ -10,8 +10,8 @@ int main()
     list l;
     createList(&l);
     int pil;
-    infotype x,q;
-    address p,c ;
+    infotype x;
+    address p,c,q ;
 
     do
     {
