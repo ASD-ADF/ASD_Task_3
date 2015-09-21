@@ -68,7 +68,7 @@ int main()
             cout<<"ID sebelum delete : ";
             cin>>x.ID;
             q = searchelement(l,x);
-            if (c!=NULL)
+            if(q!=NULL)
             {
                 deleteAfter(q,p);
             }
