@@ -35,9 +35,14 @@ typedef struct list
 void insertfirst(list *l, address p);
 void insertafter(list *l, address p, address prec);
 void insertlast(list *l, address p);
+
 void deletefirst(list *l,address p);
-void printinfo(list *l);
+void deleteafter(list *l,address p,address prec);
+void deletelast(list *l,address p);
+
+void viewList(list *l);
 void mahasiswa (infotype *x);
+address searchElement(list *l,infotype x);
 
 
 #endif // LIST_H_INCLUDED
