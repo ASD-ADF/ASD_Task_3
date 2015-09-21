@@ -50,5 +50,6 @@ void deleteafter (list *l, address *p, address prec);
 address searchelement(list l, infotype x);
 void viewlist (list l);
 
+void insertionsort (list *l);
 
 #endif // LIST_H_INCLUDED
