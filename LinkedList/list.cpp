@@ -36,27 +36,36 @@ void insertafter (list *l, address p, address prec)
     next(prec) = p;
 }
 
-address searchelement(list l, infotype x)
+void deletelast (list *l, address *p)
 {
-    address p;
-    int a=0;
+    address q;
 
-    p=first(l);
-    while ( p != nil)
+    if (first(*l) == nil)
     {
-        if (strcmp(info(p).id,x.id) == 0)
-        {
-            a = 1;
-            break;
-        }
-        else
-        {
-            p = next(p);
-        }
+        cout<<"List Kosong";
     }
-    if (a != 1)
+    else if (next(first(*l)) == nil)
     {
-        p = nil;
+        *p=first(*l);
+        first(*l) = nil;
+        dealokasi(*p);
     }
-    return p;
+    else
+    {
+        q=first(*l);
+        while (next(next(q)) != nil)
+        {
+            q=next(q);
+        }
+        *p = next(q);
+        next(q) = nil;
+        dealokasi(*p);
+    }
+}
+void deleteafter (list *l, address *p, address prec)
+{
+    *p = next(prec);
+    next(prec) = next(*p);
+    next(*p) = nil;
+    dealokasi(*p);
 }
