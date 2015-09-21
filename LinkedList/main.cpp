@@ -33,15 +33,30 @@ int main()
         switch(pil)
         {
         case 1:
-            //INSERTFIRST KOMANG
+            system("cls");
+            input_data(&x);
+            p = alokasi(x);
+            next(p)=NULL;
+            insertFirst (&l,p);
             break;
+            
         case 2:
-            //INSERTLAST KOMANG
+           system("cls");
+            input_data(&x);
+            p = alokasi(x);
+            insertLast (&l,p);
+            next(p)=NULL;
             break;
+            
         case 3:
-            //INSERTAFTER KOMANG
-
-        break;
+            cout <<"Insert After";
+         system("cls");
+                p = alokasi(x);
+                cout<<"Masukkan ID sebelum input : ";
+                cin>>x.ID;
+                q = searchBuku(l,x);
+                insertAfter(&l,q,p);
+                break;
 
         case 4:
             void deleteFirst (list &l, address p)
