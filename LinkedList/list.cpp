@@ -68,19 +68,40 @@ void insertAfter (list *l, address p, address prec)
   
 };
 
-void deleteFirst (list *l, address p)
+
+void deleteFirst (list &l, address p)
 {
-   //Ulya
+        if(next(first(l))==NULL)
+            {
+                (*l).first=NULL;
+            }
+            else
+            {
+                 p=(*l).first;
+                 (*l).first=next(p);
+                 next(p)=NULL;
+            }
+            dealokasi(p);
 };
 
-void deleteLast (list *l, address p)
+
+void deleteLast (list &l, address p)
 {
-    //Ulya
+                address q;
+                while (next(p)!=NULL)
+                {
+                    q=p;
+                    p=next(p);
+                }
+                next(q)=NULL;
+                dealokasi(p);
 };
 
-void deleteAfter (list *l,address q, address p)
+void deleteAfter(address q, address *p)
 {
-  //Ulya  
+            next(q)=next(*p);
+            next(*p)=NULL;
+            dealokasi(*p);
 };
 
 address searchBuku(list l, infotype x)
