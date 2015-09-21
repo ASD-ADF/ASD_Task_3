@@ -24,6 +24,28 @@ void insertafter(list *l,address p,address prec)
     next(p)=next(q);
 }
 
+void insertlast(list *l,adress p,address prec)
+{
+    address q=first(l*);
+    while(next(q)!=nil){
+        q=next(q);
+    }
+    next(q)=p;
+    next(p)=nil;
+}
+
+void deletefisrt(list *l,address p)
+{
+    if (next(first(*l))==nil){
+        first(*l)=nil;
+    }
+    else{
+        p=first(*l);
+        first(*l)=next(p);
+        next(p)=nil;
+    }
+}
+
 void printinfo (list *l)
 {
     address p;
