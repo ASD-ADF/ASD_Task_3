@@ -32,6 +32,8 @@ typedef struct list
     address first;
 };
 
+address alocate(infotype x);
+
 void insertfirst(list *l, address p);
 void insertafter(list *l, address p, address prec);
 void insertlast(list *l, address p);
