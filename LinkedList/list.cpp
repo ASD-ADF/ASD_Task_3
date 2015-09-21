@@ -1,5 +1,11 @@
 #include "list.h"
 
+address alocate(infotype x){
+        address p=new elmlist;
+        info(p)=x;
+        return p;
+        }
+        
 void insertFirst (list *l,address p)
 {
     if(first(*l)==nil)
@@ -8,6 +14,8 @@ void insertFirst (list *l,address p)
     }
     else
     {
+         p=alocate(x);
+        next(p)=nil;
         next(p)=first(*l);
         first(*l)=p;
     }
@@ -15,26 +23,30 @@ void insertFirst (list *l,address p)
 
 void insertafter(list *l,address p,address prec)
 {
-    address q=first(*l);
+    infotype x;
+    p=first(*l);
     while(next(q)=nil)
     {
         q=next(q);
     }
-    next(q)=next(p);
-    next(p)=next(q);
+    p=alocate(x);
+    next(p)=nil;
+    next(p)=next(prec);
+    next(prec)=p;
 }
 
 void insertlast(list *l,adress p,address prec)
-{
+{   infotype x;
     address q=first(l*);
     while(next(q)!=nil){
         q=next(q);
     }
+    p=alocate(x);
     next(q)=p;
     next(p)=nil;
 }
 
-void deletefisrt(list *l,address p)
+void deletefirst(list *l,address p)
 {
     if (next(first(*l))==nil){
         first(*l)=nil;
@@ -46,7 +58,23 @@ void deletefisrt(list *l,address p)
     }
 }
 
-void printinfo (list *l)
+void deleteafter(list *l,address p,address prec){
+    p=first(*l);
+
+    next(p)=next(prec);
+    next(prec)=nil;
+    }
+
+void deletelast(list *l,address p){
+    address q=first(*l);
+    do{
+        if (next(q)!=p){
+            q=next(q);
+        }
+    } while(next(q)!=p);
+    next(q)=nil;
+    }
+void viewList (list *l)
 {
     address p;
     while((p)!=nil)
@@ -72,3 +100,18 @@ void mahasiswa (infotype *x)
     cout << "Angkatan   : "; cin >> (*x).angkatan;
 };
   
+address searchElement(list *l,infotype x){
+        address p=first(*l);
+    do{
+        if (info(p).nim!=(x).nim){
+            p=next(p);
+            }
+        else {
+            cout<<info(p).nim;
+            cout<<info(p).nama;
+            cout<<info(p).kelas;
+            cout<<info(p).jrsn;
+            cout<<info(p).angkatan;
+        }
+    } while(next(p)!=nil);
+}
