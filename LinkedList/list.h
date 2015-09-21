@@ -40,8 +40,8 @@ void insertLast (list *l,address p);
 void insertAfter (list *l,address q, address p);
 void viewList (list l);
 
-void deleteFirst (list *l,address p);
-void deleteLast(list *l,address p);
+void deleteFirst (list &l,address p);
+void deleteLast(list &l,address p);
 void deleteAfter(address q, address *p)
 address searchBuku(list l, infotype x);
 
