@@ -163,3 +163,30 @@ void viewlist (list l)
 
 
 }
+
+void insertionsort (list *l)
+{
+    address current,insertionptr,head;
+    infotype temp;
+
+    head = first(*l);
+    current = first(*l);
+    insertionptr = first(*l);
+
+    current = next(current);
+    while (current != nil)
+    {
+        insertionptr = head;
+        while (insertionptr != current)
+        {
+            if (info(insertionptr).id > info(current).id)
+            {
+                temp = info(current);
+                info(current) = info(insertionptr);
+                info(insertionptr) = temp;
+            }
+            insertionptr = next(insertionptr);
+        }
+        current = next(current);
+    }
+}
