@@ -29,3 +29,9 @@ void insertlast (list *l, address p)
         next(q) = p;
     }
 }
+
+void insertafter (list *l, address p, address prec)
+{
+    next(p) = next(prec);
+    next(prec) = p;
+}
