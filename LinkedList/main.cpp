@@ -18,8 +18,9 @@ int main()
         cout<<"1. Input Data "<<endl;
         cout<<"2. View Data "<<endl;
         cout<<"3. Delete Data "<<endl;
-        cout<<"4. Serach Data "<<endl;
-        cout<<"5. Exit"<<endl;
+        cout<<"4. Search Data "<<endl;
+        cout<<"5. Sort Data "<<endl;
+        cout<<"6. Exit"<<endl;
         cout<<"\nYour Choice : ";
         cin>>pil;
         switch (pil)
@@ -128,6 +129,12 @@ int main()
             getch();
             break;
         case 5:
+            system("cls");
+            insertionsort(&l);
+            viewlist(l);
+            getch();
+            break;
+        case 6:
             return 0;
             break;
         default:
@@ -137,7 +144,7 @@ int main()
             break;
         }
     }
-    while (pil != 5);
+    while (pil != 6);
 
 
 }
