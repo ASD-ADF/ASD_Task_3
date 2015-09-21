@@ -34,6 +34,8 @@ typedef struct list
 
 void insertfirst(list *l, address p);
 void insertafter(list *l, address p, address prec);
+void insertlast(list *l, address p);
+void deletefirst(list *l,address p);
 void printinfo(list *l);
 void mahasiswa (infotype *x);
 
