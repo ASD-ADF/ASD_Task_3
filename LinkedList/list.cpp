@@ -35,3 +35,28 @@ void insertafter (list *l, address p, address prec)
     next(p) = next(prec);
     next(prec) = p;
 }
+
+address searchelement(list l, infotype x)
+{
+    address p;
+    int a=0;
+
+    p=first(l);
+    while ( p != nil)
+    {
+        if (strcmp(info(p).id,x.id) == 0)
+        {
+            a = 1;
+            break;
+        }
+        else
+        {
+            p = next(p);
+        }
+    }
+    if (a != 1)
+    {
+        p = nil;
+    }
+    return p;
+}
