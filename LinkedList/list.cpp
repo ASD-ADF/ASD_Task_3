@@ -1,3 +1,27 @@
+#include "list.h"
+
+
+using namespace std;
+
+void createlist (list *l)
+{
+    first(*l) = nil;
+}
+
+void dealokasi (address p)
+{
+    free(p);
+}
+
+address alokasi (infotype x)
+{
+    address p;
+    p = (address) malloc (sizeof(elmlist));
+    info(p) = x;
+    next(p) = nil;
+    return p;
+}
+
 void insertfirst (list *l, address p)
 {
     if (first(*l) == nil)
@@ -29,11 +53,31 @@ void insertlast (list *l, address p)
         next(q) = p;
     }
 }
-
 void insertafter (list *l, address p, address prec)
 {
     next(p) = next(prec);
     next(prec) = p;
+}
+
+void deletefirst (list *l, address *p)
+{
+    if (first(*l) == nil)
+    {
+        cout<<"List Kosong";
+    }
+    else if (next(first(*l)) == nil)
+    {
+        *p=first(*l);
+        first(*l) = nil;
+        dealokasi(*p);
+    }
+    else
+    {
+        *p = first(*l);
+        first(*l) = next(first(*l));
+        next(*p) = nil;
+        dealokasi(*p);
+    }
 }
 
 void deletelast (list *l, address *p)
@@ -68,6 +112,31 @@ void deleteafter (list *l, address *p, address prec)
     next(prec) = next(*p);
     next(*p) = nil;
     dealokasi(*p);
+}
+
+address searchelement(list l, infotype x)
+{
+    address p;
+    int a=0;
+
+    p=first(l);
+    while ( p != nil)
+    {
+        if (strcmp(info(p).id,x.id) == 0)
+        {
+            a = 1;
+            break;
+        }
+        else
+        {
+            p = next(p);
+        }
+    }
+    if (a != 1)
+    {
+        p = nil;
+    }
+    return p;
 }
 
 void viewlist (list l)
