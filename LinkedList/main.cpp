@@ -71,7 +71,22 @@ int main()
             break;
 
         case 7:
-           //SEARCHBUKU DZAKY
+           cout<<"Masukkan ID  : ";
+            cin>>x.ID;
+            c = searchelement(l,x);
+            if (c!=NULL)
+            {
+                cout << "ID Buku : " << info(c).ID << endl;
+                cout << "Judul : " << info(c).judul << endl;
+                cout << "Stock : " << info(c).stock << endl;
+                cout << "Pengarang : " << info(c).pengarang << endl;
+                getch();
+            }
+            else
+            {
+                cout<<"ID tidak ada"<<endl;
+                getch();
+            }
             break;
 
         case 8:
