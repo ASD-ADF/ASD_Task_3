@@ -30,19 +30,41 @@ address alokasi (infotype x)
 
 void insertFirst (list *l, address p)
 {
-    //Komang
+      if ((*l).first == NULL)
+    {
+        (*l).first = p;
+    }
+    else
+    {
+        next(p) = (*l).first;
+        (*l).first = p;
+    }
     
 };
 
 void insertLast (list *l, address p)
 {
-  //Komang
+  address q = (*l).first;
+    if ((*l).first == NULL)
+    {
+        (*l).first = p;
+    }
+    else
+    {
+
+        while (next(q) != NULL)
+        {
+            q = next(p);
+        }
+        next(q) = p;
+    }
   
 };
 
 void insertAfter (list *l, address p, address prec)
 {
-  //Komang
+   next(p) = next(q);
+    next(q) = p;
   
 };
 
