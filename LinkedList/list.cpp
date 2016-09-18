@@ -59,13 +59,12 @@ void insertLast(List &L, address P) {
     //-------------your code here-------------
     // NIM : 1301154160
     address Q;
-    first(L);
-    while(next(P)!= NULL)
-        next(P);
+    Q = first(L);
+    while(next(Q)!= NULL)
+        Q = next(Q);
     P = alokasi(x);
-    next(P) = Q;
-    Q = alokasi(x);
-    next(Q) = NULL;
+    next(Q) = P;
+    next(P) = NULL;
 
 
     //----------------------------------------
@@ -80,11 +79,21 @@ address findElm(List L, infotype x) {
 
     address P;
     //-------------your code here-------------
-    // NIM :
+    // NIM : 1301154160
+    P = first(L);
+    infotype z = info(P);
+    while (z.id != x.id || next(P) != NULL){
+        P = next(P);
+        z = info(P);
+    if (next(P)==NULL && z.id != x.id){
+    cout << "Pencarian error";
+
+    }
 
 
     //----------------------------------------
     return P;
+}
 }
 
 void deleteFirst(List &L, address &P) {
@@ -94,7 +103,8 @@ void deleteFirst(List &L, address &P) {
     */
     //-------------your code here-------------
     // NIM :
-
+    P = first(L);
+    P = next(P);
 
 
     //----------------------------------------
@@ -106,8 +116,11 @@ void deleteLast(List &L, address &P) {
     * FS : elemen tarakhir di dalam List L dilepas dan disimpan/ditunjuk oleh P
     */
     //-------------your code here-------------
-    // NIM :
-
+    // NIM : 1301154160
+    P = first(L);
+    while(next(next(P)) != NULL)
+        P = next(P);
+    next(P) = NULL;+
 
 
     //----------------------------------------
@@ -118,7 +131,20 @@ void printInfo(List L) {
     * FS : menampilkan info seluruh elemen list L
     */
     //-------------your code here-------------
-    // NIM :
+    // NIM : 1301154160
+    address P = first(L);
+    while(next(P) != NULL){
+    infotype asd = info(P);
+        cout << "ID = " << asd.id<< endl;
+        cout << "NIM = " << asd.nim<< endl;
+        cout << "Kelas = " << asd.kelas<< endl;
+        if (asd.id % 2 == 0)
+        cout << "Profession = " << asd.transprofession<< endl;
+        else
+        cout << "Transportation = " << asd.transprofession<< endl;
+        P = next(P);
+    }
+
 
 
     //----------------------------------------
@@ -132,7 +158,11 @@ void insertAfter(address Prec, address P) {
     *      ditunjuk pointer Prec
     */
     //-------------your code here-------------
-    // NIM :
+    // NIM : 1301154160
+    P = alokasi(x);
+    next(P) = NULL;
+    next(P) = next(Prec);
+    next(Prec) = P;
 
 
     //----------------------------------------
@@ -145,7 +175,10 @@ void deleteAfter(address Prec, address &P) {
     *      dan disimpan/ditunjuk oleh P
     */
     //-------------your code here-------------
-    // NIM :
+    // NIM : 1301154160
+    next(P) = next(Prec);
+    next(Prec) = NULL;
+    dealokasi(P);
 
 
     //----------------------------------------

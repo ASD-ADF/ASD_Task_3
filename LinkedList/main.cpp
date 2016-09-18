@@ -8,7 +8,7 @@ void mainMenu();
 List L;
 address P1 = NULL;
 address P2 = NULL;
-
+int i = 0;
 int main()
 {
     createList(L);
@@ -33,7 +33,12 @@ void mainMenu(){
     *       9. search
     */
     //-------------your code here-------------
-
+    while(i != 10){
+    switch(i){
+case 1:
+    insertFirst()
+    }
+    }
 
     //----------------------------------------
 }

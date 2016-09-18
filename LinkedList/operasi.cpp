@@ -10,7 +10,17 @@ address sentinelSearch(List L, infotype x){
     *      mengembalikan NULL jika tidak ditemukan
     */
     //-------------your code here-------------
-    // NIM : 
+    // NIM :1301154160
+    address P = first(L);
+    infotype z = info(P);
+    while(z.id != x.id || next(P) != NULL)
+        P = next(P);
+
+    if (z.id == x.id)
+        return P;
+    else
+        return NULL;
+
 
 
     //----------------------------------------
@@ -25,7 +35,7 @@ void insertionSort(List &L){
     */
 
     //-------------your code here-------------
-    // NIM : 
+    // NIM :
 
 
     //----------------------------------------
@@ -40,8 +50,12 @@ void deletebyID(List &L, infotype x) {
 
     address Prec, P;
     //-------------your code here-------------
-    // NIM : 
+    // NIM : 1301154160
+    Prec = first(L);
+    Prec = sentinelSearch(L,x);
+    deleteAfter(Prec,P);
 
-	
+
+
     //----------------------------------------
 }

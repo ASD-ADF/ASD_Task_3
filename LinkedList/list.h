@@ -38,6 +38,7 @@ struct stuff{
     string nama;
     string nim;
     string kelas;
+    string transprofession;
 
 
     //----------------------------------------
