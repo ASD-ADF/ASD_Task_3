@@ -17,13 +17,13 @@
 	"list.h"
 	"operasi.h"
 
-1474173181 source:c:\users\ipat1\documents\codingan\asd_task_3\linkedlist\list.cpp
+1474185566 source:c:\users\ipat1\documents\codingan\asd_task_3\linkedlist\list.cpp
 	"list.h"
 
 1474172263 c:\users\ipat1\documents\codingan\asd_task_3\linkedlist\list.h
 	<iostream>
 
-1473961658 source:c:\users\ipat1\documents\codingan\asd_task_3\linkedlist\main.cpp
+1474185024 source:c:\users\ipat1\documents\codingan\asd_task_3\linkedlist\main.cpp
 	<iostream>
 	"list.h"
 	"operasi.h"
@@ -31,7 +31,7 @@
 1473960197 c:\users\ipat1\documents\codingan\asd_task_3\linkedlist\operasi.h
 	"list.h"
 
-1474173956 source:c:\users\ipat1\documents\codingan\asd_task_3\linkedlist\operasi.cpp
+1474184583 source:c:\users\ipat1\documents\codingan\asd_task_3\linkedlist\operasi.cpp
 	"list.h"
 	"operasi.h"
 

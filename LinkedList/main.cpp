@@ -35,9 +35,10 @@ void mainMenu(){
     //-------------your code here-------------
     while(i != 10){
     switch(i){
-case 1:
-    insertFirst()
+//case 1:
+
     }
+
     }
 
     //----------------------------------------

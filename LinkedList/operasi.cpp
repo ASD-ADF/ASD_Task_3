@@ -2,7 +2,8 @@
 #include "operasi.h"
 
 
-address sentinelSearch(List L, infotype x){
+address sentinelSearch(List L, infotype x)
+{
     /**
     * IS : List mungkin kosong
     * PR : mencari elemen dengan ID infotype = infotype x menggunakan bantuan sentinel
@@ -27,7 +28,8 @@ address sentinelSearch(List L, infotype x){
 
 }
 
-void insertionSort(List &L){
+void insertionSort(List &L)
+{
     /**
     * IS : List mungkin kosong
     * PR : mengurutkan elemen di dalam List L menggunakan algoritma insertion sort
@@ -42,7 +44,8 @@ void insertionSort(List &L){
 }
 
 
-void deletebyID(List &L, infotype x) {
+void deletebyID(List &L, infotype x)
+{
     /**
     * IS : List L mungkin kosong
     * FS : 1 elemen dengan id info = x.id dihapus dari list (dealokasi)
@@ -53,7 +56,22 @@ void deletebyID(List &L, infotype x) {
     // NIM : 1301154160
     Prec = first(L);
     Prec = sentinelSearch(L,x);
-    deleteAfter(Prec,P);
+    while (next(info(P)) != x && next(P) != NULL)
+    {
+        P = next(P);
+
+    }
+    if (next(P)==NULL && info(P)!=x)
+    {
+        return NULL;
+
+    }
+    else
+    {
+
+        return P;
+
+    }
 
 
 
