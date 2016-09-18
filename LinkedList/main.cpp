@@ -8,7 +8,6 @@ void mainMenu();
 List L;
 address P1 = NULL;
 address P2 = NULL;
-infotype x;
 
 int main()
 {

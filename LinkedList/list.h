@@ -3,6 +3,8 @@
 
 #include <iostream>
 
+using namespace std;
+
 #define first(L) L.first
 #define next(P) P->next
 #define info(P) P->info
@@ -30,12 +32,14 @@ using namespace std;
 **/
 
 
-struct [stuff]{
+struct stuff{
 	int id;
     //------------- your code here -----------
-    
-	
-	
+    string nama;
+    string nim;
+    string kelas;
+
+
     //----------------------------------------
 };
 
@@ -44,15 +48,15 @@ typedef struct elmlist *address;
 
 struct elmlist{
     //------------- your code here -----------
-    
-	
+    infotype info;
+    address next;
     //----------------------------------------
 };
 
 struct List{
     //------------- your code here -----------
-    
-	
+    address first;
+
     //----------------------------------------
 };
 
