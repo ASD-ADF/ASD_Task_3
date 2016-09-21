@@ -44,15 +44,15 @@ typedef struct elmlist *address;
 
 struct elmlist{
     //------------- your code here -----------
-    
-	
+    infotype police;
+    address next;
     //----------------------------------------
 };
 
 struct List{
     //------------- your code here -----------
     
-	
+    	
     //----------------------------------------
 };
 
