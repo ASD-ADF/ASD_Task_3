@@ -14,15 +14,21 @@ address sentinelSearch(List L, infotype x)
     // NIM :1301154160
     address P = first(L);
     infotype z = info(P);
-    while(z.id != x.id || next(P) != NULL)
+    insertLast(L,alokasi(z));
+    while(z.id != x.id)
         P = next(P);
 
-    if (z.id == x.id)
+    if (next(P)!= NULL){
+        deleteLast(L,P);
         return P;
-    else
+
+        }
+        else
+        {
+        deleteLast(L,P);
         return NULL;
 
-
+        }
 
     //----------------------------------------
 
@@ -51,26 +57,30 @@ void deletebyID(List &L, infotype x)
     * FS : 1 elemen dengan id info = x.id dihapus dari list (dealokasi)
     */
 
-    address Prec, P;
-    //-------------your code here-------------
-    // NIM : 1301154160
-    Prec = first(L);
-    Prec = sentinelSearch(L,x);
-    while (next(info(P)) != x && next(P) != NULL)
+    address Q,P;
+    Q = L.first;
+    P = findElm(L,x);
+    if (P != NULL)
     {
-        P = next(P);
+        if (Q == P)
+        {
+            deleteFirst(L,P);
+        }
+        else
+        {
 
-    }
-    if (next(P)==NULL && info(P)!=x)
-    {
-        return NULL;
+            while(Q->next != P && Q->next != NULL)
+                Q = next(Q);
 
-    }
-    else
-    {
-
-        return P;
-
+            if (Q->next == NULL)
+            {
+                deleteLast(L,Q);
+            }
+            else
+            {
+                deleteAfter(Q,P);
+            }
+        }
     }
 
 

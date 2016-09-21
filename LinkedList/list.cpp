@@ -23,7 +23,8 @@ address alokasi(infotype x)
     //-------------your code here-------------
     // NIM :1301154160
     P = new elmlist;
-    info(P) = x;
+    P->info = x;
+    P->next = NULL;
 
     //----------------------------------------
     return P;
@@ -36,6 +37,7 @@ void dealokasi(address &P)
     */
     //-------------your code here-------------
     // NIM : 1301154160
+    P = NULL;
     delete P;
 
     //----------------------------------------
@@ -49,7 +51,20 @@ void insertFirst(List &L, address P)
     */
     //-------------your code here-------------
     // NIM : 1301154160
-    delete P;
+
+    if (P != NULL)
+    {
+        if (L.first != NULL)
+        {
+            P->next = L.first;
+            L.first = P;
+
+        }
+        else
+        {
+            L.first = P;
+        }
+    }
 
 
     //----------------------------------------
@@ -63,13 +78,16 @@ void insertLast(List &L, address P)
     */
     //-------------your code here-------------
     // NIM : 1301154160
-    address Q;
-    Q = first(L);
-    while(next(Q)!= NULL)
-        Q = next(Q);
-    P = alokasi(x);
-    next(Q) = P;
-    next(P) = NULL;
+
+    if (P != NULL)
+    {
+        address Q;
+        Q = L.first;
+        while (Q->next != NULL)
+            Q = Q->next;
+        Q->next = P;
+        P->next = NULL;
+    }
 
 
     //----------------------------------------
@@ -86,28 +104,18 @@ address findElm(List L, infotype x)
     address P;
     //-------------your code here-------------
     // NIM : 1301154160
-    P = first(L);
-    infotype z = info(P);
-    while (z.id != x.id && next(P) != NULL)
-    {
-        P = next(P);
-        z = info(P);
 
-    }
-    if (next(P)==NULL && z.id!=x.id)
-    {
+    P = L.first;
+    infotype z = info(P);
+    while (P->next != NULL && z.id!= x.id)
+        P = P->next;
+    if ( z.id == x.id)
+        return P;
+    else
         return NULL;
 
-    }
-    else
-    {
-
-        return P;
-
-    }
 
     //----------------------------------------
-    return P;
 }
 
 
@@ -118,11 +126,17 @@ void deleteFirst(List &L, address &P)
     * FS : elemen pertama di dalam List L dilepas dan disimpan/ditunjuk oleh P
     */
     //-------------your code here-------------
-    // NIM :
-    if (first(L) != NULL)
+    // NIM : 1301154160
+    P = L.first;
+    if (P->next !=NULL)
     {
-        P = first(L);
-        first(L) = next(P);
+        L.first = P->next;
+        dealokasi(P);
+    }
+    else
+    {
+        L.first = NULL;
+        dealokasi(P);
     }
 
 
@@ -138,20 +152,23 @@ void deleteLast(List &L, address &P)
     */
     //-------------your code here-------------
     // NIM : 1301154160
-    if (first(L) != NULL)
+
+    address Q;
+    Q = L.first;
+    if (Q->next != NULL)
     {
-        P = first(L);
-        if (next(P) != NULL)
-        {
-            while(next(next(P)) != NULL)
-                P = next(P);
-            next(P) = NULL;
-        }
-        else
-        {
-            createList(L);
-        }
+        while (next(next(Q)) != NULL)
+            Q = Q->next;
+        P = Q->next;
+        Q->next = NULL;
+        dealokasi(P);
     }
+    else
+    {
+        L.first = NULL;
+        dealokasi(Q);
+    }
+
 
 
     //----------------------------------------
@@ -200,10 +217,17 @@ void insertAfter(address Prec, address P)
     */
     //-------------your code here-------------
     // NIM : 1301154160
-    P = alokasi(x);
-    next(P) = NULL;
-    next(P) = next(Prec);
-    next(Prec) = P;
+    if (Prec->next != NULL)
+    {
+        P->next = next(Prec);
+        Prec->next = P;
+    }
+    else
+    {
+        Prec->next = P;
+        P->next = NULL;
+    }
+
 
 
 
@@ -219,9 +243,32 @@ void deleteAfter(address Prec, address &P)
     */
     //-------------your code here-------------
     // NIM : 1301154160
-    next(Prec) = next(P);
-    dealokasi(P);
+    if (Prec->next != NULL)
+    {
+        P = next(Prec);
+        next(Prec) = next(P);
+        dealokasi(P);
+    }
 
     //----------------------------------------
 }
 
+infotype isiInfotype(){
+
+            infotype asd;
+            cout << "ID = ";
+            cin >> asd.id;
+            cout << "NIM = ";
+            cin >> asd.nim;
+            cout << "Class = ";
+            cin >> asd.kelas;
+            if (asd.id % 2 == 0)
+                cout << "Profession = ";
+            else
+                cout << "Transportation = ";
+            cin >> asd.transprofession;
+
+
+        return asd;
+
+}

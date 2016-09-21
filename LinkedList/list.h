@@ -73,6 +73,7 @@ void deleteLast(List &L, address &P);
 void printInfo(List L);
 void insertAfter(address Prec, address P);
 void deleteAfter(address Prec, address &P);
+infotype isiInfotype();
 
 
 #endif // LIST_H_INCLUDED
