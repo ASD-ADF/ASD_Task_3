@@ -86,8 +86,23 @@ address findElm(List L, infotype x) {
 
     address P;
     //-------------your code here-------------
-    // NIM : 
-    
+    // NIM : 1301154449 (Atika Oktavia)
+    address P;
+    if(L.first != Nil)
+    {
+    	P = L.first;
+    	while ((info(P) != x) && (next(P) != Nil))
+    	{
+    		P=next(P);
+    		if(info(P) == x)
+    		{
+    			return P;
+    		}else
+    		{
+    			return Nil;
+    		}
+    	}
+    }
 	
     //----------------------------------------
     return P;
@@ -99,8 +114,18 @@ void deleteFirst(List &L, address &P) {
     * FS : elemen pertama di dalam List L dilepas dan disimpan/ditunjuk oleh P
     */
     //-------------your code here-------------
-    // NIM : 
-    
+    // NIM : 1301154449 (Atika Oktavia)
+    if(L.first != Nil)
+    {
+    	P = L.first;
+    	if(P->next == Nil)
+        	L.first = Nil;
+    	else
+    	{
+    		L.first = P->next;
+    		P->next = Nil;
+    	}
+    }
     //----------------------------------------
 }
 
@@ -164,7 +189,11 @@ void deleteAfter(address Prec, address &P) {
     *      dan disimpan/ditunjuk oleh P
     */
     //-------------your code here-------------
-    // NIM : 
+    // NIM : 1301154449 (Atika Oktavia)
+    next(P) = next(Prec);
+    next(Prec) = Nil;
+
+    return P;
     
 	
     //----------------------------------------
