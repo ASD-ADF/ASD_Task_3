@@ -42,9 +42,13 @@ void insertFirst(List &L, address P) {
     * FS : elemen yang ditunjuk P menjadi elemen pertama pada List L
     */
     //-------------your code here-------------
-    // NIM : 
-	
-
+    // NIM : 1301154393
+    if (first(L) == NULL){
+        first(L) = P;
+    } else {
+        next(P) = first(L);
+        first(L) = P;
+    }
     //----------------------------------------
 }
 
@@ -54,9 +58,16 @@ void insertLast(List &L, address P) {
     * FS : elemen yang ditunjuk P menjadi elemen terakhir pada List L
     */
     //-------------your code here-------------
-    // NIM : 
-    
-	
+    // NIM : 1301154393
+    if (first(L) == NULL){
+        first(L) = P;
+    } else {
+        address Q = first(L);
+        while (Q->next != NULL){
+            Q = Q->next;
+        }
+        Q->next = P;
+    }
     //----------------------------------------
 }
 
@@ -66,14 +77,19 @@ address findElm(List L, infotype x) {
     * FS : mengembalikan elemen dengan info.ID = x.ID,
            mengembalikan Nil jika tidak ditemukan
     */
-
-    address P;
     //-------------your code here-------------
-    // NIM : 
-    
-	
-    //----------------------------------------
+    // NIM : 1301154393
+    address P = first(L);
+    while (next(P) != NULL){
+        if (info(P).id == x.id){
+            cout<<info(P).id<<endl;
+            P = next(P);
+        } else {
+            P = next(P);
+        }
+    }
     return P;
+    //----------------------------------------
 }
 
 void deleteFirst(List &L, address &P) {
@@ -122,9 +138,16 @@ void printInfo(List L) {
     * FS : menampilkan info seluruh elemen list L
     */
     //-------------your code here-------------
-    // NIM : 
-
-	
+    // NIM : 1301154393
+    address P = first(L);
+    while (P != NULL){
+        cout<<"ID Pesawat        : "<<info(P).id<<endl;
+        cout<<"Nama Pesawat      : "<<info(P).nama_pesawat<<endl;
+        cout<<"Nama Pilot        : "<<info(P).pilot<<endl;
+        cout<<"Kapasitas         : "<<info(P).kapasitas<<endl;
+        cout<<"Tipe Kelas        : "<<info(P).kelas<<endl;
+        P = next(P);
+    }
     //----------------------------------------
 }
 
