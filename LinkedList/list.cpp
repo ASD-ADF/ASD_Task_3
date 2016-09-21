@@ -69,7 +69,19 @@ address findElm(List L, infotype x) {
 
     address P;
     //-------------your code here-------------
-    // NIM : 
+    // NIM :1301150015
+    if (first (L) !=Nil)
+    {
+        P = first (L);
+        while ((info (p) !=x) && (next (P) !=Nil))
+            P = next(p);
+        if (info(P) == x)
+        {
+            return P;
+        }
+        return Nil;
+    }
+}; 
     
 	
     //----------------------------------------
@@ -121,10 +133,12 @@ void insertAfter(address Prec, address P) {
     *      ditunjuk pointer Prec
     */
     //-------------your code here-------------
-    // NIM : 
+    // NIM : 1301150015
+    next (P) = Nil;
+    next(P)= next(Prec);
+    next(Prec) = next P;
 
-	
-    //----------------------------------------
+     //----------------------------------------
 
 }
 void deleteAfter(address Prec, address &P) {
