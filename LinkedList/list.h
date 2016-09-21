@@ -33,9 +33,9 @@ using namespace std;
 struct [stuff]{
 	int id;
     //------------- your code here -----------
-    
-	
-	
+
+
+
     //----------------------------------------
 };
 
@@ -44,15 +44,14 @@ typedef struct elmlist *address;
 
 struct elmlist{
     //------------- your code here -----------
-    
-	
+    infotype info;
+    address next;
     //----------------------------------------
 };
 
 struct List{
     //------------- your code here -----------
-    
-	
+    address first;
     //----------------------------------------
 };
 
@@ -68,6 +67,4 @@ void deleteLast(List &L, address &P);
 void printInfo(List L);
 void insertAfter(address Prec, address P);
 void deleteAfter(address Prec, address &P);
-
-
 #endif // LIST_H_INCLUDED
