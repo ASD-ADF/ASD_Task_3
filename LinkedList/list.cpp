@@ -103,18 +103,25 @@ address findElm(List L, infotype x) {
     p = first(L);
     if (first(L)!=NULL)
     {
-        while ((info(p)!=x) && (next (p) != NULL))
+        while ((info(P).id!=x.id) && (next (p) != NULL))
         {
             p=next(p);
         }
-        if (info(p) != x)
+        if (info(p).id != x.id)
         {
             p= NULL;
+            cout<< "data tidak ditemukan"<<endl;
+        }
+        else
+        {
+            cout <<"data ditemukan"<<endl;
         }
     }
     else
     {
-       	p = NULL;
+        p = NULL;
+        cout<< "data tidak ditemukan"<<endl;
+
     }
 	
     //----------------------------------------
@@ -175,7 +182,23 @@ void printInfo(List L) {
     */
     //-------------your code here-------------
     // NIM : 1301154351
-
+	if (first(L)!=NULL)
+    {
+        address p = first(L);
+        while (p!=NULL)
+        {
+            cout << "id  = "<<info(p).id<<endl;
+            cout << "Nama  = "<<info(p).nama<<endl;
+            cout << "Mata Pelajaran  = "<<info(p).mataPel<<endl;
+            cout << "Umur  = "<<info(p).umur<<endl;
+            cout << "No HP  = "<<info(p).noHP<<endl;
+            p = next(p);
+        }
+    }
+    else
+    {
+        cout << "NULL" << endl;
+    }
 	
     //----------------------------------------
 }
@@ -204,7 +227,9 @@ void deleteAfter(address Prec, address &P) {
     */
     //-------------your code here-------------
     // NIM : 1301154351
-    
+    P=next(Prec);
+    next(Prec)=next(P);
+    next(P)=NULL;
 	
     //----------------------------------------
 }
