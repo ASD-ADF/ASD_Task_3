@@ -6,6 +6,7 @@
 #define first(L) L.first
 #define next(P) P->next
 #define info(P) P->info
+#define Nill NULL
 
 using namespace std;
 
@@ -30,29 +31,27 @@ using namespace std;
 **/
 
 
-struct [stuff]{
+struct kereta{
 	int id;
     //------------- your code here -----------
-    
-	
-	
+    string nama,kelas;
+    int kapasitas_gerbong,jmlh_gerbong;
     //----------------------------------------
 };
 
-typedef stuff infotype;
+typedef kereta infotype;
 typedef struct elmlist *address;
 
 struct elmlist{
     //------------- your code here -----------
-    
-	
+    infotype info;
+    address next;
     //----------------------------------------
 };
 
 struct List{
     //------------- your code here -----------
-    
-	
+    address first;
     //----------------------------------------
 };
 
@@ -68,6 +67,6 @@ void deleteLast(List &L, address &P);
 void printInfo(List L);
 void insertAfter(address Prec, address P);
 void deleteAfter(address Prec, address &P);
-
+void printhasil(List L, infotype x);
 
 #endif // LIST_H_INCLUDED
