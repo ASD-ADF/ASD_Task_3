@@ -17,3 +17,21 @@
 	"list.h"
 	"operasi.h"
 
+1474567498 source:e:\sekolah\telkom\asd\asd_task_3\linkedlist\main.cpp
+	<iostream>
+	"list.h"
+	"operasi.h"
+
+1474562327 e:\sekolah\telkom\asd\asd_task_3\linkedlist\list.h
+	<iostream>
+
+1473997260 e:\sekolah\telkom\asd\asd_task_3\linkedlist\operasi.h
+	"list.h"
+
+1474567315 source:e:\sekolah\telkom\asd\asd_task_3\linkedlist\list.cpp
+	"list.h"
+
+1474565985 source:e:\sekolah\telkom\asd\asd_task_3\linkedlist\operasi.cpp
+	"list.h"
+	"operasi.h"
+
