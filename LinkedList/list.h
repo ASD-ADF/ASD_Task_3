@@ -30,29 +30,27 @@ using namespace std;
 **/
 
 
-struct [stuff]{
+struct car{
 	int id;
     //------------- your code here -----------
-    
-	
-	
+    string nama,kelas;
+	int kapasitas,jmlh_unit;
     //----------------------------------------
 };
 
-typedef stuff infotype;
+typedef car infotype;
 typedef struct elmlist *address;
 
 struct elmlist{
     //------------- your code here -----------
-    
-	
+    infotype info;
+    address next;
     //----------------------------------------
 };
 
 struct List{
     //------------- your code here -----------
-    
-	
+    address first;
     //----------------------------------------
 };
 

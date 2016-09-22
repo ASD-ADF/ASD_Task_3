@@ -5,8 +5,6 @@
 
 address sentinelSearch(List L, infotype x);
 void insertionSort(List &L);
-
 void deletebyID(List &L, infotype x);
-
 
 #endif // OPERASI_H_INCLUDED
