@@ -6,6 +6,7 @@
 #define first(L) L.first
 #define next(P) P->next
 #define info(P) P->info
+#define Nill NULL
 
 using namespace std;
 
@@ -30,29 +31,27 @@ using namespace std;
 **/
 
 
-struct [stuff]{
+struct BUS{
 	int id;
     //------------- your code here -----------
-    
-	
-	
+    string nama,kelas;
+    int kapasitas_armada,jmlh_armada;
     //----------------------------------------
 };
 
-typedef stuff infotype;
+typedef BUS infotype;
 typedef struct elmlist *address;
 
 struct elmlist{
     //------------- your code here -----------
-    
-	
+    infotype info;
+    address next;
     //----------------------------------------
 };
 
 struct List{
     //------------- your code here -----------
-    
-	
+    address first;
     //----------------------------------------
 };
 
