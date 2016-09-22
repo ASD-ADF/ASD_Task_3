@@ -140,9 +140,25 @@ void printInfo(List L) {
     * FS : menampilkan info seluruh elemen list L
     */
     //-------------your code here-------------
-    // NIM : 
+    // NIM : 1301154183
+    if (first(L) != NULL)
+    {
+        address P = first(L);
+        while(P != NULL)
+        {
+            infotype kereta = info(P);
+            cout << "ID Kereta: " <<kereta.id<< endl;
+            cout << "Kelas: " <<kereta.stasiun<< endl;
+            cout << "Stasiun: " <<kereta.stasiun<< endl;
+            cout << "Durasi: "<<kereta.durasi<<endl<<endl;
+            P = next(P);
+        }
 
-	
+    }
+    else
+    {
+        cout << "List KOSONG!" << endl;
+    }
     //----------------------------------------
 }
 
