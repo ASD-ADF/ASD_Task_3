@@ -5,7 +5,8 @@ void createList(List &L) {
     * FS : first(L) diset Nil
     */
     //-------------your code here-------------
-    // NIM : 
+    // NIM : 1301150001	
+    first(L) = Nil;
     
 
     //----------------------------------------
@@ -42,7 +43,18 @@ void insertFirst(List &L, address P) {
     * FS : elemen yang ditunjuk P menjadi elemen pertama pada List L
     */
     //-------------your code here-------------
-    // NIM : 
+    // NIM : 1301150001	
+    if (P != Nil)
+    {
+    	if (first(L) !=Nil)
+    	{
+    		next (P) = first (L);
+    		first (L) = P;
+    	}
+    	else
+    	{
+    		first (L) = P;
+    	}
 	
 
     //----------------------------------------
