@@ -41,11 +41,13 @@ void insertFirst(List &L, address P) {
     * IS : List L mungkin kosong
     * FS : elemen yang ditunjuk P menjadi elemen pertama pada List L
     */
-    //-------------your code here-------------
-    // NIM : 
-	
-
-    //----------------------------------------
+     if (first(L) == Nil) {
+        first (L) = P;
+    } else {
+        next(P)=first(L);
+        first(L)=P;
+    }
+    // NIM : 1301154547 //
 }
 
 void insertLast(List &L, address P) {
@@ -53,11 +55,17 @@ void insertLast(List &L, address P) {
     * IS : List L mungkin kosong
     * FS : elemen yang ditunjuk P menjadi elemen terakhir pada List L
     */
-    //-------------your code here-------------
-    // NIM : 
+    if (first(L) == Nil) {
+        first (L) = P;
+    } else {
+        address Q = first (L);
+        while (Q->next != Nil){
+            Q=Q->next;
+        }
+        Q->next = P;
+    }
+    // NIM : 1301154547 //
     
-	
-    //----------------------------------------
 }
 
 address findElm(List L, infotype x) {
@@ -133,10 +141,13 @@ void deleteAfter(address Prec, address &P) {
     * FS : elemen yang berada di belakang elemen Prec dilepas
     *      dan disimpan/ditunjuk oleh P
     */
-    //-------------your code here-------------
-    // NIM : 
-    
-	
-    //----------------------------------------
+     p = prec -> next;
+    prec->next=next(P);
+    next(P)=NULL;
+}
+//else {
+//    next(P);
+//}
+    // NIM : 1301154547 //
 }
 
