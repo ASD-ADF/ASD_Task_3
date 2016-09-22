@@ -176,7 +176,7 @@ void insertAfter(address Prec, address P) {
     *      ditunjuk pointer Prec
     */
     //-------------your code here-------------
-    // NIM : 
+    // NIM : 1301154379
 
     next(P) = next(Prec);
     next(Prec) = P;
