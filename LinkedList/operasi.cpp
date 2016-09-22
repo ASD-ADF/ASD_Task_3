@@ -9,11 +9,26 @@ address sentinelSearch(List L, infotype x){
     * FS : mengembalikan address elemen dengan ID infotype x jika ditemukan,
     *      mengembalikan NULL jika tidak ditemukan
     */
-    //-------------your code here-------------
-    // NIM : 
+    // NIM : 1301154169
+    address P;
+    if (L.first != nil)
+    {
+        P = L.first;
+        while ((info(P) != x) && (next(P) != nil))
+        {
+            P = next (P);
+            if(info(P) == x)
+            {
+                return P;
+            }
+            else
+            {
+                return nil;
+            }
+        }
+    }
 
-
-    //----------------------------------------
+return P;
 
 }
 
@@ -39,9 +54,38 @@ void deletebyID(List &L, infotype x) {
     */
 
     address Prec, P;
-    //-------------your code here-------------
-    // NIM : 
-
-	
-    //----------------------------------------
+    // NIM : 1301154407
+    P,Prec = first(L);
+    if (first(L) != NULL)
+    {
+        while ((info(P).id!=x.id) && (next(P) !=NULL))
+        {
+            Prec = P;
+            P = next(P);
+        }
+        if (info(P).id != x.id)
+        {
+            cout << "Data tidak ada" << endl;
+        }
+        else
+        {
+            if (P == first(L))
+            {
+                deleteFirst(L,P);
+            }
+            else if (next(P) == NULL)
+            {
+                deleteLast(L,P);
+            }
+            else
+            {
+                deleteAfter(Prec,P);
+            }
+            cout << "data telah dihapus"<< endl;
+        }
+    }
+    else
+    {
+        cout << "data tidak ada" << endl;
+    }
 }

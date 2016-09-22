@@ -30,39 +30,36 @@ using namespace std;
 **/
 
 
-struct [stuff]{
-	int id;
-    //------------- your code here -----------
-    
-	
-	
-    //----------------------------------------
+struct bus
+{
+    int id;
+    int kapasitas;
+    string brand;
+    string type;
+    string plat;
 };
 
-typedef stuff infotype;
+typedef struct bus infotype;
 typedef struct elmlist *address;
 
-struct elmlist{
-    //------------- your code here -----------
-    
-	
-    //----------------------------------------
+struct elmlist
+{
+    infotype info;
+    address next;
 };
 
-struct List{
-    //------------- your code here -----------
-    
-	
-    //----------------------------------------
+struct List
+{
+    address first;
 };
 
 
 void createList(List &L);
-address alokasi(infotype x);
+address alokasi(bus x);
 void dealokasi(address &P);
 void insertFirst(List &L, address P);
 void insertLast(List &L, address P);
-address findElm(List L, infotype x);
+address findElm(List L, bus x);
 void deleteFirst(List &L, address &P);
 void deleteLast(List &L, address &P);
 void printInfo(List L);
