@@ -3,10 +3,10 @@
 
 #include "list.h"
 
-address sentinelSearch(List L, infotype x);
+address sentinelSearch(List L, int x);
 void insertionSort(List &L);
 
-void deletebyID(List &L, infotype x);
+void deletebyID(List &L, int x);
 
 
 #endif // OPERASI_H_INCLUDED
