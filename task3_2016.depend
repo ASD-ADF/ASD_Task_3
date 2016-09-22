@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1473899619 source:c:\users\dee\documents\cpp\task3_2016\list.cpp
+	"list.h"
+
+1473899211 c:\users\dee\documents\cpp\task3_2016\list.h
+	<iostream>
+
+1473899473 source:c:\users\dee\documents\cpp\task3_2016\main.cpp
+	<iostream>
+	"list.h"
+	"operasi.h"
+
+1473899290 c:\users\dee\documents\cpp\task3_2016\operasi.h
+	"list.h"
+
+1473899596 source:c:\users\dee\documents\cpp\task3_2016\operasi.cpp
+	"list.h"
+	"operasi.h"
+
