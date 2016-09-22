@@ -2,6 +2,7 @@
 #define LIST_H_INCLUDED
 
 #include <iostream>
+#include <conio.h>
 
 #define first(L) L.first
 #define next(P) P->next
@@ -30,29 +31,33 @@ using namespace std;
 **/
 
 
-struct [stuff]{
+struct dosen{
 	int id;
     //------------- your code here -----------
-    
-	
-	
+    string nama;
+    string matkul;
+    string masakerja;
+    string asal;
+
+
     //----------------------------------------
 };
 
-typedef stuff infotype;
+typedef dosen infotype;
 typedef struct elmlist *address;
 
 struct elmlist{
     //------------- your code here -----------
-    
-	
+    infotype info;
+    address next;
+
     //----------------------------------------
 };
 
 struct List{
     //------------- your code here -----------
-    
-	
+    address first;
+
     //----------------------------------------
 };
 
