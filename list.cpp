@@ -5,7 +5,7 @@ void createList(List &L) {
     * FS : first(L) diset Nil
     */
     //-------------your code here-------------
-    // NIM :
+    // NIM : 1301154342
     first(L) = NULL;
 
     //----------------------------------------
@@ -18,7 +18,7 @@ address alokasi(infotype x) {
 
     //address P;
     //-------------your code here-------------
-    // NIM :
+    // NIM : 1301154342
     address P = new elmlist;
     info(P) = x;
     next(P) = NULL;
@@ -33,7 +33,7 @@ void dealokasi(address &P) {
     * FS : menghapus elemen yang ditunjuk oleh P (delete)
     */
     //-------------your code here-------------
-    // NIM :
+    // NIM : 1301154342
 
     delete(P);
     //----------------------------------------
@@ -45,7 +45,7 @@ void insertFirst(List &L, address P) {
     * FS : elemen yang ditunjuk P menjadi elemen pertama pada List L
     */
     //-------------your code here-------------
-    // NIM :
+    // NIM : 1301154342
 
     if (first(L) == NULL)
         first(L)= P;
@@ -63,7 +63,7 @@ void insertLast(List &L, address P) {
     * FS : elemen yang ditunjuk P menjadi elemen terakhir pada List L
     */
     //-------------your code here-------------
-    // NIM :
+    // NIM : 1301154342
 
     if (first(L)== NULL)
         first(L)=P;
@@ -86,7 +86,7 @@ address findElm(List L, infotype x) {
 
     address P;
     //-------------your code here-------------
-    // NIM :
+    // NIM : 1301154342
     while ((info(P).id != x.id) && (next(P)!= NULL))
         P = next(P);
 
@@ -101,7 +101,7 @@ void deleteFirst(List &L, address &P) {
     * FS : elemen pertama di dalam List L dilepas dan disimpan/ditunjuk oleh P
     */
     //-------------your code here-------------
-    // NIM :
+    // NIM : 1301154342
 if(first(L) != NULL)
     {
         P=first(L);
@@ -124,7 +124,7 @@ void deleteLast(List &L, address &P) {
     * FS : elemen tarakhir di dalam List L dilepas dan disimpan/ditunjuk oleh P
     */
     //-------------your code here-------------
-    // NIM :
+    // NIM : 1301154342
 
      if (first(L) != NULL)
     {
@@ -149,7 +149,7 @@ void printInfo(List L) {
     * FS : menampilkan info seluruh elemen list L
     */
     //-------------your code here-------------
-    // NIM :
+    // NIM : 1301154342
     if (first(L) != NULL)
     {
         address P = first(L);
@@ -176,15 +176,7 @@ void insertAfter(address Prec, address P) {
     *      ditunjuk pointer Prec
     */
     //-------------your code here-------------
-    // NIM :
-    /*List L;
-    first(L)= P;
-    while (info(P) != x){
-        P=next(P);
-      next(Prec) = next(P);
-    next(P)= Prec;
-    }*/
-
+    // NIM : 1301154342
     if (next(Prec) != NULL){
         next(P)= next(Prec);
         next(Prec) = P;
@@ -204,13 +196,7 @@ void deleteAfter(address Prec, address &P) {
     *      dan disimpan/ditunjuk oleh P
     */
     //-------------your code here-------------
-    // NIM :
-/*    first(L)=P;
-    while (info(P) != x)
-        P= next(P);
-        Prec = next(P);
-    next(P)= next(next(P));
-    next(Prec)= NULL;*/
+    // NIM : 1301154342
     if (next(Prec) != NULL){
         P=next(Prec);
         next(Prec)= next(P);

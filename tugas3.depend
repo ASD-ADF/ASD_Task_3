@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1474565641 source:e:\semester 3\struktur data\tes\task3\list.cpp
+	"list.h"
+
+1385316878 source:e:\semester 3\struktur data\tes\task3\main.cpp
+	<iostream>
+
+1474472450 source:e:\semester 3\struktur data\tes\task3\operasi.cpp
+
+1474566105 e:\semester 3\struktur data\tes\task3\list.h
+	<iostream>
+	<stdio.h>
+	"list.h"
+	"operasi.h"
+
+1474573198 e:\semester 3\struktur data\tes\task3\operasi.h
+	"list.h"
+	<iostream>
+	"operasi.h"
+	<stdio.h>
+
