@@ -11,7 +11,7 @@ void createList(List &L) {
     //----------------------------------------
 }
 
-address alokasi(infotype x) {
+address alokasi(police x) {
     /**
     * FS : mengembalikan elemen list baru dengan info = x, next elemen = Nil
     */
@@ -77,7 +77,7 @@ void insertLast(List &L, address P) {
     //----------------------------------------
 }
 
-address findElm(List L, infotype x) {
+address findElm(List L, police x) {
     /**
     * IS : List L mungkin kosong
     * FS : mengembalikan elemen dengan info.ID = x.ID,
