@@ -178,7 +178,8 @@ void insertAfter(address Prec, address P) {
     //-------------your code here-------------
     // NIM : 
 
-	
+    next(P) = next(Prec);
+    next(Prec) = P;
     //----------------------------------------
 
 }
