@@ -53,10 +53,58 @@ void deletebyID(List &L, infotype x) {
     * FS : 1 elemen dengan id info = x.id dihapus dari list (dealokasi)
     */
 
-    address Prec, P;
+    address Prec, P = NULL;
     //-------------your code here-------------
-    // NIM :
+    // NIM : 1301154239
+
+    if(first(L) == NULL)
+    {
+        cout << "LIST MASIH KOSONG";
+    } else
+    {
+       Prec = first(L);
+       while ((info(Prec).id != x.id) && (next(Prec) != NULL))
+       {
+           Prec=next(Prec);
+       }
+       if (next(Prec) != NULL){
+
+            P = first(L);
+            while (next(P) != Prec)
+            {
+                P = next(P);
+            }
+            if (next(Prec) != NULL)
+            {
+                next(P) = next(Prec);
+                next(Prec) = NULL;
+                cout <<"Data yang akan dihapus"<<endl;
+                cout <<"ID Dosen         : "<<info(Prec).id<<endl;
+                cout <<"Nama Dosen       : "<<info(Prec).nama<<endl;
+                cout <<"Mata Kuliah      : "<<info(Prec).matkul<<endl;
+                cout <<"Masa Kerja       : "<<info(Prec).masakerja<<endl;
+                cout <<"Asal             : "<<info(Prec).asal<<endl;
+                cout <<"Address Elmement : "<<Prec<<endl;
+                dealokasi(Prec);
+                cout <<"data berhasil dihapus"<<endl;
+            } else {
+                next(P) = NULL;
+                dealokasi(Prec);
+            }
+       } else {
+            cout <<"Data yang akan dihapus"<<endl;
+       cout <<"ID Dosen         : "<<info(Prec).id<<endl;
+       cout <<"Nama Dosen       : "<<info(Prec).nama<<endl;
+       cout <<"Mata Kuliah      : "<<info(Prec).matkul<<endl;
+       cout <<"Masa Kerja       : "<<info(Prec).masakerja<<endl;
+       cout <<"Asal             : "<<info(Prec).asal<<endl;
+       cout <<"Address Elmement : "<<Prec<<endl;
+       first(L) = P;
+       dealokasi(Prec);
+       cout << "Data berhasil di hapus";
+       }
 
 
     //----------------------------------------
+}
 }
