@@ -17,3 +17,21 @@
 	"list.h"
 	"operasi.h"
 
+1474566152 source:d:\task3\linkedlist\list.cpp
+	"list.h"
+
+1474562699 d:\task3\linkedlist\list.h
+	<iostream>
+
+1474566027 source:d:\task3\linkedlist\main.cpp
+	<iostream>
+	"list.h"
+	"operasi.h"
+
+1474475160 d:\task3\linkedlist\operasi.h
+	"list.h"
+
+1474563953 source:d:\task3\linkedlist\operasi.cpp
+	"list.h"
+	"operasi.h"
+
