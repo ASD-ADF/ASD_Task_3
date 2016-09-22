@@ -115,8 +115,18 @@ void deleteFirst(List &L, address &P) {
     * FS : elemen pertama di dalam List L dilepas dan disimpan/ditunjuk oleh P
     */
     //-------------your code here-------------
-    // NIM : 
-
+    // NIM : 1301154281
+	if(first(L) != Nil)
+    {
+        P = first(L);
+        if(next(P) == Nil) // kondisi jika elemen pada list cuma ada 1
+            first(L) = Nil;
+        else // kondisi jika elemen list > 1
+        {
+            first(L) = next(P);
+            next(P) = Nil;
+        }
+    }
 	
 	
     //----------------------------------------
@@ -128,10 +138,21 @@ void deleteLast(List &L, address &P) {
     * FS : elemen tarakhir di dalam List L dilepas dan disimpan/ditunjuk oleh P
     */
     //-------------your code here-------------
-    // NIM : 
-
-	
-
+    // NIM : 1301154281
+    if(first(L) != Nil)
+    {
+        P = first(L);
+        if (next(P) == Nil)// kondisi jika elemen pada list cuma ada 1
+            first(L) = Nil;
+        else // kondisi jika elemen list > 1
+        {
+            address Q = first(L);
+            while(next(next(Q)) != Nil)
+                Q=next(Q);
+            P = next(Q);
+            next(Q) = Nil;
+        }
+    }
     //----------------------------------------
 }
 
