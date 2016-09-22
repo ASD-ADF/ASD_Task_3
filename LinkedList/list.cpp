@@ -52,6 +52,7 @@ void insertFirst(List &L, address P) {
     //----------------------------------------
 }
 
+
 void insertLast(List &L, address P) {
     /**
     * IS : List L mungkin kosong
