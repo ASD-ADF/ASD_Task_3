@@ -205,7 +205,7 @@ void printhasil(List L, infotype x) {
 +    * FS : menampilkan info seluruh elemen list L
 +    */
 +    //-------------your code here-------------
-+    // NIM :1301154105
++    // NIM :1301154426
 +    address P = first(L);
 +
 +    while (P != Nill && info(P).id != x.id){
