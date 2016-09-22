@@ -1,5 +1,6 @@
 #include "list.h"
 #include "operasi.h"
+using namespace std;
 
 
 address sentinelSearch(List L, infotype x){
@@ -10,8 +11,15 @@ address sentinelSearch(List L, infotype x){
     *      mengembalikan NULL jika tidak ditemukan
     */
     //-------------your code here-------------
-    // NIM : 
-
+    // NIM :
+    address P;
+    P = new eLmlist;
+    P -> next = NULL;
+    P -> info.id = addstuff.id;
+    P -> info.nama = addstuff.nama;
+    P -> info.divisi = addstuff.jabatan;
+    P -> info.gaji = addstuff.gaji;
+    return P;
 
     //----------------------------------------
 
@@ -25,10 +33,36 @@ void insertionSort(List &L){
     */
 
     //-------------your code here-------------
-    // NIM : 
+    // NIM :
 
 
     //----------------------------------------
+    int temp ,ketemu,z;
+    temp=NULL;
+        if((L.first==NULL)|| (L.first)-> next==NULL) {
+            return 0;
+        }
+        p=next(L.first);
+        while (P!= NULL){
+            z=P->info ;
+            ketemu =0;
+            q=L.first;
+            while(q!=p){
+                if(q->info > P->info&&ketemu==0){
+                    z=q -> info ;
+                    q ->info = p -> info;
+                    ketemu = 1;
+                    q = q-> next;
+                else {if(ketemu==1) {temp = z;
+                z=q ->info;
+                q -> info=temp;
+                }
+                q=q -> next ;
+            }
+        }
+        q -> info=z;
+        p=p ->next;
+}
 }
 
 
@@ -40,8 +74,8 @@ void deletebyID(List &L, infotype x) {
 
     address Prec, P;
     //-------------your code here-------------
-    // NIM : 
+    // NIM :
 
-	
+
     //----------------------------------------
 }

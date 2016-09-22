@@ -30,12 +30,17 @@ using namespace std;
 **/
 
 
-struct [stuff]{
+struct stuff{
 	int id;
+	string nama;
+	string divisi;
+	string jabatan;
+	double gaji;
+
     //------------- your code here -----------
-    
-	
-	
+
+
+
     //----------------------------------------
 };
 
@@ -44,15 +49,16 @@ typedef struct elmlist *address;
 
 struct elmlist{
     //------------- your code here -----------
-    
-	
+    stuff info;
+    address next;
+
     //----------------------------------------
 };
 
 struct List{
     //------------- your code here -----------
-    
-	
+
+    address first;
     //----------------------------------------
 };
 
