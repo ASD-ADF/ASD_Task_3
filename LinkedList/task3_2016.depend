@@ -17,3 +17,21 @@
 	"list.h"
 	"operasi.h"
 
+1474582878 source:c:\users\aziza\documents\github\asd_task_3\linkedlist\main.cpp
+	<iostream>
+	"list.h"
+	"operasi.h"
+
+1474581379 c:\users\aziza\documents\github\asd_task_3\linkedlist\list.h
+	<iostream>
+
+1474551354 c:\users\aziza\documents\github\asd_task_3\linkedlist\operasi.h
+	"list.h"
+
+1474582832 source:c:\users\aziza\documents\github\asd_task_3\linkedlist\operasi.cpp
+	"list.h"
+	"operasi.h"
+
+1474582832 source:c:\users\aziza\documents\github\asd_task_3\linkedlist\list.cpp
+	"list.h"
+

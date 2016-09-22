@@ -4,8 +4,9 @@
 #include <iostream>
 
 #define first(L) L.first
-#define next(P) P->next
-#define info(P) P->info
+//#define info(P) P->info
+#define info(P) (P)->info
+//#define next(P) (P)->next
 
 using namespace std;
 
@@ -30,12 +31,15 @@ using namespace std;
 **/
 
 
-struct [stuff]{
+struct stuff{
 	int id;
     //------------- your code here -----------
-    
-	
-	
+    int tahun;
+    string namamobil;
+    string merk;
+    string jenis;
+    string warna;
+    string pemilik;
     //----------------------------------------
 };
 
@@ -44,15 +48,14 @@ typedef struct elmlist *address;
 
 struct elmlist{
     //------------- your code here -----------
-    
-	
+    infotype info;
+	address next;
     //----------------------------------------
 };
 
 struct List{
     //------------- your code here -----------
-    
-	
+    address first;
     //----------------------------------------
 };
 
@@ -62,7 +65,7 @@ address alokasi(infotype x);
 void dealokasi(address &P);
 void insertFirst(List &L, address P);
 void insertLast(List &L, address P);
-address findElm(List L, infotype x);
+address findElm(List L, int x);
 void deleteFirst(List &L, address &P);
 void deleteLast(List &L, address &P);
 void printInfo(List L);
