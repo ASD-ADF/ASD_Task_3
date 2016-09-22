@@ -19,8 +19,9 @@ address alokasi(infotype x) {
 
     address P;
     //-------------your code here-------------
-    // NIM : 
-
+    // NIM : 1301154183
+    P = new elmlist;
+    info(P) = x;
 
     //----------------------------------------
     return P;
@@ -81,8 +82,14 @@ address findElm(List L, infotype x) {
 
     address P;
     //-------------your code here-------------
-    // NIM : 
-    
+    // NIM : 1301154183
+    P = first(L);
+    infotype z = info(P);
+    while (z.id != x.id && next(P) != Nil)
+    {
+        P = next(P);
+        z = info(P);
+    }
 	
     //----------------------------------------
     return P;
