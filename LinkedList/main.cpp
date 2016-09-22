@@ -70,6 +70,7 @@ void mainMenu(){
         printInfo(L);
         break;
     case 8:
+        insertionSort(L);
         printInfo(L);
         break;
     case 9:

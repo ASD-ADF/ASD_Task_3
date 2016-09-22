@@ -10,25 +10,40 @@ address sentinelSearch(List L, infotype x)
     * FS : mengembalikan address elemen dengan ID infotype x jika ditemukan,
     *      mengembalikan NULL jika tidak ditemukan
     */
+
+    address P;
     //-------------your code here-------------
-    // NIM :1301154160
-    address P = first(L);
-    infotype z = info(P);
-    insertLast(L,alokasi(z));
-    while(z.id != x.id)
-        P = next(P);
+    // NIM : 1301154160
 
-    if (next(P)!= NULL){
-        deleteLast(L,P);
-        return P;
-
+    P = L.first;
+    if (L.first != NULL)
+    {
+        if (L.first->next != NULL && L.first->info.id != x.id)
+        {
+            infotype z = info(P);
+            insertLast(L,alokasi(x));
+            while (z.id!= x.id)
+            {
+                P = P->next;
+                z = P->info;
+            }
+            address Q;
+            deleteLast(L,Q);
+            if ( P->next != NULL)
+                return P;
+            else
+                return NULL;
         }
         else
         {
-        deleteLast(L,P);
-        return NULL;
-
+            return L.first;
         }
+    }
+    else
+    {
+
+        return NULL;
+    }
 
     //----------------------------------------
 
@@ -43,8 +58,24 @@ void insertionSort(List &L)
     */
 
     //-------------your code here-------------
-    // NIM :
-
+    // NIM : 1301154160
+    address batas,P,Q,R;
+    P = L.first;
+    batas = L.first->next;
+    while(P->info.id < batas->info.id && P->next != batas)
+    {
+        Q = P;
+        P = P->next;
+    if (batas->info.id < P->info.id){
+        R = batas;
+        batas = next(batas);
+        if (P != L.first)
+            insertFirst(L,R);
+        else
+            insertAfter(Q,R);
+    }
+    }
+    cout << "Gelapnya dunia ini" << endl;
 
     //----------------------------------------
 }
