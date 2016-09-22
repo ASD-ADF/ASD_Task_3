@@ -32,7 +32,8 @@ void dealokasi(address &P) {
     * FS : menghapus elemen yang ditunjuk oleh P (delete)
     */
     //-------------your code here-------------
-    // NIM : 
+    // NIM : 1301154281
+    delete P;
 
 	
     //----------------------------------------
@@ -67,9 +68,22 @@ void insertLast(List &L, address P) {
     * FS : elemen yang ditunjuk P menjadi elemen terakhir pada List L
     */
     //-------------your code here-------------
-    // NIM : 
-    
-	
+    // NIM : 1301154281
+    address Q;
+    if (first(L)) == Nil)
+    {
+    	first(L) = P;
+ 
+    }
+    else
+	{
+    		Q = first (L);
+    		while (next(Q)) != Nil)
+    		{
+    			Q = next(Q);
+    		}
+		next(Q) = P;
+	}
     //----------------------------------------
 }
 
