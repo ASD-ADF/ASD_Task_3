@@ -10,9 +10,24 @@ address sentinelSearch(List L, infotype x){
     *      mengembalikan NULL jika tidak ditemukan
     */
     //-------------your code here-------------
-    // NIM : 
+    // NIM : 1301154183
+    address P = first(L);
+    infotype z = info(P);
+    insertLast(L,alokasi(z));
+    while(z.id != x.id)
+        P = next(P);
 
+    if (next(P)!= Nil){
+        deleteLast(L,P);
+        return P;
 
+        }
+        else
+        {
+        deleteLast(L,P);
+        return Nil;
+
+        }
     //----------------------------------------
 
 }
@@ -40,8 +55,31 @@ void deletebyID(List &L, infotype x) {
 
     address Prec, P;
     //-------------your code here-------------
-    // NIM : 
+    // NIM : 1301154183
+    Prec = first(L);
+    P = findElm(L,x);
+    if (P != Nil)
+    {
+        if (Prec == P)
+        {
+            deleteFirst(L,P);
+        }
+        else
+        {
 
+            while(next(Prec) != P && next(Prec) != Nil)
+                Prec = next(Prec);
+
+            if (next(Prec) == Nil)
+            {
+                deleteLast(L,Prec);
+            }
+            else
+            {
+                deleteAfter(Prec,P);
+            }
+        }
+    }
 	
     //----------------------------------------
 }
