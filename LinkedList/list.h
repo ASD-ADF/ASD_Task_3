@@ -32,8 +32,7 @@ using namespace std;
 
 struct police {
 	int id;
-	char nama[10]
-	char idPolice[10]
+	char nama[15]
 	char divisi[10]
 	char pangkat[10]
 };
@@ -56,11 +55,11 @@ struct List{
 
 
 void createList(List &L);
-address alokasi(infotype x);
+address alokasi(police x);
 void dealokasi(address &P);
 void insertFirst(List &L, address P);
 void insertLast(List &L, address P);
-address findElm(List L, infotype x);
+address findElm(List L, police x);
 void deleteFirst(List &L, address &P);
 void deleteLast(List &L, address &P);
 void printInfo(List L);
