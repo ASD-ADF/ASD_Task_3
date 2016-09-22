@@ -36,7 +36,8 @@ void dealokasi(address &P) {
     * FS : menghapus elemen yang ditunjuk oleh P (delete)
     */
     //-------------your code here-------------
-    // NIM : 
+    // NIM : 1301150029
+    delete P;
 
 	
     //----------------------------------------
@@ -126,7 +127,13 @@ void deleteFirst(List &L, address &P) {
     * FS : elemen pertama di dalam List L dilepas dan disimpan/ditunjuk oleh P
     */
     //-------------your code here-------------
-    // NIM : 
+    // NIM : 1301150029
+    if (first(L)!=NULL)
+    {
+        P = first(L);
+        first(L) = next(P);
+        next (P) = NULL;
+    }
 
 	
 	
@@ -139,7 +146,23 @@ void deleteLast(List &L, address &P) {
     * FS : elemen tarakhir di dalam List L dilepas dan disimpan/ditunjuk oleh P
     */
     //-------------your code here-------------
-    // NIM : 
+    // NIM : 1301150029
+    if (first(L)!=NULL){
+        if (next(first(L))==NULL){
+            P=first(L);
+            first(L)=NULL;
+            }
+        else {
+            address q = first(L);
+            while (next(next(q))!= NULL){
+                q=next(q);
+            }
+            P=next(q);
+            next(q)=NULL;
+        }
+
+   }
+
 
 	
 
@@ -165,7 +188,9 @@ void insertAfter(address Prec, address P) {
     *      ditunjuk pointer Prec
     */
     //-------------your code here-------------
-    // NIM : 
+    // NIM : 1301150029
+    next(P)=next(Prec);
+    next(Prec)=P;
 
 	
     //----------------------------------------
