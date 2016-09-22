@@ -5,8 +5,8 @@ void createList(List &L) {
     * FS : first(L) diset Nil
     */
     //-------------your code here-------------
-    // NIM : 
-    
+    // NIM : 1301154155
+    first(L) = Nil;
 
     //----------------------------------------
 }
@@ -18,7 +18,12 @@ address alokasi(infotype x) {
 
     address P;
     //-------------your code here-------------
-    // NIM : 
+    // NIM : 1301154155
+    
+    address P = new elmlist;
+        info(P)= x;
+        next(P)=Nil;
+        return P;
 
 
     //----------------------------------------
@@ -30,8 +35,8 @@ void dealokasi(address &P) {
     * FS : menghapus elemen yang ditunjuk oleh P (delete)
     */
     //-------------your code here-------------
-    // NIM : 
-
+    // NIM : 1301154155
+    delete P;
 	
     //----------------------------------------
 }
@@ -42,10 +47,13 @@ void insertFirst(List &L, address P) {
     * FS : elemen yang ditunjuk P menjadi elemen pertama pada List L
     */
     //-------------your code here-------------
-    // NIM : 
-	
-
-    //----------------------------------------
+    // NIM :1301154113
+    if (first(L) == Nil){
+        first(L) = P;
+    } else {
+        next(P) = first(L);
+        first(L) = P;
+    }
 }
 
 void insertLast(List &L, address P) {
@@ -82,7 +90,15 @@ void deleteFirst(List &L, address &P) {
     * FS : elemen pertama di dalam List L dilepas dan disimpan/ditunjuk oleh P
     */
     //-------------your code here-------------
-    // NIM : 
+    // NIM : 1301154155
+    if (first(L) != Nil){
+        P = first(L);
+        if (next(P) == Nil){
+            first(L) = Nil;
+        }else {
+            first(L) = next (P);
+            next(P) = Nil;
+}
 
 	
 	
@@ -95,11 +111,19 @@ void deleteLast(List &L, address &P) {
     * FS : elemen tarakhir di dalam List L dilepas dan disimpan/ditunjuk oleh P
     */
     //-------------your code here-------------
-    // NIM : 
-
-	
-
-    //----------------------------------------
+    // NIM :1301154113
+    if (first(L) != Nil){
+        address Q = first(L);
+        if (Q-> == Nil){
+            first(L) = Nil;
+        } else {
+           while ((Q->next)->next != Nil){
+                Q = Q->next;
+           }
+           P = Q->next;
+           Q->next = Nil;
+        }
+    }
 }
 
 void printInfo(List L) {

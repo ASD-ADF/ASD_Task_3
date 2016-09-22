@@ -2,46 +2,46 @@
 #include "operasi.h"
 
 
-address sentinelSearch(List L, infotype x){
-    /**
-    * IS : List mungkin kosong
-    * PR : mencari elemen dengan ID infotype = infotype x menggunakan bantuan sentinel
-    * FS : mengembalikan address elemen dengan ID infotype x jika ditemukan,
-    *      mengembalikan NULL jika tidak ditemukan
-    */
+address sentinelSearch(List L, infotype x)
+{
+    address P;
+    if (first(L) = NULL)
+    {return NULL;}
+    else
+    {
+        P = first (L);
+        while (info(P).id != x.id && next(P) != NULL)
+        {P=next(P);}
+        if (info(P).id == x.id)
+        {return P;}
+        else
+        {return NULL;}
+    }
     //-------------your code here-------------
-    // NIM : 
-
-
+    // NIM : 1301154113
     //----------------------------------------
 
 }
 
 void insertionSort(List &L){
-    /**
-    * IS : List mungkin kosong
+
+    if (l!= 0)
     * PR : mengurutkan elemen di dalam List L menggunakan algoritma insertion sort
     * FS : elemen di dalam List L terurut
     */
 
-    //-------------your code here-------------
-    // NIM : 
-
-
-    //----------------------------------------
 }
 
 
 void deletebyID(List &L, infotype x) {
-    /**
-    * IS : List L mungkin kosong
-    * FS : 1 elemen dengan id info = x.id dihapus dari list (dealokasi)
-    */
+    Prec = findElm(L,x);
+    deleteAfter(Prec,P);
+    cout<<"ID yang terhapus : "<<info(P).id<<endl;
+    cout<<"Address :  "<<endl;
+    cout<<P;
+    dealokasi(P);
 
-    address Prec, P;
     //-------------your code here-------------
-    // NIM : 
-
-	
+    // NIM : 1301154113
     //----------------------------------------
 }
