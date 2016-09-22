@@ -10,7 +10,23 @@ address sentinelSearch(List L, infotype x){
     *      mengembalikan NULL jika tidak ditemukan
     */
     //-------------your code here-------------
-    // NIM : 
+    // NIM : 1301154477
+    address P;
+    if (L.first == NULL){
+    	return NULL
+    }
+    else{
+    	P = L.first;
+    	while((info(p).id != x.id)&& (next(p) != NULL)){
+    		P = next(P);
+    	}
+    	if(info(p).id == x.id){
+    		return P
+    	}
+    	else{
+    		return NULL;
+    	}
+    }
 
 
     //----------------------------------------
