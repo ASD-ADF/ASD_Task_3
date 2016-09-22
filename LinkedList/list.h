@@ -1,3 +1,6 @@
+/**
+ * NIM : 1301150085
+**/
 #ifndef LIST_H_INCLUDED
 #define LIST_H_INCLUDED
 
@@ -30,31 +33,32 @@ using namespace std;
 **/
 
 
-struct [stuff]{
-	int id;
-    //------------- your code here -----------
-    
-	
-	
-    //----------------------------------------
+struct manger_bank
+{
+    int id;
+    int gaji;
+    int umur;
+    string divisi;
+    string nama;
+
 };
 
-typedef stuff infotype;
+
+typedef manager_bank infotype;
 typedef struct elmlist *address;
 
-struct elmlist{
-    //------------- your code here -----------
-    
-	
-    //----------------------------------------
+struct elmlist
+{
+    infotype info;
+    addres next;
 };
 
-struct List{
-    //------------- your code here -----------
-    
-	
-    //----------------------------------------
+
+struct List
+{
+    address first;
 };
+
 
 
 void createList(List &L);
