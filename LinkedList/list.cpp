@@ -133,8 +133,17 @@ void insertAfter(address Prec, address P) {
     *      ditunjuk pointer Prec
     */
     //-------------your code here-------------
-    // NIM : 
-
+    // NIM : 1301150001
+	if (next(Prec) != Nil)
+    {
+        next(P) = next(Prec);
+        next(Prec) = P;
+    }
+    else
+    {
+        next(Prec) = P;
+        next(P) = NULL;
+    }
 	
     //----------------------------------------
 
@@ -146,9 +155,13 @@ void deleteAfter(address Prec, address &P) {
     *      dan disimpan/ditunjuk oleh P
     */
     //-------------your code here-------------
-    // NIM : 
-    
-	
+    // NIM : 1301150001
+    if (next(Prec) != NULL)
+    {
+        P = next(Prec);
+        next(Prec) = next(P);
+        dealokasi(P);
+    }
     //----------------------------------------
 }
 
