@@ -9,7 +9,6 @@
 
 using namespace std;
 
-
 /**
 * Type stuff <
 *   ID 	  : integer
@@ -30,12 +29,12 @@ using namespace std;
 **/
 
 
-struct [stuff]{
+struct stuff{
 	int id;
     //------------- your code here -----------
-    
-	
-	
+    //Penjual Raket tenis lapangan
+    string raket;
+    int harga;
     //----------------------------------------
 };
 
@@ -44,15 +43,14 @@ typedef struct elmlist *address;
 
 struct elmlist{
     //------------- your code here -----------
-    
-	
+    infotype info;
+	address next;
     //----------------------------------------
 };
 
 struct List{
     //------------- your code here -----------
-    
-	
+	address first;
     //----------------------------------------
 };
 
