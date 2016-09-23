@@ -10,53 +10,31 @@
 using namespace std;
 
 
-/**
-* Type stuff <
-*   ID 	  : integer
-*   ..... : .....
-*   ..... : .....
-* >
-*
-* Type infotype : stuff
-* Type address  : pointer to ElmList
-*
-* Type ElmList <
-*	info : infotype
-*	next : address
-* >
-*
-* Type List : < First : address >
-*
-**/
-
-
-struct [stuff]{
+struct stuff
+{
 	int id;
-    //------------- your code here -----------
-    
-	
-	
-    //----------------------------------------
+	string nama;
+	string pekerjaan;
+	string tempat_kerja;
+	double gaji;
+	string transportasi;
 };
 
 typedef stuff infotype;
 typedef struct elmlist *address;
 
 struct elmlist{
-    //------------- your code here -----------
-    
-	
-    //----------------------------------------
+        infotype info;
+        address next;
 };
 
 struct List{
-    //------------- your code here -----------
-    
-	
-    //----------------------------------------
+        address first;
 };
 
-
+address createElement(stuff addstuff);
+void createPekerjaan (stuff *addstuff);
+int countelement (List *L);
 void createList(List &L);
 address alokasi(infotype x);
 void dealokasi(address &P);
