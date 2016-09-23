@@ -50,13 +50,13 @@ void insertFirst(List &L, address P)
     */
     //-------------your code here-------------
     // NIM : 1301154398
-    if (first(L) == 0)
+    if (first(L) == NULL)
     {
         first(L) = P;
     }
     else
     {
-        P next() = first(L);
+        P -> next() = first(L);
         first(L) = P;
     }
 
@@ -79,7 +79,9 @@ void insertLast(List &L, address P)
     {
         address q = first(L);
         while (q -> next != NULL)
+        {
             q = q -> next();
+        }
     }
     q = next = P;
 
@@ -124,14 +126,18 @@ void deleteFirst(List &L, address &P)
     */
     //-------------your code here-------------
     // NIM :1301154398
-    if (first(L) == NULL)
+    if (first(L) != NULL)
     {
-        first(L) lengkap
+        P = first(L);
+        if (P -> next == NULL)
+        {
+            first(L) = NULL;
+        }
     }
     else
     {
-        P -> next() = first(L);
-        first(L) = P;
+        first(L) = P -> next();
+        P -> next() = NULL;
     }
 
 
@@ -147,75 +153,80 @@ void deleteLast(List &L, address &P)
     */
     //-------------your code here-------------
     // NIM :1301154398
-    if (first(L) == NULL)
-    {
-        first(L) = P;
-    }
-    else
-    {
-        address q = first(L);
-        while (q -> next() == NULL)
-            q = q -> next();
-    }
-    q -> next P
-
-    //----------------------------------------
-}
-
-void printInfo(List L)
-{
-    /**
-    * FS : menampilkan info seluruh elemen list L
-    */
-    //-------------your code here-------------
-    // NIM :1301154398
     if (first(L) != NULL)
     {
-        address P = first(L);
-        while (P != NULL)
+        address q = first(L);
+        if (q -> next == NULL)
         {
-            cout << info(P) << endl;
-            P = next(P);
+            first(L) = NULL;
         }
     }
     else
     {
-        cout << "No List!" << endl;
+        while ((q -> next) -> next != NULL)
+        {
+            q = q -> next();
+        }
+        P = q _> next();
+        q -> next() = NULL;
+
+        //----------------------------------------
     }
 
-    //----------------------------------------
-}
+    void printInfo(List L)
+    {
+        /**
+        * FS : menampilkan info seluruh elemen list L
+        */
+        //-------------your code here-------------
+        // NIM :1301154398
+        if (first(L) != NULL)
+        {
+            address P = first(L);
+            while (P != NULL)
+            {
+                cout << info(P) << endl;
+                P = next(P);
+            }
+        }
+        else
+        {
+            cout << "No List!" << endl;
+        }
+
+        //----------------------------------------
+    }
 
 
-void insertAfter(address Prec, address P)
-{
-    /**
-    * IS : Prec dan P tidak NULL
-    * FS : elemen yang ditunjuk P menjadi elemen di belakang elemen yang
-    *      ditunjuk pointer Prec
-    */
-    //-------------your code here-------------
-    // NIM :1301154398
-    next(P) = next(Prec);
-    next(Prec) = P;
+    void insertAfter(address Prec, address P)
+    {
+        /**
+        * IS : Prec dan P tidak NULL
+        * FS : elemen yang ditunjuk P menjadi elemen di belakang elemen yang
+        *      ditunjuk pointer Prec
+        */
+        //-------------your code here-------------
+        // NIM :1301154398
+        next(P) = next(Prec);
+        next(Prec) = P;
 
-    //----------------------------------------
+        //----------------------------------------
 
-}
-void deleteAfter(address Prec, address &P)
-{
-    /**
-    * IS : Prec tidak NULL
-    * FS : elemen yang berada di belakang elemen Prec dilepas
-    *      dan disimpan/ditunjuk oleh P
-    */
-    //-------------your code here-------------
-    // NIM :1301154398
-    P = next (Prec)
-        next(Prec) = next(P)
-                     next(P) = Nil
-                               return P;
+    }
+    void deleteAfter(address Prec, address &P)
+    {
+        /**
+        * IS : Prec tidak NULL
+        * FS : elemen yang berada di belakang elemen Prec dilepas
+        *      dan disimpan/ditunjuk oleh P
+        */
+        //-------------your code here-------------
+        // NIM :1301154398
+        P = next (Prec);
+        next(Prec) = next(P);
+        next(P) = NULL;
+        return P;
 
-    //----------------------------------------
-}
+        //----------------------------------------
+    }
 
