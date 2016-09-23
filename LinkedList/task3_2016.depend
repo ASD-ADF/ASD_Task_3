@@ -17,3 +17,22 @@
 	"list.h"
 	"operasi.h"
 
+1474472481 source:c:\users\ipat1\documents\codingan\asd_task_3\linkedlist\list.cpp
+	"list.h"
+
+1474472257 c:\users\ipat1\documents\codingan\asd_task_3\linkedlist\list.h
+	<iostream>
+
+1474560109 source:c:\users\ipat1\documents\codingan\asd_task_3\linkedlist\main.cpp
+	<iostream>
+	<windows.h>
+	"list.h"
+	"operasi.h"
+
+1473960197 c:\users\ipat1\documents\codingan\asd_task_3\linkedlist\operasi.h
+	"list.h"
+
+1474560056 source:c:\users\ipat1\documents\codingan\asd_task_3\linkedlist\operasi.cpp
+	"list.h"
+	"operasi.h"
+
