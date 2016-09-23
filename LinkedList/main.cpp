@@ -34,7 +34,37 @@ void mainMenu(){
     *       9. search
     */
     //-------------your code here-------------
+    int pilih;
+    infotype stuff1;
+    address P;
+    do {
+        cout << "1. insert first" << endl;
+        cout << "2. insert after" << endl;
+        cout << "3. insert last" << endl;
+        cout << "4. delete first" << endl;
+        cout << "5. delete after" << endl;
+        cout << "6. delete last" << endl;
+        cout << "7. view list" << endl;
+        cout << "8. insertion sort" << endl;
+        cout << "9. search" << endl;
+        cout << "0. exit" << endl;
+        cout << "Pilih > ";
+        cin >> pilih;
+        switch (pilih) {
+            case 1 : cout << "Masukan ID : ";
+                     cin >> stuff1.id;
+                     cout << "Masukan Nama : ";
+                     cin >> stuff1.nama;
+                     P =alokasi(stuff1);
+                     insertFirst(L,P);
+                     break;
 
+            case 2 : insertAfter();
+                     break;
 
+            case 7 : printInfo(L);
+                     break;
+        }
+    } while (pilih!=0);
     //----------------------------------------
 }

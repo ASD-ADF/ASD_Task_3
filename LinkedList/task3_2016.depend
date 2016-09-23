@@ -17,3 +17,21 @@
 	"list.h"
 	"operasi.h"
 
+1474589626 source:c:\users\pro_encoder\documents\github\asd_task_3\linkedlist\main.cpp
+	<iostream>
+	"list.h"
+	"operasi.h"
+
+1474415033 c:\users\pro_encoder\documents\github\asd_task_3\linkedlist\list.h
+	<iostream>
+
+1474164668 c:\users\pro_encoder\documents\github\asd_task_3\linkedlist\operasi.h
+	"list.h"
+
+1474588818 source:c:\users\pro_encoder\documents\github\asd_task_3\linkedlist\operasi.cpp
+	"list.h"
+	"operasi.h"
+
+1474589703 source:c:\users\pro_encoder\documents\github\asd_task_3\linkedlist\list.cpp
+	"list.h"
+
