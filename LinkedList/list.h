@@ -34,7 +34,10 @@ struct [stuff]{
 	int id;
     //------------- your code here -----------
     
-	
+    	string nama;
+    	string alamat;
+    	char no_hp;
+    	string kantor;
 	
     //----------------------------------------
 };
@@ -45,14 +48,16 @@ typedef struct elmlist *address;
 struct elmlist{
     //------------- your code here -----------
     
-	
+	infotype info;
+    	address next;
     //----------------------------------------
 };
 
 struct List{
     //------------- your code here -----------
     
-	
+	address first;
+
     //----------------------------------------
 };
 
