@@ -6,7 +6,7 @@ void createList(List &L) {
     * FS : set first(L) with Null
     */
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
+    first(l)=NULL;
 
 
     //----------------------------------------
@@ -19,7 +19,9 @@ address allocate(infotype x) {
 
     address P;
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
+    address p = new elmlist;
+    info(p) = x;
+    return p;
 
 
     //----------------------------------------
@@ -31,7 +33,7 @@ void deallocate(address &P) {
     * FS : delete element pointed by P
     */
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
+    delete p;
 
 
     //----------------------------------------
@@ -43,7 +45,9 @@ void insertFirst(List &L, address P) {
     * FS : element pointed by P became the first element in List L
     */
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
+    next(P) = first(L);
+    first(L) = p;
+
 
 
     //----------------------------------------
@@ -55,7 +59,8 @@ void insertLast(List &L, address P) {
     * FS : element pointed by P became the last element in List L
     */
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
+    next(p) = last (L);
+    last (L) = p;
 
 
     //----------------------------------------
@@ -70,7 +75,7 @@ address findElm(List L, infotype x) {
 
     address P;
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
+
 
 
     //----------------------------------------
@@ -83,7 +88,9 @@ void deleteFirst(List &L, address &P) {
     * FS : first element in List L is removed and is pointed by P
     */
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
+    P = first(L);
+    first(L) = next(first(L));
+    next(P) = NULL;
 
 
 
@@ -96,7 +103,8 @@ void deleteLast(List &L, address &P) {
     * FS : last element in List L is removed and is pointed by P
     */
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
+    P = last (L);
+    last (L) =
 
 
 
