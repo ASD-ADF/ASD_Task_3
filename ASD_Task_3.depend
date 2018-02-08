@@ -52,3 +52,31 @@
 	"operation.h"
 	"my_data.h"
 
+1518105904 source:d:\telkom university\semester 2 - struktur data\task 3 - single link list\list.cpp
+	"list.h"
+	"my_data.h"
+
+1518076829 d:\telkom university\semester 2 - struktur data\task 3 - single link list\list.h
+	<iostream>
+	"my_data.h"
+
+1518075749 d:\telkom university\semester 2 - struktur data\task 3 - single link list\my_data.h
+	<iostream>
+
+1518078453 source:d:\telkom university\semester 2 - struktur data\task 3 - single link list\my_data.cpp
+	"my_data.h"
+
+1518108365 source:d:\telkom university\semester 2 - struktur data\task 3 - single link list\operation.cpp
+	"list.h"
+	"operation.h"
+	"my_data.h"
+
+1518075873 d:\telkom university\semester 2 - struktur data\task 3 - single link list\operation.h
+	"list.h"
+
+1518108838 source:d:\telkom university\semester 2 - struktur data\task 3 - single link list\main.cpp
+	<iostream>
+	"list.h"
+	"operation.h"
+	"my_data.h"
+

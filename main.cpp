@@ -10,9 +10,7 @@ List L;
 
 int main() {
     createList(L);
-
     mainMenu();
-
     return 0;
 }
 
@@ -41,14 +39,76 @@ void mainMenu() {
         cout<<"0. exit"<<endl;
         cout<<"input choice: ";
         cin>>choice;
+        cout<<endl;
         switch(choice) {
         case 1:
             X = create_data();
             P = allocate(X);
-            insertFirst(L,P)
+            insertAndSort(L,P);
+            break;
+        case 2:
+            if(first(L)!=NULL){
+                printInfo(L);
+            }
+            else{
+                cout<<"The list is empty";
+            }
+            break;
+        case 3:
+            if(first(L) != NULL){
+                cout<<"Student ID: ";
+                cin>>X.stdntid;
+                cout<<endl;
+                address P = findElm(L,X);
+                if(P!=NULL){
+                    cout<<"Data found"<<endl;
+                    view_data(info(P));
+                }
+                else
+                {
+                    cout<<"Data not found";
+                }
+            }
+            else{
+                cout<<"The list is empty";
+            }
+            break;
+        case 4:
+            if(first(L)!=NULL){
+                cout<<"Student ID: ";
+                cin>>X.stdntid;
+                cout<<endl;
+                address P = findElm(L,X);
+                if(P!=NULL){
+                    cout<<"Data found"<<endl;
+                    edit_data(info(P));
+                }
+                else
+                {
+                    cout<<"Data not found";
+                }
+            }
+            else{
+                cout<<"The list is empty";
+            }
+            break;
+        case 5:
+            if(first(L)!=NULL){
+                cout<<"Student ID: ";
+                cin>>X.stdntid;
+                cout<<endl;
+                deletebyID(L,X);
+                cout<<"Data deleted";
+            }
+            else{
+                cout<<"The list is empty";
+            }
+            break;
+        case 0:
+            return;
             break;
         }
+        cout<<endl<<endl;
     } while(true);
-
     //----------------------------------------
 }

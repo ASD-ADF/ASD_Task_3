@@ -18,13 +18,12 @@ struct mytype {
             - a float variable
     */
     //=================================================
-    // YOUR CODE STARTS HERE
-
-
-    // YOUR CODE ENDS HERE
+    int stdntid;
+    string stdntname;
+    string stdntclass;
+    float stdntgpa;
     //=================================================
 };
-
 
 mytype create_data();
 void view_data(mytype d);
