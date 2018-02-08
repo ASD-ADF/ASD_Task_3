@@ -6,8 +6,8 @@ void createList(List &L) {
     * FS : set first(L) with Null
     */
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
 
+    first(L) = NULL
 
     //----------------------------------------
 }
@@ -19,8 +19,10 @@ address allocate(infotype x) {
 
     address P;
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
 
+    address P = new elmlist;
+    info(P) = data;
+    return P;
 
     //----------------------------------------
     return P;
@@ -31,7 +33,7 @@ void deallocate(address &P) {
     * FS : delete element pointed by P
     */
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
+    delete p;
 
 
     //----------------------------------------
@@ -43,7 +45,8 @@ void insertFirst(List &L, address P) {
     * FS : element pointed by P became the first element in List L
     */
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
+    next(P) = first(L);
+    first(L) = P;
 
 
     //----------------------------------------
@@ -55,7 +58,8 @@ void insertLast(List &L, address P) {
     * FS : element pointed by P became the last element in List L
     */
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
+    next(P) = last(L);
+    last(L) = P;
 
 
     //----------------------------------------
@@ -70,7 +74,8 @@ address findElm(List L, infotype x) {
 
     address P;
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
+
+
 
 
     //----------------------------------------
@@ -109,7 +114,14 @@ void printInfo(List L) {
     *      call the view_data function from my_data.h to print the info
     */
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
+
+    address P = first(L);
+    cout<<info(P)<<endl;
+
+    while(next(P) !=NULL){
+        cout<<info(P)<<endl;
+        P = next(P);
+
 
 
     //----------------------------------------

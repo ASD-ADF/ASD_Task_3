@@ -47,8 +47,14 @@ void mainMenu() {
             P = allocate(X);
             insertFirst(L,P)
             break;
+        case 2:
+            printInfo();
+            break;
+        case 3:
+
         }
-    } while(true);
+    } while(choice != 0);
+
 
     //----------------------------------------
 }
