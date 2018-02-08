@@ -13,7 +13,8 @@ void insertAndSort(List &L, address P) {
     */
 
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
+    P = first (L);
+
 
 
     //----------------------------------------
