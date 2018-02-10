@@ -2,6 +2,19 @@
 #include "operation.h"
 #include "my_data.h"
 
+bool same_ID(List L, address P)
+{
+    address Q = L.First;
+    while (Q != NULL)
+    {
+        if ((P->info.id == Q->info.id))
+        {
+            return true;
+        }
+        Q = Q->next;
+    }
+    return false;
+}
 
 void insertAndSort(List &L, address P) {
     /**
@@ -13,7 +26,29 @@ void insertAndSort(List &L, address P) {
     */
 
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
+    if (L.First == NULL)
+        insertFirst(L,P);
+    else
+    {
+        bool same = same_ID(L,P);
+        if (same == true)
+            cout<<"ID tidak boleh sama"<<endl;
+        else
+        {
+            if (P->info.id < L.First->info.id)
+                insertFirst(L,P);
+            else
+                {
+                    address Q = L.First;
+                    while (Q->next != NULL && P->info.id > Q->next->info.id)
+                        Q = Q->next;
+                    insertAfter(Q,P);
+                }
+        }
+    }
+
+
+
 
 
     //----------------------------------------
@@ -28,8 +63,20 @@ void deletebyID(List &L, infotype x) {
 
     address Prec, P;
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
-
+    if (L.First != NULL)
+        {
+            Prec = L.First;
+            P = findElm(L,x);
+            if (P == L.First)
+                deleteFirst(L,P);
+            else if (P->next == NULL)
+                deleteLast(L,P);
+            else
+                while (Prec->next != P)
+                    Prec = Prec->next;
+                deleteAfter(Prec,P);
+        }
 
     //----------------------------------------
 }
+

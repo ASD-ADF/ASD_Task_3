@@ -41,12 +41,63 @@ void mainMenu() {
         cout<<"0. exit"<<endl;
         cout<<"input choice: ";
         cin>>choice;
+        if (choice == 0)
+            break;
         switch(choice) {
         case 1:
             X = create_data();
             P = allocate(X);
-            insertFirst(L,P)
+            insertAndSort(L,P);
             break;
+
+        case 2:
+            printInfo(L);
+            break;
+
+        case 3:
+            {
+                infotype x;
+                cout<<"Masukkan ID yang ingin dicari: ";
+                cin>>x.id;
+                address p = findElm(L,x);
+                if (p != NULL)
+                    view_data(p->info);
+                else
+                    cout<<"Data tidak ditemukan"<<endl;
+                break;
+            }
+        case 4:
+            {
+                infotype x;
+                cout<<"Masukkan ID yang ingin diedit: ";
+                cin>>x.id;
+                address p = findElm(L,x);
+                if (p != NULL)
+                    {
+                        cout<<"old data: "<<endl;
+                        view_data(p->info);
+                        cout<<"new name: ";
+                        cin>>p->info.name;
+                        cout<<endl;
+                        cout<<"new NIM: ";
+                        cin>>p->info.nim;
+                        cout<<endl;
+                        cout<<"new nilai: ";
+                        cin>>p->info.nilai;
+                        cout<<endl;
+                    }
+                else
+                    cout<<"Data tidak ditemukan"<<endl;
+                break;
+            }
+        case 5:
+            {
+                infotype x;
+                cout<<"Masukkan ID yang ingin dihapus: ";
+                cin>>x.id;
+                deletebyID(L,x);
+                break;
+            }
         }
     } while(true);
 
