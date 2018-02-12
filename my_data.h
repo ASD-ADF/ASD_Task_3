@@ -5,9 +5,9 @@
 using namespace std;
 
 /**
-    CLASS      :
-    NAME       :
-    STUDENT ID :
+    CLASS      : IF 41-08
+    NAME       : Fareza Adityanto
+    STUDENT ID : 1301174228
 **/
 
 struct mytype {
@@ -20,6 +20,9 @@ struct mytype {
     //=================================================
     // YOUR CODE STARTS HERE
 
+    int ID;
+    string name, kelas;
+    float IPK;
 
     // YOUR CODE ENDS HERE
     //=================================================

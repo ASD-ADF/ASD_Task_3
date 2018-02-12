@@ -52,3 +52,31 @@
 	"operation.h"
 	"my_data.h"
 
+1518285469 source:e:\dokumen & tugas\tugas\semester 2\struktur data\pelajaran\task 1 = pengenalan\asd_task_3\my_data.cpp
+	"my_data.h"
+
+1518313552 e:\dokumen & tugas\tugas\semester 2\struktur data\pelajaran\task 1 = pengenalan\asd_task_3\my_data.h
+	<iostream>
+
+1518450337 source:e:\dokumen & tugas\tugas\semester 2\struktur data\pelajaran\task 1 = pengenalan\asd_task_3\operation.cpp
+	"list.h"
+	"operation.h"
+	"my_data.h"
+
+1518362500 e:\dokumen & tugas\tugas\semester 2\struktur data\pelajaran\task 1 = pengenalan\asd_task_3\list.h
+	<iostream>
+	"my_data.h"
+
+1518131029 e:\dokumen & tugas\tugas\semester 2\struktur data\pelajaran\task 1 = pengenalan\asd_task_3\operation.h
+	"list.h"
+
+1518442962 source:e:\dokumen & tugas\tugas\semester 2\struktur data\pelajaran\task 1 = pengenalan\asd_task_3\list.cpp
+	"list.h"
+	"my_data.h"
+
+1518445677 source:e:\dokumen & tugas\tugas\semester 2\struktur data\pelajaran\task 1 = pengenalan\asd_task_3\main.cpp
+	<iostream>
+	"list.h"
+	"operation.h"
+	"my_data.h"
+
