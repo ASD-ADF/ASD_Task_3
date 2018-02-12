@@ -8,7 +8,8 @@ using namespace std;
 void mainMenu();
 List L;
 
-int main() {
+int main()
+{
     createList(L);
 
     mainMenu();
@@ -16,7 +17,8 @@ int main() {
     return 0;
 }
 
-void mainMenu() {
+void mainMenu()
+{
     address P;
     infotype X;
     /**
@@ -31,7 +33,8 @@ void mainMenu() {
     */
     //-------------your code here-------------
     int choice;
-    do {
+    do
+    {
         cout<<"Menu"<<endl;
         cout<<"1. insert"<<endl;
         cout<<"2. view data"<<endl;
@@ -41,14 +44,43 @@ void mainMenu() {
         cout<<"0. exit"<<endl;
         cout<<"input choice: ";
         cin>>choice;
-        switch(choice) {
+        switch(choice)
+        {
         case 1:
             X = create_data();
             P = allocate(X);
-            insertFirst(L,P)
+            insertFirst(L,P);
             break;
+
+        case 2:
+            printInfo(L);
+            break;
+
+        case 3:
+
+            cout<<" id yang di cari : ";
+            cin>>X.id;
+            P = findElm(L,X);
+            view_data(info(P));
+            break;
+        case 4:
+            cout<<" Id yang di edit : ";
+            cin>>X.id;
+            P = findElm(L,X);
+            edit_data(info(P));
+            break;
+        case 5:
+            cout<<" Id yang mau di delete :";
+            cin>>X.id;
+            P = findElm(L,X);
+            deletebyID(L,X);
+            break;
+
+
+
         }
-    } while(true);
+    }
+    while(true);
 
     //----------------------------------------
 }
