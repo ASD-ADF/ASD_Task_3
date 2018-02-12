@@ -24,8 +24,6 @@ using namespace std;
 *
 **/
 
-
-
 typedef mytype infotype;
 typedef struct elmlist *address;
 
@@ -38,11 +36,9 @@ struct elmlist{
 
 struct List{
     //------------- your code here -----------
-    address First;
+    address first;
     //----------------------------------------
 };
-
-
 
 // define a function and a procedure to allocate and deallocate an element list
 void createList(List &L);
@@ -61,5 +57,5 @@ void deleteAfter(address Prec, address &P);
 address findElm(List L, infotype x);
 void printInfo(List L);
 
-
 #endif // LIST_H_INCLUDED
+

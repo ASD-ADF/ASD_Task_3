@@ -2,21 +2,9 @@
 #include "operation.h"
 #include "my_data.h"
 
-bool same_ID(List L, address P)
-{
-    address Q = L.First;
-    while (Q != NULL)
-    {
-        if ((P->info.id == Q->info.id))
-        {
-            return true;
-        }
-        Q = Q->next;
-    }
-    return false;
-}
 
-void insertAndSort(List &L, address P) {
+void insertAndSort(List &L, address P)
+{
     /**
     * IS : List may be empty
     * PR : insert an element pointed by P into an already sorted-by-ID List L
@@ -26,31 +14,41 @@ void insertAndSort(List &L, address P) {
     */
 
     //-------------your code here-------------
-    if (L.First == NULL)
-        insertFirst(L,P);
-    else
+    address Prec = first(L);
+    address Q = first(L);
+    if (first(L)== NULL)
     {
-        bool same = same_ID(L,P);
-        if (same == true)
-            cout<<"ID tidak boleh sama"<<endl;
+        insertFirst(L,P);
+    }
+    else if (first(L) != NULL)
+    {
+        while (next(Q) != NULL)
+        {
+            Q = next (Q);
+        }
+        if (info(P).id < info(first(L)).id)
+        {
+            insertFirst(L,P);
+        }
+        else if (info(P).id > info(Q).id)
+        {
+            insertLast(L,P);
+        }
         else
         {
-            if (P->info.id < L.First->info.id)
-                insertFirst(L,P);
-            else
-                {
-                    address Q = L.First;
-                    while (Q->next != NULL && P->info.id > Q->next->info.id)
-                        Q = Q->next;
-                    insertAfter(Q,P);
-                }
+            while(info(Prec).id <= info(P).id)
+            {
+                Prec = next(Prec);
+            }
+            insertAfter(Prec,P);
         }
     }
     //----------------------------------------
 }
 
 
-void deletebyID(List &L, infotype x) {
+void deletebyID(List &L, infotype x)
+{
     /**
     * IS : List L may be empty
     * FS : an element with ID info = x.id is deleted from List L (deallocate)
@@ -58,18 +56,25 @@ void deletebyID(List &L, infotype x) {
 
     address Prec, P;
     //-------------your code here-------------
-    if (L.First != NULL)
+    address Q;
+    P = findElm(L,x);
+    if( P = first(L))
+    {
+        deleteFirst(L,P);
+    }
+    else if(next(P) == NULL)
+    {
+        deleteLast(L,P);
+    }
+    else
+    {
+
+
+        while(next(Q) != P)
         {
-            Prec = L.First;
-            P = findElm(L,x);
-            if (P == L.First)
-                deleteFirst(L,P);
-            else if (P->next == NULL)
-                deleteLast(L,P);
-            else
-                while (Prec->next != P)
-                    Prec = Prec->next;
-                deleteAfter(Prec,P);
+            Q = next(Q);
         }
+    }
+    deleteAfter(Q,P);
     //----------------------------------------
 }

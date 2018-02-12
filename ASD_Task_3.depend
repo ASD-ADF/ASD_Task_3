@@ -52,12 +52,12 @@
 	"operation.h"
 	"my_data.h"
 
-1518264717 source:c:\users\vectorgrim\documents\github\asd_task_3\operation.cpp
+1518362445 source:c:\users\vectorgrim\documents\github\asd_task_3\operation.cpp
 	"list.h"
 	"operation.h"
 	"my_data.h"
 
-1518264717 c:\users\vectorgrim\documents\github\asd_task_3\list.h
+1518362171 c:\users\vectorgrim\documents\github\asd_task_3\list.h
 	<iostream>
 	"my_data.h"
 
@@ -73,6 +73,10 @@
 	"operation.h"
 	"my_data.h"
 
-1518264794 source:c:\users\vectorgrim\documents\github\asd_task_3\my_data.cpp
+1518362041 source:c:\users\vectorgrim\documents\github\asd_task_3\my_data.cpp
+	"my_data.h"
+
+1518448509 source:c:\users\vectorgrim\documents\github\asd_task_3\list.cpp
+	"list.h"
 	"my_data.h"
 
