@@ -84,6 +84,10 @@ void mainMenu() {
             return;
             break;
         }
+        cout<<endl;
+        cout<<endl<<"press enter to continue"<<endl;
+        cin.get();
+        cin.get();
         cout<<endl<<endl;
     } while(true);
 

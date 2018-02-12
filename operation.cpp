@@ -62,6 +62,19 @@ void deletebyID(List &L, infotype x) {
     P = findElm(L,x);
     if (P == NULL) {
         cout<< "ID not found"<<endl;
+        return;
+    }
+
+    address last = first(L);
+    while (next(last) != NULL) {
+        last = next(last);
+    }
+
+    if (first(L) == P) {
+        deleteFirst(L,P);
+    }
+    else if (P == last) {
+        deleteLast(L,P);
     }
     else {
         Prec = first(L);
@@ -70,7 +83,7 @@ void deletebyID(List &L, infotype x) {
         }
         next(Prec) = next(P);
         next(P) = NULL;
-        cout<< "Delete succeed"<<endl;
     }
+    cout<< "Delete succeed"<<endl;
     //----------------------------------------
 }
