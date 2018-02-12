@@ -59,8 +59,23 @@ void insertLast(List &L, address P) {
     * FS : element pointed by P became the last element in List L
     */
     //-------------your code here-------------
-    next(p) = last (L);
-    last (L) = p;
+    if (first(L) != NULL){
+        address Q;
+        P = first(L);
+        while (next(Q) !=NULL) {
+            Q = next(Q);
+            next(Q) = P;
+        }
+    }
+    else {
+        P = first(L);
+        if (first(L) == NULL){
+            next(P) = first(L);
+            first(L) = P;
+        }
+    }
+
+
 
 
     //----------------------------------------
@@ -74,6 +89,16 @@ address findElm(List L, infotype x) {
     */
 
     address P;
+    P = first(L);
+    while ((next(P) != NULL) and (info(P) != x)){
+        P = next(P);
+    }
+    if (info (P) == x) {
+        cout<<P<<endl;
+    }
+    else {
+        cout<<"kosong"<<endl;
+    }
     //-------------your code here-------------
 
 
@@ -88,9 +113,14 @@ void deleteFirst(List &L, address &P) {
     * FS : first element in List L is removed and is pointed by P
     */
     //-------------your code here-------------
-    P = first(L);
-    first(L) = next(first(L));
-    next(P) = NULL;
+    if (first(L) != NULL) {
+        P = first(L);
+        first(L) = next(first(L));
+        next(P) = NULL;
+    }
+    else {
+        cout<<"tidak ada data"<<endl;
+    }
 
 
 
@@ -103,10 +133,23 @@ void deleteLast(List &L, address &P) {
     * FS : last element in List L is removed and is pointed by P
     */
     //-------------your code here-------------
-    P = last (L);
-    last (L) =
-
-
+    address R;
+    if ( first(L) == NULL) {
+        P = NULL;
+    }
+    else if (next(first(L))== NULL){
+        P = first(L);
+        first(L) = NULL;
+    }
+    else {
+        P = first(L);
+        while (next(P) != NULL){
+            R = P;
+            P = next(P)
+        }
+        next(R) = NULL;
+    }
+    return p;
 
     //----------------------------------------
 }
@@ -117,7 +160,13 @@ void printInfo(List L) {
     *      call the view_data function from my_data.h to print the info
     */
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
+    address (P) = first(L);
+    if (first(L) !=NULL){
+        do {
+            cout<< info(P)<<", ";
+            P=next(P);
+        } while (P != NULL);
+    }
 
 
     //----------------------------------------
@@ -131,19 +180,48 @@ void insertAfter(address Prec, address P) {
     *      pointed by pointer Prec
     */
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
 
+    address Q;
+    Q = first(L);
+    while ( next(Q) != NULL and info(Q) != Prec){
+        Q = next (Q);
+    }
+    if ( next (Q) != NULL ){
+        next(P) = next(Q);
+        next (Q) = P;
+    }
+    else {
+        cout<<"list kosong"<<endl;
+    }
     //----------------------------------------
 
 }
-void deleteAfter(address Prec, address &P) {
+void deleteAfter(List &L, address Prec, address &P) {
     /**
     * IS : Prec is not NULL
     * FS : element which was before behind an element pointed by Prec
     *      is removed and pointed by pointer P
     */
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
+    address Q;
+    P = NULL;
+    Q = first(L);
+    while ((Q != NULL) and (info(Q) != Prec)) {
+        Q = next(Q);
+    }
+    if (Q != NULL){
+        if (next(Q) != NULL){
+            P = next(Q);
+            next (Q) = next(P);
+            next(P) = NULL;
+        }
+        else {
+            cout<<"prec di data berakhir"<<endl;
+        }
+    }
+    else {
+        cout<<"list kosong"<<endl;
+    }
 
 
     //----------------------------------------

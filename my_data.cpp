@@ -31,7 +31,11 @@ void view_data(mytype d) {
 
     // ===========================
     // YOUR CODE HERE
-    cout<<"your code here"<<endl;
+    cout<<"ID   : "<<d.Nim<<endl;
+    cout<<"Nama : "<<d.nama<<endl;
+    cout<<"kelas: "<<d.kelas<<endl;
+    cout<<"Nilai: "<<d.nilai<<endl;
+    cout<<endl<<endl;
 
 
 
@@ -48,7 +52,14 @@ void edit_data(mytype &d) {
 
     // ===========================
     // YOUR CODE HERE
-        cout<<"your code here"<<endl;
+        cin.get();
+        cout<<"Masukan Nama     : ";
+        gets(d.Nama);
+        cout<<"Masukan Kelas    : ";
+        gets(d.Kelas);
+        cout<<"Masukan Nilai    : ";
+        cin>>d.Kilai;
+
 
 
 
