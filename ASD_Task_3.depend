@@ -75,7 +75,7 @@
 1518316576 e:\telkom university\github\asd_task_3\operation.h
 	"list.h"
 
-1518444113 source:e:\telkom university\github\asd_task_3\main.cpp
+1518445945 source:e:\telkom university\github\asd_task_3\main.cpp
 	<iostream>
 	"list.h"
 	"operation.h"

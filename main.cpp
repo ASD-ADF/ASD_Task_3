@@ -55,6 +55,12 @@ void mainMenu() {
             break;
         case 3:
             cout<< "Enter ID to find : "; cin>>X.id;
+
+            if (first(L) == NULL) {
+                cout<< "List empty" <<endl;
+                break;
+            }
+
             P = findElm(L, X);
             if (P == NULL) {
                 cout<< "ID not found"<<endl;
@@ -66,6 +72,12 @@ void mainMenu() {
             break;
         case 4:
             cout<< "Enter ID to edit : "; cin>>X.id;
+
+            if (first(L) == NULL) {
+                cout<< "List empty" <<endl;
+                break;
+            }
+
             P = findElm(L, X);
             if (P == NULL) {
                 cout<< "ID not found"<<endl;
@@ -77,6 +89,12 @@ void mainMenu() {
             break;
         case 5:
             cout<< "Enter ID to delete : "; cin>>X.id;
+
+            if (first(L) == NULL) {
+                cout<< "List empty" <<endl;
+                break;
+            }
+
             deletebyID(L,X);
             break;
         case 0:
