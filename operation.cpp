@@ -84,6 +84,7 @@ void deletebyID(List &L, infotype x) {
         next(Prec) = next(P);
         next(P) = NULL;
     }
+    deallocate(P);
     cout<< "Delete succeed"<<endl;
     //----------------------------------------
 }

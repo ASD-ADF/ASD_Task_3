@@ -32,7 +32,7 @@ void mainMenu() {
     //-------------your code here-------------
     int choice;
     do {
-        cout<<"Menu"<<endl;
+        cout<<"==========Menu=========="<<endl;
         cout<<"1. insert"<<endl;
         cout<<"2. view data"<<endl;
         cout<<"3. find and view"<<endl;
@@ -54,13 +54,11 @@ void mainMenu() {
             cout<<endl;
             break;
         case 3:
-            cout<< "Enter ID to find : "; cin>>X.id;
-
             if (first(L) == NULL) {
                 cout<< "List empty" <<endl;
                 break;
             }
-
+            cout<< "Enter ID to find : "; cin>>X.id;
             P = findElm(L, X);
             if (P == NULL) {
                 cout<< "ID not found"<<endl;
@@ -71,13 +69,11 @@ void mainMenu() {
             }
             break;
         case 4:
-            cout<< "Enter ID to edit : "; cin>>X.id;
-
             if (first(L) == NULL) {
                 cout<< "List empty" <<endl;
                 break;
             }
-
+            cout<< "Enter ID to edit : "; cin>>X.id;
             P = findElm(L, X);
             if (P == NULL) {
                 cout<< "ID not found"<<endl;
@@ -88,13 +84,11 @@ void mainMenu() {
             }
             break;
         case 5:
-            cout<< "Enter ID to delete : "; cin>>X.id;
-
             if (first(L) == NULL) {
                 cout<< "List empty" <<endl;
                 break;
             }
-
+            cout<< "Enter ID to delete : "; cin>>X.id;
             deletebyID(L,X);
             break;
         case 0:

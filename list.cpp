@@ -75,13 +75,9 @@ address findElm(List L, infotype x) {
            return Null if such ID is not found
     */
 
-    address P;
     //-------------your code here-------------
-    if (first(L) == NULL) {
-        cout<< "List empty" <<endl;
-    }
-    else {
-        P = first(L);
+    if (first(L) != NULL) {
+        address P = first(L);
         while ((next(P) != NULL) && (info(P).id != x.id)) {
             P = next(P);
         }
@@ -101,18 +97,18 @@ void deleteFirst(List &L, address &P) {
     * FS : first element in List L is removed and is pointed by P
     */
     //-------------your code here-------------
-    if (first(L) == NULL) {
-        cout<< "List empty" <<endl;
+    if (first(L) != NULL) {
+        if (next(first(L)) == NULL) {
+            P = first(L);
+            first(L) = NULL;
+        }
+        else {
+            P = first(L);
+            first(L) = next(first(L));
+            next(P) = NULL;
+        }
     }
-    else if (next(first(L)) == NULL) {
-        P = first(L);
-        first(L) = NULL;
-    }
-    else {
-        P = first(L);
-        first(L) = next(first(L));
-        next(P) = NULL;
-    }
+
     //----------------------------------------
 }
 
@@ -122,21 +118,21 @@ void deleteLast(List &L, address &P) {
     * FS : last element in List L is removed and is pointed by P
     */
     //-------------your code here-------------
-    if (first(L) == NULL) {
-        cout<< "List empty" <<endl;
-    }
-    else if (next(first(L)) == NULL) {
-        P = first(L);
-        first(L) = NULL;
-    }
-    else {
-        address Q = first(L);
-        while (next(next(Q)) != NULL) {
-            Q = next(Q);
+    if (first(L) != NULL) {
+        if (next(first(L)) == NULL) {
+            P = first(L);
+            first(L) = NULL;
         }
-        P = next(Q);
-        next(Q) = NULL;
+        else {
+            address Q = first(L);
+            while (next(next(Q)) != NULL) {
+                Q = next(Q);
+            }
+            P = next(Q);
+            next(Q) = NULL;
+        }
     }
+
     //----------------------------------------
 }
 
@@ -146,10 +142,7 @@ void printInfo(List L) {
     *      call the view_data function from my_data.h to print the info
     */
     //-------------your code here-------------
-    if (first(L) == NULL) {
-        cout<< "List empty" <<endl;
-    }
-    else {
+    if (first(L) != NULL) {
         address P = first(L);
         while (P != NULL) {
             view_data(info(P));
