@@ -13,7 +13,7 @@ void insertAndSort(List &L, address P) {
     */
 
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
+
 
 
     //----------------------------------------
@@ -28,7 +28,23 @@ void deletebyID(List &L, infotype x) {
 
     address Prec, P;
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
+    if (first(L)==NULL)
+    {
+
+    }
+    else
+    {
+        address P;
+        address Q;
+        P=first(L);
+        while(P!=NULL)
+        {
+            if (info(P)==x)
+            {
+
+            }
+        }
+    }
 
 
     //----------------------------------------
