@@ -45,9 +45,37 @@ void mainMenu() {
         case 1:
             X = create_data();
             P = allocate(X);
-            insertFirst(L,P)
+            insertFirst(L,P);
             break;
+
+
+        case 2:
+            printInfo(L);
+            break;
+
+        case 3:
+            cout<<" Find ID : ";
+            cin>>X.id;
+            P = findElm(L,X);
+            view_data(info(P));
+            break;
+
+        case 4:
+            cout<<" Edit ID: ";
+            cin>>X.id;
+            P = findElm(L,X);
+            edit_data(info(P));
+            break;
+
+        case 5:
+            cout<<" Delete ID :";
+            cin>>X.id;
+            P = findElm(L,X);
+            deletebyID(L,X);
+            break;
+
         }
+
     } while(true);
 
     //----------------------------------------
