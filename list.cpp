@@ -7,7 +7,7 @@ void createList(List &L) {
     */
     //-------------your code here-------------
 
-    first(L) = NULL
+    first(L) = NULL;
 
     //----------------------------------------
 }
@@ -22,10 +22,11 @@ address allocate(infotype x) {
 
     address P = new elmlist;
     info(P) = data;
+    next(P) = NULL;
     return P;
 
     //----------------------------------------
-    return P;
+
 }
 
 void deallocate(address &P) {
@@ -34,8 +35,6 @@ void deallocate(address &P) {
     */
     //-------------your code here-------------
     delete p;
-
-
     //----------------------------------------
 }
 
@@ -44,7 +43,7 @@ void insertFirst(List &L, address P) {
     * IS : List L may be empty
     * FS : element pointed by P became the first element in List L
     */
-    //-------------your code here-------------
+    //-------------your code here-------o------
     next(P) = first(L);
     first(L) = P;
 
@@ -58,10 +57,13 @@ void insertLast(List &L, address P) {
     * FS : element pointed by P became the last element in List L
     */
     //-------------your code here-------------
-    next(P) = last(L);
-    last(L) = P;
-
-
+    address Q = first(L);
+    while(next(Q) != NULL){
+        Q = next(Q);
+    }
+    next(Q) = P;
+    Q = NULL;
+    P = NULL;
     //----------------------------------------
 }
 
@@ -75,9 +77,17 @@ address findElm(List L, infotype x) {
     address P;
     //-------------your code here-------------
 
-
-
-
+    if(first(L) !=NULL){
+        P = first(L);
+        while(P!= NULL){
+            if(info(P).stdnt == x.stdntid){
+                return P;
+            }
+            else{
+                P= next(P);
+            }
+        };
+    }
     //----------------------------------------
     return P;
 }
@@ -88,8 +98,13 @@ void deleteFirst(List &L, address &P) {
     * FS : first element in List L is removed and is pointed by P
     */
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
 
+    if(first(L) != NULL){
+        P = first(L);
+        first(L) = next(P);
+        deallocate(P);
+        next(P) = NULL;
+    }
 
 
     //----------------------------------------
@@ -101,8 +116,12 @@ void deleteLast(List &L, address &P) {
     * FS : last element in List L is removed and is pointed by P
     */
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
-
+     address Q = first(L);
+     while(next(Q)!= P){
+        Q = next(Q);
+     }
+    next(Q) = NULL;
+    deallocate(P);
 
 
     //----------------------------------------

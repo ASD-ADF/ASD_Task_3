@@ -34,6 +34,7 @@ struct elmlist{
 
     infotype info;
     address next;
+    address prev;
 
     //----------------------------------------
 };

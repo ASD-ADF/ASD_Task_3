@@ -52,3 +52,21 @@
 	"operation.h"
 	"my_data.h"
 
+1518079961 source:c:\users\asus\documents\github repositories\asd_task_3\operation.cpp
+	"list.h"
+	"operation.h"
+	"my_data.h"
+
+1518491419 c:\users\asus\documents\github repositories\asd_task_3\list.h
+	<iostream>
+	"my_data.h"
+
+1518081785 c:\users\asus\documents\github repositories\asd_task_3\my_data.h
+	<iostream>
+
+1518080556 c:\users\asus\documents\github repositories\asd_task_3\operation.h
+	"list.h"
+
+1518081782 source:c:\users\asus\documents\github repositories\asd_task_3\my_data.cpp
+	"my_data.h"
+
