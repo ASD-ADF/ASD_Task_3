@@ -50,7 +50,12 @@ void mainMenu() {
             insertAndSort(L,P);
             break;
         case 2:
-            printInfo(L);
+            if (P == NULL) {
+                cout<< "ID not found"<<endl;
+            }
+            else {
+                printInfo(L);
+            }
             cout<<endl;
             break;
         case 3:

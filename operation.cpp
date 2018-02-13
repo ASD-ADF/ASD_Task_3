@@ -65,15 +65,10 @@ void deletebyID(List &L, infotype x) {
         return;
     }
 
-    address last = first(L);
-    while (next(last) != NULL) {
-        last = next(last);
-    }
-
     if (first(L) == P) {
         deleteFirst(L,P);
     }
-    else if (P == last) {
+    else if (next(P) == NULL) {
         deleteLast(L,P);
     }
     else {
