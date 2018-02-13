@@ -32,7 +32,7 @@ void mainMenu() {
     //-------------your code here-------------
     int choice;
     do {
-        cout<<"Menu"<<endl;
+        cout<<"==========Menu=========="<<endl;
         cout<<"1. insert"<<endl;
         cout<<"2. view data"<<endl;
         cout<<"3. find and view"<<endl;
@@ -41,14 +41,66 @@ void mainMenu() {
         cout<<"0. exit"<<endl;
         cout<<"input choice: ";
         cin>>choice;
+        cout<<endl<<endl;
+
         switch(choice) {
         case 1:
             X = create_data();
             P = allocate(X);
-            insertFirst(L,P)
+            insertAndSort(L,P);
+            break;
+        case 2:
+            printInfo(L);
+            cout<<endl;
+            break;
+        case 3:
+            if (first(L) == NULL) {
+                cout<< "List kosong" <<endl;
+                break;
+            }
+            cout<< "enter untuk memasukan Id : "; cin>>X.id;
+            P = findElm(L, X);
+            if (P == NULL) {
+                cout<< "ID tidak ditemukan"<<endl;
+            }
+            else {
+                view_data(info(P));
+                cout<<endl;
+            }
+            break;
+        case 4:
+            if (first(L) == NULL) {
+                cout<< "List kosong" <<endl;
+                break;
+            }
+            cout<< "Enter ID untuk edit : "; cin>>X.id;
+            P = findElm(L, X);
+            if (P == NULL) {
+                cout<< "ID tidak ditemukan"<<endl;
+            }
+            else {
+                edit_data(info(P));
+                cout<<endl;
+            }
+            break;
+        case 5:
+            if (first(L) == NULL) {
+                cout<< "List kosong" <<endl;
+                break;
+            }
+            cout<< "Enter ID untuk menghapus : "; cin>>X.id;
+            deletebyID(L,X);
+            break;
+        case 0:
+            cout<<"Terimakasih"<<endl;
+            return;
             break;
         }
+        cout<<endl;
+        cout<<endl<<"tekan enter untuk melanjutkan"<<endl;
+        cin.get();
+        cin.get();
+        cout<<endl<<endl;
     } while(true);
 
-    //----------------------------------------
 }

@@ -52,3 +52,32 @@
 	"operation.h"
 	"my_data.h"
 
+1518101117 source:e:\dokument\telkom university\semester 2\code block\github\asd_task_3\operation.cpp
+	"list.h"
+	"operation.h"
+	"my_data.h"
+
+1518527587 e:\dokument\telkom university\semester 2\code block\github\asd_task_3\list.h
+	<iostream>
+	"my_data.h"
+
+1518527587 e:\dokument\telkom university\semester 2\code block\github\asd_task_3\my_data.h
+	<iostream>
+	<stdio.h>
+
+1518527284 e:\dokument\telkom university\semester 2\code block\github\asd_task_3\operation.h
+	"list.h"
+
+1518527284 source:e:\dokument\telkom university\semester 2\code block\github\asd_task_3\list.cpp
+	"list.h"
+	"my_data.h"
+
+1518527284 source:e:\dokument\telkom university\semester 2\code block\github\asd_task_3\my_data.cpp
+	"my_data.h"
+
+1518527587 source:e:\dokument\telkom university\semester 2\code block\github\asd_task_3\main.cpp
+	<iostream>
+	"list.h"
+	"operation.h"
+	"my_data.h"
+
