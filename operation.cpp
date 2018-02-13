@@ -23,10 +23,8 @@ void insertAndSort(List &L, address P) {
 
     if (Q != NULL) {
         cout<< "ID is already exists (No Duplicate ID)"<<endl;
-        return;
     }
-
-    if (Q == NULL) {
+    else {
         address last = first(L);
         while (next(last) != NULL) {
             last = next(last);
@@ -45,7 +43,7 @@ void insertAndSort(List &L, address P) {
             }
             insertAfter(L,R,P);
             }
-        }
+    }
 
     //----------------------------------------
 }
