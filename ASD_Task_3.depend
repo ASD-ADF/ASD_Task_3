@@ -52,3 +52,31 @@
 	"operation.h"
 	"my_data.h"
 
+1518620641 source:c:\users\asus x550v\documents\hithub v2\asd_task_3\list.cpp
+	"list.h"
+	"my_data.h"
+
+1518620626 c:\users\asus x550v\documents\hithub v2\asd_task_3\list.h
+	<iostream>
+	"my_data.h"
+
+1518620636 c:\users\asus x550v\documents\hithub v2\asd_task_3\my_data.h
+	<iostream>
+
+1518620848 source:c:\users\asus x550v\documents\hithub v2\asd_task_3\main.cpp
+	<iostream>
+	"list.h"
+	"operation.h"
+	"my_data.h"
+
+1518570173 c:\users\asus x550v\documents\hithub v2\asd_task_3\operation.h
+	"list.h"
+
+1518620881 source:c:\users\asus x550v\documents\hithub v2\asd_task_3\my_data.cpp
+	"my_data.h"
+
+1518620937 source:c:\users\asus x550v\documents\hithub v2\asd_task_3\operation.cpp
+	"list.h"
+	"operation.h"
+	"my_data.h"
+
