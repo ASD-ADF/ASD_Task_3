@@ -47,6 +47,29 @@ void mainMenu() {
             P = allocate(X);
             insertFirst(L,P)
             break;
+            case 2:
+            printInfo(L);
+            break;
+        case 3:
+            cout << "Input Student ID : ";
+			cin >> X.id;
+			P = findElm(L, X);
+			view_data(info(P));
+            break;
+        case 4:
+           cout << "Input Student ID : ";
+			cin >> X.id;
+			P = findElm(L, X);
+			edit_data(info(P));
+            break;
+        case 5:
+            cout << "Input Student ID :";
+			cin >> X.id;
+			deletebyID(L, X);
+            break;
+        case 0:
+            exit = true;
+            break;
         }
     } while(true);
 
