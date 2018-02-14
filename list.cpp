@@ -1,5 +1,6 @@
 #include "list.h"
 #include "my_data.h"
+#include<iostream>
 
 void createList(List &L) {
     /**
@@ -20,8 +21,8 @@ address allocate(infotype x) {
     address P;
     //-------------your code here-------------
 
-    address P = new elmlist;
-    info(P) = data;
+    P = new elmlist;
+    info(P) = x;
     next(P) = NULL;
     return P;
 
@@ -34,7 +35,7 @@ void deallocate(address &P) {
     * FS : delete element pointed by P
     */
     //-------------your code here-------------
-    delete p;
+    delete P;
     //----------------------------------------
 }
 
@@ -80,7 +81,7 @@ address findElm(List L, infotype x) {
     if(first(L) !=NULL){
         P = first(L);
         while(P!= NULL){
-            if(info(P).stdnt == x.stdntid){
+            if(info(P).nim == x.nim){
                 return P;
             }
             else{
@@ -134,12 +135,13 @@ void printInfo(List L) {
     */
     //-------------your code here-------------
 
-    address P = first(L);
-    cout<<info(P)<<endl;
-
-    while(next(P) !=NULL){
-        cout<<info(P)<<endl;
-        P = next(P);
+    address P;
+    P = first(L);
+    while(P!=NULL){
+        view_data(info(P));
+        cout<<endl;
+        P=next(P);
+    }
 
 
 
@@ -154,8 +156,8 @@ void insertAfter(address Prec, address P) {
     *      pointed by pointer Prec
     */
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
-
+next(P) = next(Prec);
+next(Prec) = P;
     //----------------------------------------
 
 }
@@ -166,7 +168,8 @@ void deleteAfter(address Prec, address &P) {
     *      is removed and pointed by pointer P
     */
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
+    next(Prec) = next(P);
+    deallocate(P);
 
 
     //----------------------------------------
