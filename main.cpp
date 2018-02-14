@@ -50,7 +50,8 @@ void mainMenu()
         {
             X = create_data();
             P = allocate(X);
-            insertFirst(L,P);
+            //insertFirst(L,P);
+            insertLast(L,P);
             break;
         }
         case 2:
@@ -60,20 +61,19 @@ void mainMenu()
         }
         case 3:
         {
-            //infotype z;
             cout<<"Masukkan id yang ingin dicari datanya = ";
             cin>>X.ID;
             cout<<endl;
-            findElm(L,X);
             cout<<"=============Hasil Cari==================="<<endl;
             address w=findElm(L,X);
             if(w==NULL)
             {
-                cout<<"data tidak ditemukan";
+                cout<<"data tidak ditemukan"<<endl;
             }
             else
             {
-                view_data(X);
+                view_data(info(w));
+                cout<<"====================================="<<endl;
             }
             break;
         }
@@ -109,7 +109,7 @@ void mainMenu()
         }
         }
     }
-    while(true);
+    while(choice!=0);
 
     //----------------------------------------
 }

@@ -63,26 +63,27 @@ void deletebyID(List &L, infotype x) {
         cout<<"List kosong";
     }else{
         if(next(first(L))==NULL){
-            if(first(L)->info.ID==x.ID){
+            if(x.ID==first(L)->info.ID){
                 deleteFirst(L,P);
             }else{
                 cout<<"Id tidak ditemukan";
             }
         }else{
             Prec=first(L);
-            while(next(Prec)->info.ID!=x.ID){
+            if(x.ID==first(L)->info.ID){
+                deleteFirst(L,P);
+            }else{
+                while(next(Prec)->info.ID!=x.ID){
                 Prec=next(Prec);
             }
-            if(first(L)->info.ID==x.ID){
-                deleteFirst(L,P);
-            }else if(next(next(Prec))==NULL){
+            if(next(next(Prec))==NULL){
                 deleteLast(L,P);
             }else{
                 deleteAfter(Prec,P);
             }
         }
     }
-
+  }
 
     //----------------------------------------
 }

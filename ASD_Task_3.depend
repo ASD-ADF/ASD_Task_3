@@ -80,3 +80,31 @@
 	"operation.h"
 	"my_data.h"
 
+1518573470 source:e:\dokumen & tugas\tugas\semester 2\struktur data\pelajaran\task adf\asd_task_3\main.cpp
+	<iostream>
+	"list.h"
+	"operation.h"
+	"my_data.h"
+
+1518362500 e:\dokumen & tugas\tugas\semester 2\struktur data\pelajaran\task adf\asd_task_3\list.h
+	<iostream>
+	"my_data.h"
+
+1518313552 e:\dokumen & tugas\tugas\semester 2\struktur data\pelajaran\task adf\asd_task_3\my_data.h
+	<iostream>
+
+1518131029 e:\dokumen & tugas\tugas\semester 2\struktur data\pelajaran\task adf\asd_task_3\operation.h
+	"list.h"
+
+1518285469 source:e:\dokumen & tugas\tugas\semester 2\struktur data\pelajaran\task adf\asd_task_3\my_data.cpp
+	"my_data.h"
+
+1518573892 source:e:\dokumen & tugas\tugas\semester 2\struktur data\pelajaran\task adf\asd_task_3\operation.cpp
+	"list.h"
+	"operation.h"
+	"my_data.h"
+
+1518574194 source:e:\dokumen & tugas\tugas\semester 2\struktur data\pelajaran\task adf\asd_task_3\list.cpp
+	"list.h"
+	"my_data.h"
+

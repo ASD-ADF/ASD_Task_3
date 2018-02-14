@@ -56,12 +56,10 @@ void insertFirst(List &L, address P)
     if(first(L)==NULL)
     {
         first(L)=P;
+        return;
     }
-    else
-    {
-        next(P)=first(L);
-        first(L)=P;
-    }
+    next(P)=first(L);
+    first(L)=P;
     //----------------------------------------
 }
 
@@ -76,16 +74,14 @@ void insertLast(List &L, address P)
     if(first(L)==NULL)
     {
         insertFirst(L,P);
+        return;
     }
-    else
+    address Q=first(L);
+    while(next(Q)!=NULL)
     {
-        address Q=first(L);
-        while(Q!=NULL)
-        {
-            Q=next(Q);
-        }
-        next(Q)=P;
+       Q=next(Q);
     }
+    next(Q)=P;
 
     //----------------------------------------
 }
@@ -102,18 +98,15 @@ address findElm(List L, infotype x)
     //-------------your code here-------------
     cout<<"your code here"<<endl;
     P=first(L);
-    bool found=false;
-    while(P->info.ID!=x.ID&&!found)
+    while(P!=NULL)
     {
-        if(P->info.ID==x.ID)
+        if(x.ID==P->info.ID)
         {
-            found=true;
+            return P;
         }
         P=next(P);
     }
-    if(found)
-        return P;
-
+    return NULL;
     //----------------------------------------
     return P;
 }
@@ -284,7 +277,7 @@ void deleteAfter(address Prec, address &P)
     {
         if(next(first(L))==NULL)     // list cuma punya 1 elemen
         {
-            if(first(L)->info.ID==a->info.ID){
+            if(a->info.ID==first(L)->info.ID){
                 deleteFirst(L,P);
             }else{
                 cout<<"ID tidak ditemukan";
@@ -296,7 +289,10 @@ void deleteAfter(address Prec, address &P)
             {
                 cout<<"ID tidak ditemukan ";
             }else{
-                while(next(Prec)!=a)
+                if(a->info.ID==first(L)->info.ID){
+                    deleteFirst(L,P);
+                }
+                while(next(Prec)!=NULL)
                 {
                     Prec=next(Prec);
                 }
