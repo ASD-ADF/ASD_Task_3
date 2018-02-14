@@ -13,9 +13,27 @@ void insertAndSort(List &L, address P) {
     */
 
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
-
-
+        infotype info = create_data();
+        P = allocate(info);
+        if (first(L) == NULL) {
+            insertFirst(L, P);
+        }
+        else {
+            bool duplicate = false;
+            address Q = first(L);
+            while ((Q!=NULL)&&(!duplicate)) {
+                if (info.ID(Q) == info.ID)
+                    duplicate = true;
+                Q = next(Q);
+            }
+            if (!duplicate) {
+                Q = first(L);
+                while ((Q!=NULL)&&(info.ID(Q)!=info.id)) {
+                    if ((info.ID(Q)<info.id)&&((info.ID(next(Q))>info.id))
+                        insertAfter(Q, P);
+                    }
+                }
+            }
     //----------------------------------------
 }
 
@@ -28,8 +46,15 @@ void deletebyID(List &L, infotype x) {
 
     address Prec, P;
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
-
-
+        if (first(L)!=NULL){
+            address Q=first(L);
+            while((Q!=NULL)&&(Prec!=Q)){
+                  if(info.ID(Q)==info.ID(x)){
+                        Prec=Q;
+                  }
+                  Q=next(Q);
+            }
+            deleteAfter(Prec,P);
+        }
     //----------------------------------------
 }
