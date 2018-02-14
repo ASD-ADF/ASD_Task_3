@@ -19,6 +19,7 @@ int main() {
 void mainMenu() {
     address P;
     infotype X;
+    mytype Z;
     /**
     * IS : List has been created
     * PR : prints menu to user
@@ -57,11 +58,10 @@ void mainMenu() {
                 cout<<"List Kosong"<<endl;
                 break;
             }
-            mytype x;
             cout<<"ID yg dicari : ";
-            cin>>x.id;
+            cin>>Z.id;
             cout<<endl;
-            P=findElm(L,x);
+            P=findElm(L,Z);
             cout<<"ID   : "<<info(P).id<<endl;
             cout<<"Nama : "<<info(P).nama<<endl;
             cout<<"NIM  : "<<info(P).nim<<endl;

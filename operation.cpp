@@ -16,6 +16,7 @@ void insertAndSort(List &L, address P) {
     if (first(L)==NULL)
     {
         insertFirst(L,P);
+
     }
     else if (info(P).id < info(first(L)).id)
     {
