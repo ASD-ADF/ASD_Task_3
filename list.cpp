@@ -113,7 +113,19 @@ void deleteLast(List &L, address &P) {
     * FS : last element in List L is removed and is pointed by P
     */
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
+    if (first(L)==NULL){
+        cout<<"list empty"<<endl;
+    } else if (next(first(L))==NULL){
+        deleteFirst(L,P);
+    } else {
+        address Q=first(L);
+        while(next(next(Q))!=NULL){
+            Q=next(Q);
+        }
+        P=next(Q);
+        next(Q)=NULL;
+        deallocate(P);
+    }
 
 
 
@@ -126,7 +138,16 @@ void printInfo(List L) {
     *      call the view_data function from my_data.h to print the info
     */
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
+    if (first(L)!=NULL){
+        do {
+            cout<<"ID     :"<<info(P).ID<<endl;
+            cout<<"Nama   :"<<info(P).nama<<endl;
+            cout<<"Kelas  :"<<info(P).kelas<<endl;
+            cout<<"Nilai  :"<<info(P).nilai<<endl;
+            cout<<endl;
+            P=next(P);
+        } while (P!=NULL);
+    }
 
 
     //----------------------------------------
@@ -140,7 +161,12 @@ void insertAfter(address Prec, address P) {
     *      pointed by pointer Prec
     */
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
+    if(next(Prec)==NULL){
+        insertLast(L,P);
+    } else {
+        next(P)=next(Prec);
+        next(Prec)=P;
+    }
 
     //----------------------------------------
 
@@ -152,8 +178,9 @@ void deleteAfter(address Prec, address &P) {
     *      is removed and pointed by pointer P
     */
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
-
+    P=next(Prec);
+    next(Prec)=next(P);
+    next(P)=NULL;
 
     //----------------------------------------
 }
