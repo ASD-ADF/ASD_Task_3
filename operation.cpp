@@ -28,8 +28,17 @@ void deletebyID(List &L, infotype x) {
 
     address Prec, P;
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
-
-
+    address Q;
+    P = findElm(L,x);
+    if( P = first(L)){
+        deleteFirst(L,P);
+    }else if(next(P) == NULL){
+        deleteLast(L,P);
+    }else{
+        while(next(Q) != P){
+        Q = next(Q);
+        }
+    }
+    deleteAfter(Q,P);
     //----------------------------------------
 }

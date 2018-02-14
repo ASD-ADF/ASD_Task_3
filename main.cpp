@@ -41,13 +41,73 @@ void mainMenu() {
         cout<<"0. exit"<<endl;
         cout<<"input choice: ";
         cin>>choice;
+        cout<<endl;
         switch(choice) {
         case 1:
             X = create_data();
             P = allocate(X);
-            insertFirst(L,P)
+            insertFirst(L,P);
             break;
+
+        case 2:
+             if (first(L) == NULL){
+                cout<<"NO DATA"<<endl;
+                break;
+            }
+            printInfo(L);
+            break;
+            cout<<endl;
+
+        case 3:
+            if (first(L) == NULL){
+                cout<<"NO DATA"<<endl;
+                break;
+            }
+            cout<<"ID : ";
+            cin>>X.ID;
+            P = findElm(L,X);
+            if (P!=NULL){
+                view_data(info(P));
+            }else{
+                cout<<"NO DATA FOUND"<<endl;
+            }
+            break;
+            cout<<endl;
+
+        case 4:
+            if (first(L) == NULL){
+                cout<<"NO DATA"<<endl;
+                break;
+            }
+            cout<<"ID : ";
+            cin>>X.ID;
+            P = findElm(L,X);
+            if (P != NULL){
+                edit_data(info(P));
+            }else{
+            cout<<"NO DATA FOUND"<<endl;
+            }
+            break;
+            cout<<endl;
+
+        case 5:
+            if (first(L) == NULL){
+                cout<<"NO DATA"<<endl;
+                break;
+            }
+            cout<<"ID :";
+            cin>>X.ID;
+            P = findElm(L,X);
+            if ( P != NULL){
+                    deletebyID(L,X);
+            }else{
+                cout<<"NO DATA FOUND"<<endl;
+            }
+            break;
+            cout<<endl;
+
         }
+        cout<<endl;
     } while(true);
 
     //----------------------------------------
