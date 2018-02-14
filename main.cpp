@@ -45,8 +45,55 @@ void mainMenu() {
         case 1:
             X = create_data();
             P = allocate(X);
-            insertFirst(L,P)
+            insertFirst(L,P);
             break;
+        case 2 :
+            printInfo(L);
+            break;
+        case 3 :
+            {
+
+                infotype x;
+                cout<< " ==>><<== "<<endl;
+                cout<<" Find ID : ";
+                cin>>x.id;
+                address f;
+                f = findElm(L,x);
+                if ( f != NULL){
+                    cout << " ==>><<==<<>>==>><<== " << end;
+                    cout << " ID    : " << f->info.id << endl;
+                    cout << " Name  : " << f->info.name << endl;
+                    cout << " Class : " << f->info.clas << endl;
+                    cout << " Score : " << f->info.score << endl;
+                    cout << endl;
+                } else {
+                    cout << " == " << endl;
+                    cout << " ID Not Found " << endl;
+                    cout << endl;
+                }
+            }
+            break;
+        case 4 :
+            infotype y;
+            cout << " ==>><<== " << endl;
+            cout << " Find ID : " ;
+            cin >> y.id ;
+            address f;
+            f = findElm(L,y);
+            if (f != NULL){
+                edit_data(info(f));
+            }else{
+                cout << " ID Not Found " << endl;
+            }
+            break;
+        case 5 :
+            infotype z;
+            cout << " ==>><<== " << endl;
+            cout << "Find ID : " << endl;
+            cin >> z.id;
+            address f;
+            deletebyID(L,z);
+            cout << P -> info.id << endl;
         }
     } while(true);
 

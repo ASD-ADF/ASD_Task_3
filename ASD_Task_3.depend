@@ -52,3 +52,21 @@
 	"operation.h"
 	"my_data.h"
 
+1518623310 source:e:\tugas\asd-adf\asd_task_3\my_data.cpp
+	"my_data.h"
+
+1518623759 e:\tugas\asd-adf\asd_task_3\my_data.h
+	<iostream>
+
+1518359096 source:e:\tugas\asd-adf\asd_task_3\operation.cpp
+	"list.h"
+	"operation.h"
+	"my_data.h"
+
+1518359096 e:\tugas\asd-adf\asd_task_3\list.h
+	<iostream>
+	"my_data.h"
+
+1518359096 e:\tugas\asd-adf\asd_task_3\operation.h
+	"list.h"
+
