@@ -52,3 +52,27 @@
 	"operation.h"
 	"my_data.h"
 
+1518611633 source:d:\intania effendi-telkom\it telkom\asd-41-08\github\asd_task_3\operation.cpp
+	"list.h"
+	"operation.h"
+	"my_data.h"
+
+1518619427 d:\intania effendi-telkom\it telkom\asd-41-08\github\asd_task_3\list.h
+	<iostream>
+	"my_data.h"
+
+1518618588 d:\intania effendi-telkom\it telkom\asd-41-08\github\asd_task_3\my_data.h
+	<iostream>
+
+1518611633 d:\intania effendi-telkom\it telkom\asd-41-08\github\asd_task_3\operation.h
+	"list.h"
+
+1518616780 source:d:\intania effendi-telkom\it telkom\asd-41-08\github\asd_task_3\my_data.cpp
+	"my_data.h"
+
+1518616409 source:d:\intania effendi-telkom\it telkom\asd-41-08\github\asd_task_3\main.cpp
+	<iostream>
+	"list.h"
+	"operation.h"
+	"my_data.h"
+

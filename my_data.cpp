@@ -16,6 +16,7 @@ mytype create_data() {
     // ===========================
     // YOUR CODE HERE
     cout<<"your code here"<<endl;
+    d.id = 5;
 
 
 

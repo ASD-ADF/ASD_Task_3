@@ -4,9 +4,9 @@
 #include <iostream>
 #include "my_data.h"
 
-#define first(L) L.first
 #define next(P) P->next
 #define info(P) P->info
+#define first(L) L.first
 
 using namespace std;
 
@@ -24,21 +24,20 @@ using namespace std;
 *
 **/
 
-
-
-typedef mytype infotype;
 typedef struct elmlist *address;
+typedef mytype infotype;
 
 struct elmlist{
     //------------- your code here -----------
-
+    infotype info;
+    address next;
     //----------------------------------------
 };
 
 struct List{
     //------------- your code here -----------
 
-
+    address first;
     //----------------------------------------
 };
 
