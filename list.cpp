@@ -138,6 +138,7 @@ void printInfo(List L) {
     *      call the view_data function from my_data.h to print the info
     */
     //-------------your code here-------------
+    address P=first(L);
     if (first(L)!=NULL){
         do {
             cout<<"ID     :"<<info(P).ID<<endl;
@@ -154,7 +155,7 @@ void printInfo(List L) {
 }
 
 
-void insertAfter(address Prec, address P) {
+void insertAfter(List &L,address Prec, address P) {
     /**
     * IS : Prec and P is not NULL
     * FS : element pointed by P is placed behind the element
