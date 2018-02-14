@@ -29,16 +29,18 @@ using namespace std;
 typedef mytype infotype;
 typedef struct elmlist *address;
 
-struct elmlist{
+struct elmlist
+{
     //------------- your code here -----------
-
+    infotype info;
+    address next;
     //----------------------------------------
 };
 
-struct List{
+struct List
+{
     //------------- your code here -----------
-
-
+    address first;
     //----------------------------------------
 };
 
@@ -54,8 +56,8 @@ void insertFirst(List &L, address P);
 void insertLast(List &L, address P);
 void deleteFirst(List &L, address &P);
 void deleteLast(List &L, address &P);
-void insertAfter(address Prec, address P);
-void deleteAfter(address Prec, address &P);
+void insertAfter(List &L, address Prec, address P);
+void deleteAfter(List &L, address Prec, address &P);
 
 // define search-by-ID function and view procedure
 address findElm(List L, infotype x);

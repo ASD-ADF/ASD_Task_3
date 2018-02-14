@@ -52,3 +52,31 @@
 	"operation.h"
 	"my_data.h"
 
+1518576486 source:d:\nta\latihan c++\clone\asd_task_2\asd_task_3\list.cpp
+	"list.h"
+	"my_data.h"
+
+1518519340 d:\nta\latihan c++\clone\asd_task_2\asd_task_3\list.h
+	<iostream>
+	"my_data.h"
+
+1518518977 d:\nta\latihan c++\clone\asd_task_2\asd_task_3\my_data.h
+	<iostream>
+
+1518571841 source:d:\nta\latihan c++\clone\asd_task_2\asd_task_3\my_data.cpp
+	"my_data.h"
+
+1518576456 source:d:\nta\latihan c++\clone\asd_task_2\asd_task_3\operation.cpp
+	"list.h"
+	"operation.h"
+	"my_data.h"
+
+1518429839 d:\nta\latihan c++\clone\asd_task_2\asd_task_3\operation.h
+	"list.h"
+
+1518576866 source:d:\nta\latihan c++\clone\asd_task_2\asd_task_3\main.cpp
+	<iostream>
+	"list.h"
+	"operation.h"
+	"my_data.h"
+
