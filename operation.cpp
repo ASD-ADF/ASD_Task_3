@@ -13,7 +13,19 @@ void insertAndSort(List &L, address P) {
     */
 
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
+
+    if (first(L)==NULL){
+        insertFirst(L,P);
+    }else if(L.first->info.id >= P->info.id){
+        insertFirst(L,P);
+    }else if(L.first->info.id <= P->info.id) {
+        address Q = first(L);
+        while(P->info.id <= Q->info.id && next(first(L))!=NULL){
+                Q = next(Q);
+        }
+        next(P)=next(Q);
+        next(Q)=P;
+    }
 
 
     //----------------------------------------
@@ -28,7 +40,24 @@ void deletebyID(List &L, infotype x) {
 
     address Prec, P;
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
+    Prec = first(L);
+    P = findElm(L,x);
+
+    if(P != NULL){
+        if(P == first(L)){
+            deleteFirst(L,P);
+        }else if(next(P)!=NULL){
+            while(next(Prec)!=P){
+                Prec = next(Prec);
+            }
+            next(Prec)=next(P);
+            P = NULL;
+        }else{
+            deleteLast(L,P);
+        }
+    }else{
+        cout<<P->info.id<<" is not exist"<<endl;
+    }
 
 
     //----------------------------------------
