@@ -10,15 +10,14 @@ List L;
 
 int main() {
     createList(L);
-
     mainMenu();
-
     return 0;
 }
 
 void mainMenu() {
     address P;
     infotype X;
+    bool exit;
     /**
     * IS : List has been created
     * PR : prints menu to user
@@ -29,7 +28,6 @@ void mainMenu() {
     *       5. delete data by ID
     *       0. exit
     */
-    //-------------your code here-------------
     int choice;
     do {
         cout<<"Menu"<<endl;
@@ -41,14 +39,36 @@ void mainMenu() {
         cout<<"0. exit"<<endl;
         cout<<"input choice: ";
         cin>>choice;
+        cout<<endl;
         switch(choice) {
         case 1:
             X = create_data();
             P = allocate(X);
-            insertFirst(L,P)
+            insertFirst(L,P);
+            break;
+        case 2:
+            printInfo(L);
+            break;
+        case 3:
+            cout << "Input Student ID : ";
+			cin >> X.id;
+			P = findElm(L, X);
+			view_data(info(P));
+            break;
+        case 4:
+           cout << "Input Student ID : ";
+			cin >> X.id;
+			P = findElm(L, X);
+			edit_data(info(P));
+            break;
+        case 5:
+            cout << "Input Student ID :";
+			cin >> X.id;
+			deletebyID(L, X);
+            break;
+        case 0:
+            exit = true;
             break;
         }
-    } while(true);
-
-    //----------------------------------------
+    } while(!exit);
 }
