@@ -19,6 +19,7 @@ int main() {
 void mainMenu() {
     address P;
     infotype X;
+    int t=1;
     /**
     * IS : List has been created
     * PR : prints menu to user
@@ -45,10 +46,36 @@ void mainMenu() {
         case 1:
             X = create_data();
             P = allocate(X);
-            insertFirst(L,P)
+            insertFirst(L,P);
+            break;
+        case 2:
+            printInfo(L);
+            break;
+        case 3:
+            cout<<"Masukkan ID yang ingin dicari : ";
+            cin>>X.id;
+            P=findElm(L, X);
+            X=info(P);
+            view_data(X);
+            break;
+        case 4:
+            cout<<"Masukkan ID yang ingin dicari : ";
+            cin>>X.id;
+            P=findElm(L, X);
+            X=info(P);
+            edit_data(X);
+            info(P)=X;
+            break;
+        case 5:
+            cout<<"Masukkan ID Buku yang ingin di hapus : ";
+            cin>>X.id;
+            deletebyID(L, X);
+            break;
+        case 0:
+            t=0;
             break;
         }
-    } while(true);
+    } while(t==1);
 
     //----------------------------------------
 }

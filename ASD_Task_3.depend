@@ -52,3 +52,31 @@
 	"operation.h"
 	"my_data.h"
 
+1518626909 source:c:\users\yogi\documents\struktur data\asd_task_3\operation.cpp
+	"list.h"
+	"operation.h"
+	"my_data.h"
+
+1518531375 c:\users\yogi\documents\struktur data\asd_task_3\list.h
+	<iostream>
+	"my_data.h"
+
+1518531695 c:\users\yogi\documents\struktur data\asd_task_3\my_data.h
+	<iostream>
+
+1518599649 c:\users\yogi\documents\struktur data\asd_task_3\operation.h
+	"list.h"
+
+1518626404 source:c:\users\yogi\documents\struktur data\asd_task_3\main.cpp
+	<iostream>
+	"list.h"
+	"operation.h"
+	"my_data.h"
+
+1518626254 source:c:\users\yogi\documents\struktur data\asd_task_3\list.cpp
+	"list.h"
+	"my_data.h"
+
+1518626253 source:c:\users\yogi\documents\struktur data\asd_task_3\my_data.cpp
+	"my_data.h"
+

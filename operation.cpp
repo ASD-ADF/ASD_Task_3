@@ -2,6 +2,35 @@
 #include "operation.h"
 #include "my_data.h"
 
+void sorting(List &L, address Prec){
+    List L2;
+    createList(L2);
+    Prec=first(L);
+    address Q;
+    if (next(first(L))==NULL) {
+
+    }
+    else {
+    while (first(L)!=NULL){
+        deleteFirst(L, Prec);
+        if ((first(L2)==NULL) || (info(Prec).id<info(first(L2)).id)) {
+            insertFirst(L2, Prec);
+        }
+        else {
+            Q=first(L2);
+            while (next(Q)!=NULL) {
+                Q=next(Q);
+                if (info(next(Q)).id<info(Prec).id){
+                    insertAfter(L2, Q, Prec);
+                }
+            }
+            insertLast(L, Prec);
+
+        }
+    }
+    L=L2;
+    }
+}
 
 void insertAndSort(List &L, address P) {
     /**
@@ -13,12 +42,13 @@ void insertAndSort(List &L, address P) {
     */
 
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
+
+        insertFirst(L, P);
 
 
     //----------------------------------------
-}
 
+    }
 
 void deletebyID(List &L, infotype x) {
     /**
@@ -28,7 +58,22 @@ void deletebyID(List &L, infotype x) {
 
     address Prec, P;
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
+    Prec=findElm(L, x);
+    if (Prec==first(L)) {
+        deleteFirst(L, Prec);
+    }
+    else if (next(Prec)==NULL) {
+        deleteLast(L, Prec);
+    }
+    else {
+        P=first(L);
+        while (next(P)!=Prec) {
+            P=next(P);
+        }
+        deleteAfter(L, P, Prec);
+    }
+    deallocate(Prec);
+
 
 
     //----------------------------------------
