@@ -13,7 +13,25 @@ void insertAndSort(List &L, address P) {
     */
 
     //-------------your code here-------------
+    if (first(L)==NULL)
+    {
+        insertFirst(L,P);
+    }
+    else if (info(P).id < info(first(L)).id)
+    {
+        insertFirst(L,P);
+    }
+    else
+    {
+        address Q;
+        Q = first(L);
+        while(info(Q).id<info(P).id)
+        {
+            Q=next(Q);
+        }
+        insertAfter(L,Q,P);
 
+    }
 
 
     //----------------------------------------
@@ -32,17 +50,29 @@ void deletebyID(List &L, infotype x) {
     {
 
     }
+    else if (info(first(L)).id==x.id)
+    {
+        Prec=first(L);
+        deleteFirst(L,Prec);
+    }
     else
     {
-        address P;
-        address Q;
-        P=first(L);
-        while(P!=NULL)
+        Prec=first(L);
+        while(Prec!=NULL)
         {
-            if (info(P)==x)
+            if (info(Prec).id==x.id)
             {
-
+                if (next(Prec)==NULL)
+                {
+                    deleteLast(L,P);
+                }
+                else
+                {
+                P=next(Prec);
+                next(Prec)=next(P);
+                }
             }
+            Prec=next(Prec);
         }
     }
 

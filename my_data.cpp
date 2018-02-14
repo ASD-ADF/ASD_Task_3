@@ -59,7 +59,7 @@ void edit_data(mytype &d) {
 
     // ===========================
     // YOUR CODE HERE
-            cout<<"Nama : ";
+        cout<<"Nama : ";
         cin>>d.nama;
         cout<<"NIM  : ";
         cin>>d.nim;

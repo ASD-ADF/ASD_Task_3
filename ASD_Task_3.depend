@@ -52,25 +52,31 @@
 	"operation.h"
 	"my_data.h"
 
-1518249717 source:c:\users\gl553vd\downloads\documents\dap\strukdat\asd task_1\asd_task_3\list.cpp
+1518593292 source:c:\users\gl553vd\downloads\documents\dap\strukdat\asd task_1\asd_task_3\list.cpp
 	"list.h"
 	"my_data.h"
 
-1518249717 c:\users\gl553vd\downloads\documents\dap\strukdat\asd task_1\asd_task_3\list.h
+1518593397 c:\users\gl553vd\downloads\documents\dap\strukdat\asd task_1\asd_task_3\list.h
 	<iostream>
 	"my_data.h"
 
-1518444163 c:\users\gl553vd\downloads\documents\dap\strukdat\asd task_1\asd_task_3\my_data.h
+1518457860 c:\users\gl553vd\downloads\documents\dap\strukdat\asd task_1\asd_task_3\my_data.h
 	<iostream>
 
-1518444163 source:c:\users\gl553vd\downloads\documents\dap\strukdat\asd task_1\asd_task_3\my_data.cpp
+1518593543 source:c:\users\gl553vd\downloads\documents\dap\strukdat\asd task_1\asd_task_3\my_data.cpp
 	"my_data.h"
 
-1518249717 source:c:\users\gl553vd\downloads\documents\dap\strukdat\asd task_1\asd_task_3\operation.cpp
+1518593448 source:c:\users\gl553vd\downloads\documents\dap\strukdat\asd task_1\asd_task_3\operation.cpp
 	"list.h"
 	"operation.h"
 	"my_data.h"
 
 1518249717 c:\users\gl553vd\downloads\documents\dap\strukdat\asd task_1\asd_task_3\operation.h
 	"list.h"
+
+1518444175 source:c:\users\gl553vd\downloads\documents\dap\strukdat\asd task_1\asd_task_3\main.cpp
+	<iostream>
+	"list.h"
+	"operation.h"
+	"my_data.h"
 

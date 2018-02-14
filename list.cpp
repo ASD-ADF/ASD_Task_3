@@ -19,8 +19,8 @@ address allocate(infotype x) {
 
     address P;
     //-------------your code here-------------
-    p=(address)malloc(sizeof(elmlist));
-    info(P)= x
+    info(P)= x;
+    next(P)=NULL;
 
 
     //----------------------------------------
@@ -64,14 +64,14 @@ void insertLast(List &L, address P) {
     * FS : element pointed by P became the last element in List L
     */
     //-------------your code here-------------
-    address Q
+    address Q;
     if (first(L)== NULL)
     {
         first(L)=P;
     }
     else
     {
-        Q = first(L)
+        Q = first(L);
         while(next(Q)!=NULL)
         {
             Q=next(Q);
@@ -101,14 +101,14 @@ address findElm(List L, infotype x) {
        P=first(L);
        while(P!=NULL)
        {
-           if (P==x)
+           if (info(P).id == x.id)
            {
-               return P
+               return P;
            }
            P=next(P);
        }
    }
-   return NULL
+   return NULL;
 
     //----------------------------------------
 
@@ -169,11 +169,17 @@ void printInfo(List L) {
     *      call the view_data function from my_data.h to print the info
     */
     //-------------your code here-------------
-    address P
+    address P;
+    P=first(L);
+    if(first(L)!=NULL)
     while (P!=NULL)
     {
-        cout<<info(P)<<", ";
-        P=next(P);
+       cout<<"ID   : "<<info(P).id<<endl;
+       cout<<"Nama : "<<info(P).nama<<endl;
+       cout<<"NIM  : "<<info(P).nim<<endl;
+       cout<<"IPK  : "<<info(P).ip<<endl;
+       cout<<endl;
+       P=next(P);
     }
 
 
@@ -181,29 +187,57 @@ void printInfo(List L) {
 }
 
 
-void insertAfter(address Prec, address P) {
+void insertAfter(List &L,address Prec, address P) {
     /**
     * IS : Prec and P is not NULL
     * FS : element pointed by P is placed behind the element
     *      pointed by pointer Prec
     */
     //-------------your code here-------------
-    if (Prec!=NULL)
+    if (Prec==NULL)
     {
+
+    }
+    else if (next(Prec)==NULL)
+    {
+        insertLast(L,P);
+    }
+    else
+    {
+
+        next(P)=next(Prec);
+        next(Prec)=P;
+
 
     }
 
     //----------------------------------------
 
 }
-void deleteAfter(address Prec, address &P) {
+void deleteAfter(List &L,address Prec, address &P) {
     /**
     * IS : Prec is not NULL
     * FS : element which was before behind an element pointed by Prec
     *      is removed and pointed by pointer P
     */
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
+    if (Prec==NULL)
+    {
+
+    }
+    else if (Prec==first(L))
+    {
+        deleteFirst(L,P);
+    }
+    else if (next(Prec)==NULL)
+    {
+        deleteLast(L,P);
+    }
+    else
+    {
+        P=next(Prec);
+        next(Prec)=next(P);
+    }
 
 
     //----------------------------------------

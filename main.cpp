@@ -45,8 +45,62 @@ void mainMenu() {
         case 1:
             X = create_data();
             P = allocate(X);
-            insertFirst(L,P);
+            insertAndSort(L,P);
             break;
+        case 2:
+            printInfo(L);
+            break;
+
+        case 3:
+            if (first(L)=NULL)
+            {
+                cout<<"List Kosong"<<endl;
+                break;
+            }
+            mytype x;
+            cout<<"ID yg dicari : ";
+            cin>>x.id;
+            cout<<endl;
+            P=findElm(L,x);
+            cout<<"ID   : "<<info(P).id<<endl;
+            cout<<"Nama : "<<info(P).nama<<endl;
+            cout<<"NIM  : "<<info(P).nim<<endl;
+            cout<<"IPK  : "<<info(P).ip<<endl;
+            break;
+
+        case 4:
+            if(first(L)==NULL)
+            {
+                cout<<"List Kosong"<<endl;
+                break;
+            }
+            cout<<"ID yg ingin diedit : ";
+            cin>>X.id;
+            P=findElm(L,X);
+            if (P==NULL)
+            {
+                cout<<"ID tidak ditemukan"<<endl;
+            }
+            else
+            {
+                edit_data(info(P));
+                cout<<endl;
+            }
+            break;
+
+        case 5:
+            if(first(L)==NULL)
+            {
+                cout<<"List Kosong"<<endl;
+                break;
+            }
+            cout<<"ID yg ingin dihapus : ";
+            cin>>X.id;
+            deletebyID(L,X);
+            break;
+
+        case 0 :
+            return;
         }
     } while(true);
 
