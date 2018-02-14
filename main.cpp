@@ -31,6 +31,7 @@ void mainMenu() {
     */
     //-------------your code here-------------
     int choice;
+    bool exit = false;
     do {
         cout<<"Menu"<<endl;
         cout<<"1. insert"<<endl;
@@ -45,10 +46,62 @@ void mainMenu() {
         case 1:
             X = create_data();
             P = allocate(X);
-            insertFirst(L,P)
+            insertFirst(L,P);
             break;
-        }
-    } while(true);
+        case 2:
+                printInfo(L);
+                break;
+        case 3:
+            if (first(L) == NULL){
+                    cout<<"Empty List"<<endl;
+                    break;
+            }
+            cout<<" Find ID : ";
+            cin>>X.id;
+            P = findElm(L,X);
+            if (P != NULL){
+                    view_data(info(P));
+            }else{
+                    cout<<"Data Not Found"<<endl;
+            }
+            break;
+
+        case 4:
+            if (first(L) == NULL){
+                    cout<<"Empty List"<<endl;
+                    break;
+            }
+            cout<<" Change Your ID: ";
+            cin>>X.id;
+            P = findElm(L,X);
+            if (P != NULL){
+                    edit_data(info(P));
+            }else{
+                    cout<<"Data Not Found"<<endl;
+            }
+            break;
+
+        case 5:
+            if (first(L) == NULL){
+                    cout<<"Empty List"<<endl;
+                    break;
+            }
+            cout<<" Delete ID :";
+            cin>>X.id;
+            P = findElm(L,X);
+            if ( P != NULL){
+                    deletebyID(L,X);
+            }else{
+                    cout<<"Data Not Found"<<endl;
+            }
+            break;
+        case 0:
+            exit = true;
+            break;
+            }
+        } while(!exit);
+    }
+
 
     //----------------------------------------
-}
+
