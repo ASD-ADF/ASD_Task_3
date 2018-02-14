@@ -48,7 +48,61 @@ void mainMenu() {
             insertFirst(L,P)
             break;
         }
-    } while(true);
+    } case 2:
+            printInfo(L);
+            break;
+        case 3:
+        if (first(L)==NULL){
+            cout<<"No data"<<endl;
+            break;
+        }
+        cout<<" Find ID : ";
+        cin>>X.ID;
+        P=findElm(L,X);
+        if (P!=NULL){
+            view_data(info(P));
+        }else{
+            cout<<" data not found "<<endl;
+        }
+            break;
+
+        case 4:
+            if (first(L)==NULL){
+                cout<<" No data. "<<endl;
+                break;
+            }
+            cout<<" Edit Your ID : ";
+            cin>>X.ID;
+            P = findElm(L,X);
+            if (P != NULL){
+                edit_data(info(P));
+            }else{
+                cout<<" Data not found"<<endl;
+            }
+                break;
+        case 5:
+            if (first(L)==NULL){
+                cout<<" No Data Input "<<endl;
+            }
+                break;
+
+         cout<<" Delete ID : ";
+         cin>>X.ID;
+         P = findElm(L,X);
+         if(P!=NULL){
+            deletebyID(L,X);
+         }else{
+            cout<<"Data not found"<<endl;
+         }
+            break;
+        case 0:
+            cout<<"thank you"<<endl;
+            exit = true;
+            break;
+        }
+    }while(!exit);
+    }
+
 
     //----------------------------------------
 }
