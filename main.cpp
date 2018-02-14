@@ -30,7 +30,7 @@ void mainMenu() {
     *       0. exit
     */
     //-------------your code here-------------
-    int choice;
+    int choice, x;
     do {
         cout<<"Menu"<<endl;
         cout<<"1. insert"<<endl;
@@ -45,10 +45,57 @@ void mainMenu() {
         case 1:
             X = create_data();
             P = allocate(X);
-            insertFirst(L,P)
+            insertAndSort(L, P);
             break;
+        case 2:
+            printInfo(L);
+            break;
+        case 3:
+            cout<<"Masukkan ID anda: ";
+            cin >> x;
+            info(P).id = x;
+            P = findElm(L, info(P));
+            view_data(info(P));
+            break;
+        case 4:
+            cout<<"Masukkan ID anda: ";
+            cin>>x;
+            info(P).id = x;
+            P = findElm(L, info(P));
+            edit_data(info(P));
+            break;
+        case 5:
+            mytype D;
+            cout<<"Masukkan ID anda: ";
+            cin>>x;
+            D.id = x;
+            P = findElm(L, D);
+            if ( P != NULL) {
+                if (P==first(L)) {
+                    deleteFirst(L, P);
+                    deallocate(P);
+                }
+                else {
+                    address Q = new elmlist;
+                    bool ketemu = false;
+                    Q = first(L);
+                    while (Q != NULL && !ketemu) {
+                        if (next(next(Q)) == NULL) {
+                            deleteLast(L, P);
+                        }
+                        else if ( next(Q) != NULL) {
+                            if (info(next(Q)).id == info(P).id) {
+                                deleteAfter(L,Q,P);
+                                ketemu = true;
+                            }
+                        }
+                        Q = next(Q);
+                    }
+                    deallocate(P);
+                }
+            }
         }
-    } while(true);
+    } while(choice != 0);
 
     //----------------------------------------
 }
