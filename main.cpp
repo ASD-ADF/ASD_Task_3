@@ -45,10 +45,58 @@ void mainMenu() {
         case 1:
             X = create_data();
             P = allocate(X);
-            insertFirst(L,P)
+            insertFirst(L,P);
             break;
-        }
-    } while(true);
+        case 2:
+            printInfo(L);
+            break;
+        case 3:{
+            infotype v;
+            cout<<"++++++++"<<endl;
+            cout<<"View ur data by your id : ";
+            cin>>v.yid;
+            address F ;
+            F = findElm(L,v);
+            if(F!=NULL){
+                cout<<"Data of user"<<endl;
+                cout<<"your name here : "<<F->info.yname<<endl;
+                cout<<"your id here   : "<<F->info.yid<<endl;
+                cout<<"your class here : "<<F->info.yclas1<<endl;
+                cout<<"your score here : "<<F->info.yscore<<endl;
+            }else{
+                cout<<"xxxxxxxxx"<<endl;
+                cout<<"can't find your id"<<endl;
+                cout<<endl;
+            }}
+            break;
 
+        case 4:{
+            infotype u;
+            cout<<"+++++++++"<<endl;
+            cout<<"View ur data by your id : ";
+            cin>>u.yid;
+            address F;
+            F = findElm(L,u);
+            if(F!=NULL){
+                edit_data(info(P));
+            }else{
+                cout<<"can't find your id"<<endl;
+                }
+            }
+            break;
+        case 5: {
+            infotype x;
+            cout<<"++++++++++"<<endl;
+            cout<<"View ur data by your id"<<endl;
+            cin>>x.yid;
+            address F ;
+            deletebyID(L,x);
+            cout<<P->info.yid<<endl;
+            }
+        }
+
+
+
+    }while(true);
     //----------------------------------------
 }

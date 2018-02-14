@@ -13,7 +13,7 @@ void insertAndSort(List &L, address P) {
     */
 
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
+   // cout<<"your code here"<<endl;
 
 
     //----------------------------------------
@@ -28,8 +28,24 @@ void deletebyID(List &L, infotype x) {
 
     address Prec, P;
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
+   // cout<<"your code here"<<endl;
+     Prec = first(L);
+     P = findElm(L,x);
 
-
+     if(P !=NULL){
+        if(P == first(L)){
+            deleteFirst(L,P);
+        }else if(next(P)!=NULL){
+            while(next(Prec)!=P){
+              Prec = next(P);
+            }
+            next(Prec) = next(P);
+            P=NULL;
+        }else{
+            deleteLast(L,P);
+        }
+     }else{
+        cout<<P->info.yid<<"not found"<<endl;
+     }
     //----------------------------------------
 }

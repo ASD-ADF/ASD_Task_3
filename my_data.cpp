@@ -2,9 +2,9 @@
 #include "my_data.h"
 
 /**
-    CLASS      :
-    NAME       :
-    STUDENT ID :
+    CLASS      :if-40-int
+    NAME       :muhamad rikbal ikhsani
+    STUDENT ID :1301163598
 **/
 
 mytype create_data() {
@@ -15,7 +15,17 @@ mytype create_data() {
     mytype d;
     // ===========================
     // YOUR CODE HERE
-    cout<<"your code here"<<endl;
+    cout<<"inputan data users"<<endl;
+
+    cout<<"input your name : ";
+    cin>>d.yname;
+    cout<<"input your id   : ";
+    cin>>d.yid;
+    cout<<"input your class : ";
+    cin>>d.yclas1;
+    cout<<"input your score : ";
+    cin>>d.yscore;
+
 
 
 
@@ -31,7 +41,12 @@ void view_data(mytype d) {
 
     // ===========================
     // YOUR CODE HERE
-    cout<<"your code here"<<endl;
+    cout<<"data of users"<<endl;
+
+    cout<<"your name here : "<<d.yname<<endl;
+    cout<<"your id here   : "<<d.yid<<endl;
+    cout<<"your class here : "<<d.yclas1<<endl;
+    cout<<"your score here : "<<d.yscore<<endl;
 
 
 
@@ -48,10 +63,15 @@ void edit_data(mytype &d) {
 
     // ===========================
     // YOUR CODE HERE
-        cout<<"your code here"<<endl;
+        cout<<"Data Change"<<endl;
 
-
-
+        cout<<"input your new data of name : ";
+        cin>>d.yname;
+        cout<<"input your new data of class : ";
+        cin>>d.yclas1;
+        cout<<"input your new data of score : ";
+        cin>>d.yscore;
+        cout<<endl;
 
     // ===========================
 }
