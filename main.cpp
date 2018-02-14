@@ -19,17 +19,6 @@ int main() {
 void mainMenu() {
     address P;
     infotype X;
-    /**
-    * IS : List has been created
-    * PR : prints menu to user
-    *       1. insert new data
-    *       2. print all data
-    *       3. find and print a data by ID
-    *       4. edit data by ID
-    *       5. delete data by ID
-    *       0. exit
-    */
-    //-------------your code here-------------
     int choice;
     do {
         cout<<"Menu"<<endl;
@@ -41,14 +30,81 @@ void mainMenu() {
         cout<<"0. exit"<<endl;
         cout<<"input choice: ";
         cin>>choice;
+        cout<<endl<<endl;
         switch(choice) {
         case 1:
             X = create_data();
             P = allocate(X);
-            insertFirst(L,P)
+            insertAndSort(L,P);
             break;
+
+        case 2:
+            printInfo(L);
+            break;
+
+        case 3:
+            if (first(L) == NULL)
+                {
+                    cout<<"No Data"<<endl;
+                    break;
+                }
+            cout<<" Find ID : ";
+            cin>>X.ID;
+            P = findElm(L,X);
+            if (P != NULL)
+                {
+                    view_data(info(P));
+                }
+            else
+                {
+                    cout<<"Data Not Found"<<endl;
+                }
+            break;
+
+        case 4:
+            if (first(L) == NULL)
+                {
+                    cout<<"No Data"<<endl;
+                    break;
+                }
+            cout<<" Edit ID: ";
+            cin>>X.ID;
+            P = findElm(L,X);
+            if (P != NULL)
+                {
+                    edit_data(info(P));
+                }
+            else
+                {
+                    cout<<"Data Not Found"<<endl;
+                }
+            break;
+
+        case 5:
+            if (first(L) == NULL)
+                {
+                    cout<<"No Data"<<endl;
+                    break;
+                }
+            cout<<" Delete ID :";
+            cin>>X.ID;
+            P = findElm(L,X);
+            if ( P != NULL)
+                {
+                    deletebyID(L,X);
+                }
+            else
+                {
+                    cout<<"Data Not Found"<<endl;
+                }
+            break;
+        case 0:
+            cout<<"Terima Kasih"<<endl;
+            return;
         }
+    cout<<endl<<endl;
     } while(true);
+
 
     //----------------------------------------
 }
