@@ -52,3 +52,31 @@
 	"operation.h"
 	"my_data.h"
 
+1518625282 source:c:\users\helmi.ruslan\documents\strukdat\task\asd_task_3\list.cpp
+	"list.h"
+	"my_data.h"
+
+1518622984 c:\users\helmi.ruslan\documents\strukdat\task\asd_task_3\list.h
+	<iostream>
+	"my_data.h"
+
+1518525612 c:\users\helmi.ruslan\documents\strukdat\task\asd_task_3\my_data.h
+	<iostream>
+
+1518623975 source:c:\users\helmi.ruslan\documents\strukdat\task\asd_task_3\my_data.cpp
+	"my_data.h"
+
+1518619816 source:c:\users\helmi.ruslan\documents\strukdat\task\asd_task_3\operation.cpp
+	"list.h"
+	"operation.h"
+	"my_data.h"
+
+1518524437 c:\users\helmi.ruslan\documents\strukdat\task\asd_task_3\operation.h
+	"list.h"
+
+1518624470 source:c:\users\helmi.ruslan\documents\strukdat\task\asd_task_3\main.cpp
+	<iostream>
+	"list.h"
+	"operation.h"
+	"my_data.h"
+
