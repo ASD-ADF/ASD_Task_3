@@ -41,41 +41,79 @@ void mainMenu() {
         cout<<"0. exit"<<endl;
         cout<<"input choice: ";
         cin>>choice;
+        cout<<endl<<endl;
         switch(choice) {
         case 1:
             X = create_data();
             P = allocate(X);
-            insertFirst(L,P);
+            insertAndSort(L,P);
             break;
-
 
         case 2:
             printInfo(L);
             break;
 
         case 3:
+            if (first(L) == NULL)
+                {
+                    cout<<"No Data"<<endl;
+                    break;
+                }
             cout<<" Find ID : ";
             cin>>X.id;
             P = findElm(L,X);
-            view_data(info(P));
+            if (P != NULL)
+                {
+                    view_data(info(P));
+                }
+            else
+                {
+                    cout<<"Data Not Found"<<endl;
+                }
             break;
 
         case 4:
+            if (first(L) == NULL)
+                {
+                    cout<<"No Data"<<endl;
+                    break;
+                }
             cout<<" Edit ID: ";
             cin>>X.id;
             P = findElm(L,X);
-            edit_data(info(P));
+            if (P != NULL)
+                {
+                    edit_data(info(P));
+                }
+            else
+                {
+                    cout<<"Data Not Found"<<endl;
+                }
             break;
 
         case 5:
+            if (first(L) == NULL)
+                {
+                    cout<<"No Data"<<endl;
+                    break;
+                }
             cout<<" Delete ID :";
             cin>>X.id;
             P = findElm(L,X);
-            deletebyID(L,X);
+            if ( P != NULL)
+                {
+                    deletebyID(L,X);
+                }
+            else
+                {
+                    cout<<"Data Not Found"<<endl;
+                }
             break;
-
+        case 0:
+            cout<<"Terima Kasih"<<endl;
+            return;
         }
-
+    cout<<endl<<endl;
     } while(true);
 
     //----------------------------------------

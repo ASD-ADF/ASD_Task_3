@@ -15,13 +15,13 @@ mytype create_data() {
     mytype d;
     // ===========================
     // YOUR CODE HERE
-    cout<<"Masukkan ID   : ";
+    cout<<"Insert ID   : ";
     cin>>d.id;
-    cout<<"Masukkan Nama : ";
+    cout<<"Insert Name : ";
     cin>>d.nama;
-    cout<<"Masukkan Kelas: ";
+    cout<<"Insert Class: ";
     cin>>d.kelas;
-    cout<<"Masukkan Nilai: ";
+    cout<<"Insert Score: ";
     cin>>d.nilai;
 
 
@@ -38,9 +38,9 @@ void view_data(mytype d) {
     // ===========================
     // YOUR CODE HERE
     cout<<"ID     : "<<d.id<<" "<<endl;
-    cout<<"Nama   : "<<d.nama<<" "<<endl;
-    cout<<"Kelas  : "<<d.kelas<<" "<<endl;
-    cout<<"Nilai  : "<<d.nilai<<" "<<endl;
+    cout<<"Name   : "<<d.nama<<" "<<endl;
+    cout<<"Class  : "<<d.kelas<<" "<<endl;
+    cout<<"Score  : "<<d.nilai<<" "<<endl;
 
 
 
@@ -57,11 +57,11 @@ void edit_data(mytype &d) {
 
     // ===========================
     // YOUR CODE HERE
-       cout<<"Masukkan Nama  : ";
+       cout<<"Insert Name  : ";
        cin>>d.nama;
-       cout<<"Masukkan Kelas : ";
+       cout<<"Insert Class : ";
        cin>>d.kelas;
-       cout<<"Masukkan Nilai : ";
+       cout<<"Insert Score : ";
        cin>>d.nilai;
 
 

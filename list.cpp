@@ -67,8 +67,7 @@ void insertLast(List &L, address P) {
     //-------------your code here-------------
     if (first(L) == NULL)
     {
-        next(P) = first(L);
-        first(L) = P;
+        insertFirst(L,P);
     }
     else
     {
@@ -90,26 +89,23 @@ address findElm(List L, infotype x) {
     * FS : returns element with info.ID = x.ID,
            return Null if such ID is not found
     */
-
-    address P;
     //-------------your code here-------------
-    P = first(L);
-    while ((P != NULL) && (info(P).id) != x.id)
-    {
-        P = next(P);
+    if (first(L) != NULL) {
+        address P = first(L);
+        while ((next(P) != NULL) && (info(P).id) != x.id)
+        {
+            P = next(P);
+        }
+        if (info(P).id == x.id)
+        {
+            return P;
+        }
+        else
+        {
+            return NULL;
+        }
     }
-    if (info(P).id == x.id)
-    {
-        return P;
-    }
-    else
-    {
-        return NULL;
-    }
-
-
     //----------------------------------------
-    return P;
 }
 
 void deleteFirst(List &L, address &P) {
@@ -118,26 +114,20 @@ void deleteFirst(List &L, address &P) {
     * FS : first element in List L is removed and is pointed by P
     */
     //-------------your code here-------------
-    if (first(L) == NULL)
+    if (first(L) != NULL)
     {
-        P = NULL;
-    }
-    else
         if (next(first(L))== NULL)
         {
             P = first(L);
             first(L)=NULL;
         }
-    else
-    {
-        P = first(L);
-        first(L) = next(P);
-        next(P) = NULL;
+        else
+        {
+            P = first(L);
+            first(L) = next(P);
+            next(P) = NULL;
+        }
     }
-
-
-
-
     //----------------------------------------
 }
 
@@ -147,11 +137,8 @@ void deleteLast(List &L, address &P) {
     * FS : last element in List L is removed and is pointed by P
     */
     //-------------your code here-------------
-    if (first(L) == NULL)
+    if (first(L) != NULL)
     {
-        P = NULL;
-    }
-    else
         if (next(first(L)) == NULL)
             {
                 P = first(L);
@@ -168,9 +155,7 @@ void deleteLast(List &L, address &P) {
             }
             next(Q) = NULL;
         }
-
-
-
+    }
     //----------------------------------------
 }
 
@@ -185,16 +170,14 @@ void printInfo(List L) {
     while (P != NULL)
     {
         view_data(info(P));
+        cout<<endl;
         P = next(P);
     }
-
-
-
     //----------------------------------------
 }
 
 
-void insertAfter(address Prec, address P) {
+void insertAfter(List L,address Prec, address P) {
     /**
     * IS : Prec and P is not NULL
     * FS : element pointed by P is placed behind the element
@@ -207,7 +190,7 @@ void insertAfter(address Prec, address P) {
     //----------------------------------------
 
 }
-void deleteAfter(address Prec, address &P) {
+void deleteAfter(List L,address Prec, address &P) {
     /**
     * IS : Prec is not NULL
     * FS : element which was before behind an element pointed by Prec
