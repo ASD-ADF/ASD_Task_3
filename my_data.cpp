@@ -1,4 +1,6 @@
-
+#include <conio.h>
+#include <stdio.h>
+#include <string>
 #include "my_data.h"
 
 /**
@@ -15,8 +17,16 @@ mytype create_data() {
     mytype d;
     // ===========================
     // YOUR CODE HERE
-    cout<<"your code here"<<endl;
+    cout<<"Masukkan ID    :  ";
+    cin>>d.ID;
+    cin.get();
+    cout<<"Masukkan Nama  :  ";
+    gets(d.nama);
+    cout<<"Masukkan Kelas :  ";
+    gets(d.kelas);
 
+    cout<<"Masukkan Nilai :  ";
+    cin>>d.nilai;
 
 
 
@@ -31,7 +41,11 @@ void view_data(mytype d) {
 
     // ===========================
     // YOUR CODE HERE
-    cout<<"your code here"<<endl;
+    cout<<"ID    : "<<d.ID<<endl;
+    cout<<"Nama  : "<<d.nama<<endl;
+    cout<<"Kelas : "<<d.kelas<<endl;
+    cout<<"Nilai : "<<d.nilai<<endl;
+    cout<<endl;
 
 
 
@@ -48,7 +62,13 @@ void edit_data(mytype &d) {
 
     // ===========================
     // YOUR CODE HERE
-        cout<<"your code here"<<endl;
+    cin.get();
+    cout<<"Masukkan Nama  :  ";
+    gets(d.nama);
+    cout<<"Masukkan Kelas :  ";
+    gets(d.kelas);
+    cout<<"Masukkan Nilai :  ";
+    cin>>d.nilai;
 
 
 

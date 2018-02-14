@@ -4,7 +4,6 @@
 #include "list.h"
 
 void insertAndSort(List &L, address P);
-
 void deletebyID(List &L, infotype x);
 
 
