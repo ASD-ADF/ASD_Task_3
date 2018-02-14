@@ -10,13 +10,12 @@ List L;
 
 int main() {
     createList(L);
-
     mainMenu();
-
     return 0;
 }
 
-void mainMenu() {
+void mainMenu()
+{
     address P;
     infotype X;
     /**
@@ -31,7 +30,8 @@ void mainMenu() {
     */
     //-------------your code here-------------
     int choice;
-    do {
+    do
+    {
         cout<<"Menu"<<endl;
         cout<<"1. insert"<<endl;
         cout<<"2. view data"<<endl;
@@ -41,14 +41,40 @@ void mainMenu() {
         cout<<"0. exit"<<endl;
         cout<<"input choice: ";
         cin>>choice;
+        if (choice == 0) {
+            cout<<endl;
+            cout<<"Thank You"<<endl;
+            break;
+        }
         switch(choice) {
         case 1:
             X = create_data();
             P = allocate(X);
-            insertFirst(L,P)
+            insertFirst(L,P);
+            break;
+        case 2:
+            printInfo(L);
+            break;
+        case 3:
+            cout<<"ID to find: ";
+            cin>>X.id;
+            P = findElm(L,X);
+            view_data(info(P));
+            break;
+        case 4:
+            cout<<"ID to edit: ";
+            cin>>X.id;
+            P = findElm(L,X);
+            edit_data(info(P));
+            break;
+        case 5:
+            cout<<"ID to delete: ";
+            cin>>X.id;
+            P = findElm(L,X);
+            deletebyID(L,X);
             break;
         }
-    } while(true);
-
-    //----------------------------------------
+    }
+        while(true);
 }
+//----------------------------------------
