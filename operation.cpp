@@ -3,7 +3,8 @@
 #include "my_data.h"
 
 
-void insertAndSort(List &L, address P) {
+void insertAndSort(List &L, address P)
+{
     /**
     * IS : List may be empty
     * PR : insert an element pointed by P into an already sorted-by-ID List L
@@ -20,7 +21,8 @@ void insertAndSort(List &L, address P) {
 }
 
 
-void deletebyID(List &L, infotype x) {
+void deletebyID(List &L, infotype x)
+{
     /**
     * IS : List L may be empty
     * FS : an element with ID info = x.id is deleted from List L (deallocate)
@@ -28,7 +30,15 @@ void deletebyID(List &L, infotype x) {
 
     address Prec, P;
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
+    if (first(L)!=NULL) {
+        address Q=first(L);
+        while ((Q != NULL) && (Prec != Q)) {
+            if (info(Q).id == x.id) {
+                Prec=Q;
+            }
+            Q=next(Q);
+        }
+    }
 
 
     //----------------------------------------
