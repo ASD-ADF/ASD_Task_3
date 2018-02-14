@@ -41,14 +41,39 @@ void mainMenu() {
         cout<<"0. exit"<<endl;
         cout<<"input choice: ";
         cin>>choice;
-        switch(choice) {
+        switch(choice)
+        {
+        case 0:
+            cout<<"Press <enter> to exit program";
+            break;
         case 1:
             X = create_data();
             P = allocate(X);
-            insertFirst(L,P)
+            insertAndSort(L, P);
+            break;
+        case 2:
+            printInfo(L);
+            break;
+        case 3:
+            int idtofind;
+            cout<<"ID to find : ";
+            cin>>X.id;
+            P = findElm(L,X);
+            view_data(info(P));
+            break;
+        case 4:
+            cout<<"ID to find : ";
+            cin>>X.id;
+            P = findElm(L,X);
+            edit_data(info(P));
+            break;
+        case 5:
+            cout<<"ID to delete : ";
+            cin>>X.id;
+            deletebyID(L, X);
             break;
         }
-    } while(true);
+    } while(choice != 0);
 
     //----------------------------------------
 }
