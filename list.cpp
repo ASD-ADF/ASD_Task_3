@@ -6,7 +6,7 @@ void createList(List &L) {
     * FS : set first(L) with Null
     */
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
+    first(L)=NULL;
 
 
     //----------------------------------------
@@ -20,6 +20,9 @@ address allocate(infotype x) {
     address P;
     //-------------your code here-------------
     cout<<"your code here"<<endl;
+    P=(address)malloc(sizeof(elmlist));
+         info(P)=x;
+         next(P)=NULL;
 
 
     //----------------------------------------
@@ -31,7 +34,7 @@ void deallocate(address &P) {
     * FS : delete element pointed by P
     */
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
+    delete(P)
 
 
     //----------------------------------------
@@ -43,8 +46,8 @@ void insertFirst(List &L, address P) {
     * FS : element pointed by P became the first element in List L
     */
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
-
+    P->next = L.First;
+    L.First  = P;
 
     //----------------------------------------
 }
@@ -55,7 +58,15 @@ void insertLast(List &L, address P) {
     * FS : element pointed by P became the last element in List L
     */
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
+     address Q = L.First;
+     if (Q == NULL){
+         insertFirst(L,P);
+      }else{
+         while(Q->next != NULL)
+             Q = Q->next;
+         Q->next = P;
+        P->next = NULL;
+     };
 
 
     //----------------------------------------
@@ -70,7 +81,10 @@ address findElm(List L, infotype x) {
 
     address P;
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
+    P = L.First;
+     while (P != NULL && (P->info.id) != x.id){
+         P = P->next;
+     };
 
 
     //----------------------------------------
@@ -83,7 +97,12 @@ void deleteFirst(List &L, address &P) {
     * FS : first element in List L is removed and is pointed by P
     */
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
+    if (L.First != NULL){
+             P = L.First;
+            L.First = P->next;
+             P->next = NULL;
+             deallocate(P);
+        }
 
 
 
@@ -96,7 +115,18 @@ void deleteLast(List &L, address &P) {
     * FS : last element in List L is removed and is pointed by P
     */
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
+    if (L.First != NULL){
+             if(L.First->next == NULL){
+                 deleteFirst(L,P);
+             }else{
+                 address temp = L.First;
+                 while(temp->next->next != NULL)
+                     temp = temp->next;
+                P = temp->next;
+                 temp->next = NULL;
+                 deallocate(P);
+             };
+         }
 
 
 
@@ -109,7 +139,16 @@ void printInfo(List L) {
     *      call the view_data function from my_data.h to print the info
     */
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
+   address p = L.First;
+     while (p != NULL){
+         cout<<"-----------------------"<<endl;
+         cout<<"ID: "<<p->info.id<<endl;
+         cout<<"Name: "<<p->info.name<<endl;
+         cout<<"NIM: "<<p->info.nim<<endl;
+         cout<<"Score: "<<p->info.score<<endl;
+         cout<<"------------"<<endl;
+         p = p->next;
+     };
 
 
     //----------------------------------------
@@ -123,7 +162,8 @@ void insertAfter(address Prec, address P) {
     *      pointed by pointer Prec
     */
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
+    next(P) = next(Prec);
+    next(Prec) = P;
 
     //----------------------------------------
 
@@ -135,7 +175,11 @@ void deleteAfter(address Prec, address &P) {
     *      is removed and pointed by pointer P
     */
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
+    if (Prec != NULL)
+     {
+ 		P = Prec->next;
+ 		Prec->next = Prec->next->next;
+ 	}
 
 
     //----------------------------------------
