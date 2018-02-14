@@ -50,8 +50,8 @@ void mainMenu()
         {
             X = create_data();
             P = allocate(X);
-            //insertFirst(L,P);
-            insertLast(L,P);
+            insertFirst(L,P);
+            //insertLast(L,P);
             break;
         }
         case 2:
