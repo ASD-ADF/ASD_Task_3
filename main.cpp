@@ -17,7 +17,7 @@ int main() {
 }
 
 void mainMenu() {
-    address P;
+    address P, Q;
     infotype X;
     /**
     * IS : List has been created
@@ -31,6 +31,7 @@ void mainMenu() {
     */
     //-------------your code here-------------
     int choice;
+    mytype a,b;
     do {
         cout<<"Menu"<<endl;
         cout<<"1. insert"<<endl;
@@ -45,8 +46,44 @@ void mainMenu() {
         case 1:
             X = create_data();
             P = allocate(X);
-            insertFirst(L,P)
+            Q = findElm(L, X);
+            if(Q == NULL){
+                insertFirst(L,P);
+            }else{
+                cout<<"ID sudah ada"<<endl;
+            }
             break;
+        case 2:
+            printInfo(L);
+            break;
+        case 3:
+            cout<<"ID   : ";
+            cin>>a.id;
+            P = findElm(L, a);
+            b = P->info;
+            view_data(b);
+        case 4:
+            cout<<"ID   : ";
+            cin>>a.id;
+            P = findElm(L, a);
+            cout<<"Name     : ";
+            cin>>P->info.name;
+            cout<<"Class   : ";
+            cin>>P->info.Class;
+            cout<<"Score   : ";
+            cin>>P->info.score;
+        case 5:
+            cout<<"ID   : ";
+            cin>>a.id;
+            P = findElm(L, a);
+            if (P == first(L)){
+                deleteFirst(L, P);
+            }else if(next(P) == NULL){
+                deleteLast(L, P);
+            }else{
+                Q = first(L);
+                deleteAfter(Q, P);
+            }
         }
     } while(true);
 

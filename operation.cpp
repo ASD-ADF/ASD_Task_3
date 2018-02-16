@@ -13,13 +13,34 @@ void insertAndSort(List &L, address P) {
     */
 
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
-
-
+    if (first(L) == NULL) {
+        first(L) = P;
+    }
+    address Q = findElm(L,info(P));
+    if (Q != NULL) {
+        cout<< "ID Sudah Ada"<<endl;
+    }
+    else {
+        address last = first(L);
+        while (next(last) != NULL) {
+            last = next(last);
+        }
+        if (info(P).id < info(first(L)).id) {
+            insertFirst(L,P);
+        }
+        else if (info(P).id > info(last).id) {
+            next(last) = P;
+        }
+        else {
+            address R = first(L);
+            while (info(next(R)).id < info(P).id) {
+                R = next(R);
+            }
+            insertAfter(R,P);
+            }
+    }
     //----------------------------------------
 }
-
-
 void deletebyID(List &L, infotype x) {
     /**
     * IS : List L may be empty
@@ -28,8 +49,27 @@ void deletebyID(List &L, infotype x) {
 
     address Prec, P;
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
+    P = findElm(L,x);
+    if (P == NULL) {
+        cout<< "ID Tidak Ditemukan"<<endl;
+        return;
+    }
 
-
+    if (first(L) == P) {
+        deleteFirst(L,P);
+    }
+    else if (next(P) == NULL) {
+        deleteLast(L,P);
+    }
+    else {
+        Prec = first(L);
+        while (next(Prec) != P) {
+            Prec = next(Prec);
+        }
+        next(Prec) = next(P);
+        next(P) = NULL;
+    }
+    deallocate(P);
+    cout<< "Delete Berhasil"<<endl;
     //----------------------------------------
 }
