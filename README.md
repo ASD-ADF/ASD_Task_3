@@ -1,7 +1,7 @@
-# Task_3 [2017/2018-II]
-Task 3 : Linked List Introduction
+# Task_3 [2019]
+Task 3 : Double Linked List 
 
-# DEADLINE = FEBRUARY 14TH, 2018 - 23:59
+# DEADLINE = FEBRUARY 22TH, 2018 - 23:59
 
 ## Reading Material
 * [git cheat sheet](https://education.github.com/git-cheat-sheet-education.pdf)
@@ -16,16 +16,17 @@ Task 3 : Linked List Introduction
 6. create a Pull Request
 
 
-Create a program to store and manage a data using single linear linked list
+Create a program to store and manage a data using double linear linked list
 
 
 ## TO DO
 
-### mydata.h (From Previous Task_2)
+### mydata.h
 TODO:  create a new Data type with specification:
 		- an integer variable acted as an ID
-		- two other variables
-		- a float variable
+		- string name
+		- integer rank
+		- float score
 
 
 ### mydata.cpp
@@ -40,7 +41,7 @@ You may just copy your previous result
 
 
 ### list.h
-Create ADT of single linked list
+Create ADT of double linked list
 * define a function and a procedure to allocate and deallocate an element list
   * `function allocate(in: x : infotype) : address`
   * `procedure deallocate( i/o: P : address )`
@@ -48,10 +49,10 @@ Create ADT of single linked list
 * define insert and delete procedure
   * `procedure insertFirst( i/o: L : List, i: P : address )`
   * `procedure insertLast( i/o: L : List, i: P : address )`
-  * `procedure insertAfter( i: Prec : address, P : address )`
+  * `procedure insertAfter(i/o: L : List, i: Prec : address, P : address )`
   * `procedure deleteFirst( i/o: L : List, i/o: P : address )`
   * `procedure deleteLast( i/o: L : List, i/o: P : address )`
-  * `procedure deleteAfter( i: Prec : address, i/o: P : address )`
+  * `procedure deleteAfter(i/o: L : List, i: Prec : address, i/o: P : address )`
 
 * define search-by-ID function and view procedure
   * `function findElm( i: L : List, x : infotype ) : address`
@@ -60,13 +61,17 @@ Create ADT of single linked list
 
 ### operation.h
 * define insertion procedure
-  * `procedure insertionSort( i: L : List )`<br>
-	TODO: insert an element pointed by P into an already sorted-by-ID List L, <br>
+  * `procedure insertAndSort( i: L : List, x : infotype )`<br>
+	TODO: insert a new element into an already sorted-by-ID List L, <br>
 	so that the elements inside List L is still sorted by ID<br>
-	procedure must also check if such ID is already exists (No Duplicate ID)
+	procedure must also check if such ID is already exists (No Duplicate ID)<br>
+	If new data has duplicate ID, new data is rejected.
 * define deletebyID function
-  * `procedure deletebyID( i/o : L : List, x : infotype )`
-
+  * `procedure deletebyID( i/o : L : List, x_id : integer )`<br>
+    TODO: delete an element in List based on it's ID
+* define savePassedMember procedure
+  * `savePassedMember( i/o: L : List, L2 : List )`<br>
+    TODO: move any element from List L that has score greater than 80 into List L2
   
 ### list.cpp
 Implement function and procedure defined in list.h
@@ -80,7 +85,7 @@ Create a main menu to run your application <br>
 Menu Application:
    1. insert new data
    2. print all data
-   3. find and print a data by ID
+   3. find and print a data (search by ID)
    4. edit data by ID
    5. delete data by ID
    0. exit

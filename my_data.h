@@ -14,12 +14,13 @@ struct mytype {
     /**
      TODO:  create a new Data type with specification:
             - an integer variable acted as an ID
-            - two other variables
-            - a float variable
+            - string name
+            - integer rank
+            - float score
     */
     //=================================================
     // YOUR CODE STARTS HERE
-
+    your code here
 
     // YOUR CODE ENDS HERE
     //=================================================

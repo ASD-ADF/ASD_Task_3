@@ -6,10 +6,11 @@
 using namespace std;
 
 void mainMenu();
-List L;
+List L, L_passed;
 
 int main() {
     createList(L);
+    createList(L_passed);
 
     mainMenu();
 
@@ -23,10 +24,12 @@ void mainMenu() {
     * IS : List has been created
     * PR : prints menu to user
     *       1. insert new data
-    *       2. print all data
+    *       2. print all data (List L)
     *       3. find and print a data by ID
     *       4. edit data by ID
     *       5. delete data by ID
+    *       6. separate passed member
+    *       7. print all data (List L2)
     *       0. exit
     */
     //-------------your code here-------------
@@ -34,10 +37,12 @@ void mainMenu() {
     do {
         cout<<"Menu"<<endl;
         cout<<"1. insert"<<endl;
-        cout<<"2. view data"<<endl;
+        cout<<"2. view member"<<endl;
         cout<<"3. find and view"<<endl;
         cout<<"4. find and edit"<<endl;
         cout<<"5. find and delete"<<endl;
+        cout<<"6. separate passed member"<<endl;
+        cout<<"7. view passed member"<<endl;
         cout<<"0. exit"<<endl;
         cout<<"input choice: ";
         cin>>choice;
