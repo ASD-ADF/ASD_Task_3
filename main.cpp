@@ -8,7 +8,8 @@ using namespace std;
 void mainMenu();
 List L, L_passed;
 
-int main() {
+int main()
+{
     createList(L);
     createList(L_passed);
 
@@ -17,9 +18,11 @@ int main() {
     return 0;
 }
 
-void mainMenu() {
-    address P;
+void mainMenu()
+{
+    address P, Q;
     infotype X;
+    mytype data;
     /**
     * IS : List has been created
     * PR : prints menu to user
@@ -34,7 +37,8 @@ void mainMenu() {
     */
     //-------------your code here-------------
     int choice;
-    do {
+    do
+    {
         cout<<"Menu"<<endl;
         cout<<"1. insert"<<endl;
         cout<<"2. view member"<<endl;
@@ -46,14 +50,55 @@ void mainMenu() {
         cout<<"0. exit"<<endl;
         cout<<"input choice: ";
         cin>>choice;
-        switch(choice) {
+        switch(choice)
+        {
         case 1:
             X = create_data();
             P = allocate(X);
-            insertFirst(L,P);
+            Q = findElm(L, X);
+            if (Q == NULL)
+            {
+                insertFirst(L,P);
+            }
+            else
+            {
+                cout << "ID Sudah terinput, silahkan ganti dan input kembali.\n";
+            }
+            break;
+        case 2:
+            printInfo(L);
+            break;
+        case 3:
+            cout << "Masukan ID yang dicari : ";
+            cin >> data.id;
+            P = findElm(L, data);
+            if(P == NULL)
+            {
+                cout << "ID tidak ditemukan.\n";
+            }
+            else
+            {
+                data = info(P);
+                view_data(data);
+            }
+            break;
+        case 4:
+            cout << "Masukan ID yang ingin diubah : ";
+            cin >> data.id;
+            P = findElm(L, data);
+            if (P == NULL)
+            {
+                cout << "ID tidak ditemukan.\n";
+            }
+            else
+            {
+                edit_data(data);
+                info(P) = data;
+            }
             break;
         }
-    } while(true);
+    }
+    while(choice != 0);
 
     //----------------------------------------
 }
