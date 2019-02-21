@@ -137,7 +137,7 @@ void printInfo(List L)
     */
     if (first(L) == NULL)
     {
-        cout << "Data Kosong";
+        cout << "Data Kosong \n";
     }
     else
     {
@@ -145,7 +145,7 @@ void printInfo(List L)
         while (P != NULL)
         {
             view_data(info(P));
-            next(P);
+            P = next(P);
         }
     }
 }
