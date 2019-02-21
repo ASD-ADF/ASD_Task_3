@@ -14,9 +14,25 @@ void insertAndSort(List &L, infotype x) {
     */
 
     //-------------your code here-------------
-    your code here
-
-
+    address P = allocate(x);
+    if (first(L) == NULL) {
+        insertFirst(L,P);
+    } else {
+        address Q = first(L);
+        while (info(Q).ID < info(P).ID && Q != NULL) {
+            Q = next(Q);
+        }
+        if (info(P).ID != info(Q).ID) {
+            if (Q == first(L)) {
+                insertFirst(L,P);
+            } else if (Q == NULL) {
+                insertLast(L,P);
+            } else {
+                address R = prev(Q);
+                insertAfter(L,R,P);
+            }
+        }
+    }
     //----------------------------------------
 }
 
@@ -29,9 +45,23 @@ void deletebyID(List &L, int id_x) {
 
     address Prec, P;
     //-------------your code here-------------
-    your code here
-
-
+    if (first(L) != NULL) {
+        P = first(L);
+        while (P != NULL && info(P).ID != id_x) {
+            P = next(P);
+        }
+        if (info(P).ID == id_x) {
+            if (P == first(L)) {
+                deleteFirst(L,P);
+            } else if (P == last(L)) {
+                deleteLast(L,P);
+            } else {
+                Prec = prev(P);
+                deleteAfter(L,Prec,P);
+            }
+            deallocate(P);
+        }
+    }
     //----------------------------------------
 }
 
@@ -43,8 +73,28 @@ void savePassedMember(List &L, List &L2){
     */
     address P;
     //-------------your code here-------------
-    your code here
-
-
+    if (first(L) != NULL) {
+        address Q = first(L);
+        while (Q != NULL) {
+            while (Q != NULL && info(Q).Score <= 80) {
+                Q = next(Q);
+            }
+            if (info(Q).Score > 80) {
+                P = Q;
+                Q = next(Q);
+                if (P == first(L)) {
+                    deleteFirst(L,P);
+                    insertLast(L2,P);
+                } else if (P == last(L)) {
+                    deleteLast(L,P);
+                    insertLast(L2,P);
+                } else {
+                    address Prec = prev(P);
+                    deleteAfter(L2,Prec,P);
+                    insertLast(L2,P);
+                }
+            }
+        }
+    }
     //----------------------------------------
 }
