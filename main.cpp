@@ -20,7 +20,7 @@ int main()
 
 void mainMenu()
 {
-    address P, Q;
+    address P;
     infotype X;
     mytype data;
     /**
@@ -55,15 +55,7 @@ void mainMenu()
         case 1:
             X = create_data();
             P = allocate(X);
-            Q = findElm(L, X);
-            if (Q == NULL)
-            {
-                insertFirst(L,P);
-            }
-            else
-            {
-                cout << "ID Sudah terinput, silahkan ganti dan input kembali.\n";
-            }
+            insertAndSort(L, info(P));
             break;
         case 2:
             printInfo(L);
@@ -96,6 +88,11 @@ void mainMenu()
                 info(P) = data;
             }
             break;
+/*            case 5;
+            cout << "Masukan ID yang ingin dihapus : ";
+            cin >> X.id;
+            deletebyID(L, X.id);
+            break;*/
         }
     }
     while(choice != 0);
