@@ -137,13 +137,13 @@ void printInfo(List L) {
             cout<<"Nama: "<<info(P).Name<<endl;
             cout<<"Ranking: "<<info(P).Ranking<<endl;
             cout<<"Score: "<<info(P).Score<<endl;
+            cout<<endl;
             P = next(P);
         }
-        cout<<endl;
     } else {
         cout<<"[Empty]"<<endl;
+        cout<<endl;
     }
-    cout<<endl;
     //----------------------------------------
 }
 

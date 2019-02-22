@@ -21,17 +21,24 @@ void insertAndSort(List &L, infotype x) {
         address Q = findElm(L,x);
         if (Q == NULL){
             Q = first(L);
-            while (info(Q).ID < info(P).ID && Q != NULL) {
+            while (info(Q).ID < info(P).ID && Q != last(L)) {
                 Q = next(Q);
             }
-            if (Q == first(L)) {
+            if (Q == first(L) && Q != last(L)) {
                 insertFirst(L,P);
-            } else if (Q == NULL) {
-                insertLast(L,P);
+            } else if (Q == last(L)) {
+                if (info(P).ID > info(Q).ID) {
+                    insertLast(L,P);
+                } else {
+                    address R = prev(Q);
+                    insertAfter(L,R,P);
+                }
             } else {
                 address R = prev(Q);
                 insertAfter(L,R,P);
             }
+        } else {
+            cout<<"ID already exists"<<endl;
         }
     }
     //----------------------------------------

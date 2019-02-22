@@ -46,6 +46,7 @@ void mainMenu() {
         cout<<"0. exit"<<endl;
         cout<<"input choice: ";
         cin>>choice;
+        cout<<endl;
         switch(choice) {
         case 1:
             X = create_data();
@@ -88,6 +89,7 @@ void mainMenu() {
             cout<<"Separating passed member..."<<endl;
             savePassedMember(L,L_passed);
             cout<<"Separation done."<<endl;
+            cout<<endl;
             break;
         case 7:
             cout<<"Passed Member"<<endl;
