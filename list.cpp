@@ -133,18 +133,19 @@ void printInfo(List L) {
     if (first(L) != NULL) {
         address P = first(L);
         while (P != NULL) {
-            cout<<info(P).ID<<endl;
-            cout<<info(P).Name<<endl;
-            cout<<info(P).Ranking<<endl;
-            cout<<info(P).Score<<endl;
+            cout<<"ID: "<<info(P).ID<<endl;
+            cout<<"Nama: "<<info(P).Name<<endl;
+            cout<<"Ranking: "<<info(P).Ranking<<endl;
+            cout<<"Score: "<<info(P).Score<<endl;
             P = next(P);
         }
+        cout<<endl;
     } else {
         cout<<"[Empty]"<<endl;
     }
+    cout<<endl;
     //----------------------------------------
 }
-
 
 void insertAfter(List &L, address Prec, address P) {
     /**
@@ -160,6 +161,7 @@ void insertAfter(List &L, address Prec, address P) {
     //----------------------------------------
 
 }
+
 void deleteAfter(List &L, address Prec, address &P) {
     /**
     * IS : Prec is not NULL

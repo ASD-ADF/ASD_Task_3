@@ -18,11 +18,12 @@ void insertAndSort(List &L, infotype x) {
     if (first(L) == NULL) {
         insertFirst(L,P);
     } else {
-        address Q = first(L);
-        while (info(Q).ID < info(P).ID && Q != NULL) {
-            Q = next(Q);
-        }
-        if (info(P).ID != info(Q).ID) {
+        address Q = findElm(L,x);
+        if (Q == NULL){
+            Q = first(L);
+            while (info(Q).ID < info(P).ID && Q != NULL) {
+                Q = next(Q);
+            }
             if (Q == first(L)) {
                 insertFirst(L,P);
             } else if (Q == NULL) {
@@ -46,11 +47,10 @@ void deletebyID(List &L, int id_x) {
     address Prec, P;
     //-------------your code here-------------
     if (first(L) != NULL) {
-        P = first(L);
-        while (P != NULL && info(P).ID != id_x) {
-            P = next(P);
-        }
-        if (info(P).ID == id_x) {
+        infotype x;
+        x.ID = id_x;
+        P = findElm(L,x);
+        if (P != NULL) {
             if (P == first(L)) {
                 deleteFirst(L,P);
             } else if (P == last(L)) {
@@ -60,6 +60,8 @@ void deletebyID(List &L, int id_x) {
                 deleteAfter(L,Prec,P);
             }
             deallocate(P);
+        } else {
+            cout<<"Data not found"<<endl;
         }
     }
     //----------------------------------------

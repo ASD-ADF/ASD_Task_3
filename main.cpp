@@ -49,11 +49,52 @@ void mainMenu() {
         switch(choice) {
         case 1:
             X = create_data();
-            P = allocate(X);
-            insertFirst(L,P);
+            insertAndSort(L,X);
+            break;
+        case 2:
+            cout<<"Raw Data Base"<<endl;
+            printInfo(L);
+            break;
+        case 3:
+            cout<<"Find Data"<<endl;
+            cout<<"Input ID: ";
+            cin>>X.ID;
+            P = findElm(L,X);
+            if (P != NULL) {
+                view_data(info(P));
+            } else {
+                cout<<"Data not found"<<endl;
+            }
+            break;
+        case 4:
+            cout<<"Find and Edit"<<endl;
+            cout<<"Input data ID that you want to edit: ";
+            cin>>X.ID;
+            P = findElm(L,X);
+            if (P != NULL) {
+                edit_data(info(P));
+            } else {
+                cout<<"Wrong ID"<<endl;
+            }
+            break;
+        case 5:
+            cout<<"Find and Delete"<<endl;
+            cout<<"Input data ID that you want to delete: ";
+            int id;
+            cin>>id;
+            deletebyID(L,id);
+            break;
+        case 6:
+            cout<<"Separating passed member..."<<endl;
+            savePassedMember(L,L_passed);
+            cout<<"Separation done."<<endl;
+            break;
+        case 7:
+            cout<<"Passed Member"<<endl;
+            printInfo(L_passed);
             break;
         }
-    } while(true);
+    } while(choice != 0);
 
     //----------------------------------------
 }

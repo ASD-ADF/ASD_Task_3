@@ -36,10 +36,10 @@ void view_data(mytype d) {
 
     // ===========================
     // YOUR CODE HERE
-    cout<<d.ID<<endl;
-    cout<<d.Name<<endl;
-    cout<<d.Ranking<<endl;
-    cout<<d.Score<<endl;
+    cout<<"ID: "<<d.ID<<endl;
+    cout<<"Nama: "<<d.Name<<endl;
+    cout<<"Ranking: "<<d.Ranking<<endl;
+    cout<<"Score: "<<d.Score<<endl;
     cout<<endl;
     // ===========================
 }
