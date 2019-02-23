@@ -56,9 +56,10 @@ void deletebyID(List &L, int id_x)
     * FS : an element with ID info = id_x is deleted from List L (deallocate)
     */
     address Prec, P, X;
-    infotype numpang = id_x;
-    X = allocate(numpang);
-    P = findElm(L, info(X).id);
+    mytype data;
+    cout << "Masukkan ID yang ingin dihapus : ";
+    cin >> data.id;
+    P = findElm(L, data);
     if (P == NULL)
     {
         cout << "ID tidak ditemukan.\n";
@@ -93,4 +94,13 @@ void savePassedMember(List &L, List &L2)
     * FS : any element with score greater than 80 is moved to L2
     */
     address P;
+    P = first(L);
+    while (P != NULL)
+    {
+        if (info(P).score > 80)
+        {
+            insertFirst(L2, P);
+        }
+        P = next(P);
+    }
 }

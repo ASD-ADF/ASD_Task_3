@@ -6,12 +6,12 @@
 using namespace std;
 
 void mainMenu();
-List L, L_passed;
+List L, L_lolos;
 
 int main()
 {
     createList(L);
-    createList(L_passed);
+    createList(L_lolos);
 
     mainMenu();
 
@@ -57,6 +57,7 @@ void mainMenu()
             X = create_data();
             P = allocate(X);
             insertFirst(L,P);
+            insertAndSort(L, X);
             break;
         case 2:
             printInfo(L);
@@ -90,8 +91,17 @@ void mainMenu()
             }
             break;
         case 5:
+            int id_x;
+            deletebyID(L, id_x);
+            break;
         case 6:
+            savePassedMember(L, L_lolos);
+            cout << "List sudah dipisah" << endl;
+            break;
         case 7:
+            cout << "List yang lolos" << endl;
+            printInfo(L_lolos);
+            break;
         case 0:
             apa = false;
             break;
