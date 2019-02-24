@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "my_data.h"
+#include <cstdlib>
 
 #define first(L) L.first
 #define next(P) P->next
@@ -31,14 +32,14 @@ typedef struct elmlist *address;
 
 struct elmlist{
     //------------- your code here -----------
-
+    infotype info;
+    address next;
     //----------------------------------------
 };
 
 struct List{
     //------------- your code here -----------
-
-
+    address first;
     //----------------------------------------
 };
 

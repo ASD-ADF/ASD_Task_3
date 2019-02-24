@@ -6,11 +6,11 @@
 using namespace std;
 
 void mainMenu();
-List L, L_passed;
+List L, L2;
 
 int main() {
     createList(L);
-    createList(L_passed);
+    createList(L2);
 
     mainMenu();
 
@@ -20,6 +20,7 @@ int main() {
 void mainMenu() {
     address P;
     infotype X;
+    mytype data;
     /**
     * IS : List has been created
     * PR : prints menu to user
@@ -50,7 +51,60 @@ void mainMenu() {
         case 1:
             X = create_data();
             P = allocate(X);
-            insertFirst(L,P)
+            insertFirst(L,P);
+            break;
+        case 2:
+            printInfo(L);
+            break;
+        case 3:
+            cout << "ID yang dicari : ";
+            cin >> data.id;
+            P = findElm(L, data);
+            if(P == NULL)
+            {
+                cout << "ID Not Found.";
+            }
+            else
+            {
+                data = info(P);
+                view_data(data);
+            }
+            break;
+        case 4:
+            cout << "ID yang ingin diubah : ";
+            cin >> data.id;
+            P = findElm(L, data);
+            if (P == NULL)
+            {
+                cout << "ID Not Found.";
+            }
+            else
+            {
+                edit_data(data);
+                info(P) = data;
+            }
+            break;
+        case 5:
+            if(first(L)!=NULL){
+                cout << " Delete ID : ";
+                cin >> X.id;
+                cout<<endl;
+                deletebyID(L,X);
+                cout<<"Data Deleted"<<endl;
+            }else{
+                cout<<"List is Empty"<<endl;
+            }
+            break;
+        case 6:
+            savePassedMember(L,L2);
+            break;
+        case 7:
+            cout<<"Passed Member : ";
+            printInfo(L2);
+            break;
+        case 0:
+            cout<<"EXIT..."<<endl;
+            exit(1);
             break;
         }
     } while(true);

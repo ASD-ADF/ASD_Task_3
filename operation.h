@@ -5,7 +5,7 @@
 
 void insertAndSort(List &L, infotype x);
 
-void deletebyID(List &L, int id_x);
+void deletebyID(List &L, infotype x);
 
 void savePassedMember(List &L, List &L2);
 
