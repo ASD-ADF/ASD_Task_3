@@ -13,38 +13,45 @@ void insertAndSort(List &L, infotype x)
     *      If new data has duplicate ID, new data is rejected.
     * FS : elements in List L sorted by ID, P is inside List L
     */
-    address C, P, Prec;
-    P = findElm(L, x);
-    C = first(L);
-    Prec = first(L);
-    while (next(C) != NULL)
+    address P;
+    P = allocate(x);
+    if (first(L)== NULL)
     {
-        C = next(C);
-    }
-    if (P != NULL)
-    {
-        cout << "Duplikat";
-    }
-    else if (first(L) == NULL)
-    {
-        insertFirst(L, P);
-    }
-    else if (info(P).id <= info(first(L)).id)
-    {
-        insertFirst(L, P);
-    }
-    else if (info(P).id >= info(C).id)
-    {
-        insertLast(L, P);
+        insertFirst(L,P);
     }
     else
     {
-        Prec = first(L);
-        while (info(Prec).id <= info(P).id)
+        address Q = findElm(L, info(P));
+        if (Q == NULL)
         {
-            Prec = next(Prec);
+            address last = first(L);
+            while (next(last)!= NULL)
+            {
+                last = next(last);
+            }
+
+            if (info(P).id <= info(first(L)).id)
+            {
+                insertFirst(L,P);
+            }
+            else if (info(P).id >= info(last).id)
+            {
+                insertLast(L,P);
+            }
+            else
+            {
+                Q = first(L);
+                while (info(next(Q)).id < info(P).id)
+                {
+                    Q = next(Q);
+                }
+                insertAfter(L,Q,P);
+            }
         }
-        insertAfter(L, Prec, P);
+        else
+        {
+            cout << "Duplikat";
+        }
     }
 }
 
@@ -55,11 +62,10 @@ void deletebyID(List &L, int id_x)
     * IS : List L may be empty
     * FS : an element with ID info = id_x is deleted from List L (deallocate)
     */
-    address Prec, P, X;
-    mytype data;
-    cout << "Masukkan ID yang ingin dihapus : ";
-    cin >> data.id;
-    P = findElm(L, data);
+    address Prec, P;
+    infotype x;
+    x.id = id_x;
+    P = findElm(L, x);
     if (P == NULL)
     {
         cout << "ID tidak ditemukan.\n";

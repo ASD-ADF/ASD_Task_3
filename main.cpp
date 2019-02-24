@@ -6,12 +6,12 @@
 using namespace std;
 
 void mainMenu();
-List L, L_lolos;
+List L, L_passed;
 
 int main()
 {
     createList(L);
-    createList(L_lolos);
+    createList(L_passed);
 
     mainMenu();
 
@@ -55,15 +55,13 @@ void mainMenu()
         {
         case 1:
             X = create_data();
-            P = allocate(X);
-            insertFirst(L,P);
             insertAndSort(L, X);
             break;
         case 2:
             printInfo(L);
             break;
         case 3:
-            cout << "Masukkan ID yang ingin dicari : ";
+            cout << "Masukkan ID dari data yang ingin dicari : ";
             cin >> data.id;
             P = findElm(L, data);
             if (P == NULL)
@@ -77,7 +75,7 @@ void mainMenu()
             }
             break;
         case 4:
-            cout << "Masukkan data yang ingin diubah : ";
+            cout << "Masukkan ID dari data yang ingin diubah : ";
             cin >> data.id;
             P = findElm(L, data);
             if (P == NULL)
@@ -91,17 +89,14 @@ void mainMenu()
             }
             break;
         case 5:
-            int id_x;
-            deletebyID(L, id_x);
-            break;
+            cout << "Masukkan ID dari data yang ingin dihapus : ";
+            cin >> data.id;
+            deletebyID(L, data.id);
         case 6:
-            savePassedMember(L, L_lolos);
-            cout << "List sudah dipisah" << endl;
-            break;
+            savePassedMember(L, L_passed);
+            cout << "List sudah di update"<< endl;
         case 7:
-            cout << "List yang lolos" << endl;
-            printInfo(L_lolos);
-            break;
+            printInfo(L_passed);
         case 0:
             apa = false;
             break;
