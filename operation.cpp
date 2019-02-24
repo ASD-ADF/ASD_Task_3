@@ -13,39 +13,7 @@ void insertAndSort(List &L, infotype x)
     *      If new data has duplicate ID, new data is rejected.
     * FS : elements in List L sorted by ID, P is inside List L
     */
-    address C, P, Prec;
-    P = findElm(L, x);
-    C = first(L);
-    Prec = first(L);
-    while (next(C) != NULL)
-    {
-        C = next(C);
-    }
-    if (P != NULL)
-    {
-        cout << "Duplikat";
-    }
-    else if (first(L) == NULL)
-    {
-        insertFirst(L, P);
-    }
-    else if (info(P).id <= info(first(L)).id)
-    {
-        insertFirst(L, P);
-    }
-    else if (info(P).id >= info(C).id)
-    {
-        insertLast(L, P);
-    }
-    else
-    {
-        Prec = first(L);
-        while (info(Prec).id <= info(P).id)
-        {
-            Prec = next(Prec);
-        }
-        insertAfter(L, Prec, P);
-    }
+
 }
 
 
@@ -55,7 +23,7 @@ void deletebyID(List &L, int id_x)
     * IS : List L may be empty
     * FS : an element with ID info = id_x is deleted from List L (deallocate)
     */
-    address Prec, P, X;
+    address Prec, P;
     mytype data;
     cout << "Masukkan ID yang ingin dihapus : ";
     cin >> data.id;
