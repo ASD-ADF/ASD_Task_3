@@ -66,7 +66,7 @@
 1550746959 source:d:\kuliah\semester 2\struktur data\asd_task_3\my_data.cpp
 	"my_data.h"
 
-1551000799 source:d:\kuliah\semester 2\struktur data\asd_task_3\main.cpp
+1550750540 source:d:\kuliah\semester 2\struktur data\asd_task_3\main.cpp
 	<iostream>
 	"list.h"
 	"operation.h"
@@ -75,7 +75,7 @@
 1550394481 d:\kuliah\semester 2\struktur data\asd_task_3\operation.h
 	"list.h"
 
-1551000881 source:d:\kuliah\semester 2\struktur data\asd_task_3\operation.cpp
+1550868368 source:d:\kuliah\semester 2\struktur data\asd_task_3\operation.cpp
 	"list.h"
 	"operation.h"
 	"my_data.h"

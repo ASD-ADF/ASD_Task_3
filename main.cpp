@@ -55,6 +55,8 @@ void mainMenu()
         {
         case 1:
             X = create_data();
+            P = allocate(X);
+            insertFirst(L,P);
             insertAndSort(L, X);
             break;
         case 2:
