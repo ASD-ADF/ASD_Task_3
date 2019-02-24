@@ -54,8 +54,7 @@ void mainMenu()
         {
         case 1:
             X = create_data();
-            P = allocate(X);
-            insertAndSort(L, info(P));
+            insertAndSort(L, X);
             break;
         case 2:
             printInfo(L);
@@ -88,11 +87,18 @@ void mainMenu()
                 info(P) = data;
             }
             break;
-/*            case 5;
+        case 5:
             cout << "Masukan ID yang ingin dihapus : ";
-            cin >> X.id;
-            deletebyID(L, X.id);
-            break;*/
+            cin >> data.id;
+            deletebyID(L, data.id);
+            break;
+        case 6:
+            savePassedMember(L, L_passed);
+            cout << "Update List > 80" << endl;
+            break;
+        case 7:
+            printInfo(L_passed);
+            break;
         }
     }
     while(choice != 0);

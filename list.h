@@ -24,8 +24,6 @@ using namespace std;
 *
 **/
 
-
-
 typedef mytype infotype;
 typedef struct elmlist *address;
 

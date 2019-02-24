@@ -76,18 +76,18 @@ address findElm(List L, infotype x)
     */
 
     address P = first(L);
-    if (P != NULL)
+    if (first(L) != NULL)
     {
-        while (next(P) != NULL)
+        while ((next(P) != NULL) && (info(P).id != x.id))
         {
-            if (info(P).id = x.id)
-            {
-                return P;
-            }
             P = next(P);
         }
+        if (info(P).id == x.id)
+        {
+            return P;
+        }
     }
-    return P;
+    return NULL;
 }
 
 void deleteFirst(List &L, address &P)
