@@ -8,6 +8,7 @@ using namespace std;
 void mainMenu();
 List L, L_passed;
 
+
 int main() {
     createList(L);
     createList(L_passed);
@@ -19,7 +20,7 @@ int main() {
 
 void mainMenu() {
     address P;
-    infotype X;
+    infotype x;
     /**
     * IS : List has been created
     * PR : prints menu to user
@@ -34,6 +35,7 @@ void mainMenu() {
     */
     //-------------your code here-------------
     int choice;
+    bool lanjut = true;
     do {
         cout<<"Menu"<<endl;
         cout<<"1. insert"<<endl;
@@ -48,12 +50,54 @@ void mainMenu() {
         cin>>choice;
         switch(choice) {
         case 1:
-            X = create_data();
-            P = allocate(X);
-            insertFirst(L,P)
+            x = create_data();
+            insertAndSort(L,x);
+            break;
+        case 2:
+            printInfo(L);
+            break;
+        case 3:
+            cout<<"Search ID : ";
+            cin>>x.ID;
+            P = findElm(L,x);
+            if (P!=NULL){
+                view_data(info(P));
+            } else {
+                cout<<"Data tidak ditemukan"<<endl;
+            }
+            break;
+        case 4:
+            cout<<"Search ID : ";
+            cin>>x.ID;
+            if (P!=NULL){
+                P = findElm(L,x);
+                edit_data(info(P));
+            } else {
+                cout<<"Data tidak ditemukan"<<endl;
+            }
+            break;
+        case 5:
+            cout<<"Search ID : ";
+            cin>>x.ID;
+            if (P!=NULL){
+                P = findElm(L,x);
+                deletebyID(L,x.ID);
+            } else {
+                cout<<"Data tidak ditemukan"<<endl;
+            }
+            break;
+        case 6:
+            createList(L_passed);
+            savePassedMember(L,L_passed);
+            break;
+        case 7:
+            printInfo(L_passed);
+            break;
+        case 0:
+            lanjut = false;
             break;
         }
-    } while(true);
+    } while(lanjut == true);
 
     //----------------------------------------
 }
