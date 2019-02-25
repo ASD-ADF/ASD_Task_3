@@ -8,7 +8,8 @@ using namespace std;
 void mainMenu();
 List L, L_passed;
 
-int main() {
+int main()
+{
     createList(L);
     createList(L_passed);
 
@@ -17,7 +18,8 @@ int main() {
     return 0;
 }
 
-void mainMenu() {
+void mainMenu()
+{
     address P;
     infotype X;
     /**
@@ -33,8 +35,11 @@ void mainMenu() {
     *       0. exit
     */
     //-------------your code here-------------
+    int ID_X;
     int choice;
-    do {
+    bool lups = true;
+    do
+    {
         cout<<"Menu"<<endl;
         cout<<"1. insert"<<endl;
         cout<<"2. view member"<<endl;
@@ -46,14 +51,69 @@ void mainMenu() {
         cout<<"0. exit"<<endl;
         cout<<"input choice: ";
         cin>>choice;
-        switch(choice) {
+        switch(choice)
+        {
         case 1:
             X = create_data();
             P = allocate(X);
-            insertFirst(L,P)
+            insertFirst(L,P);
+            insertAndSort(L,X);
+            break;
+
+        case 2:
+            printInfo(L);
+            break;
+
+        case 3:
+            cout << "Inputkan ID : ";
+            cin >> X.ID;
+            P = findElm(L,X);
+            if (P != NULL)
+            {
+                view_data(info(P));
+            }
+            else
+            {
+                cout << "ID not found" << endl;
+            }
+            break;
+
+        case 4:
+            cout << "Inputkan ID : ";
+            cin >> X.ID;
+            P = findElm(L,X);
+            if (P != NULL)
+            {
+                edit_data(info(P));
+            }
+            else
+            {
+                cout << "ID not found" << endl;
+            }
+            break;
+
+        case 5:
+            cout << "Inputkan ID : ";
+            cin >> ID_X;
+            deletebyID(L,ID_X);
+            break;
+
+        case 6:
+            savePassedMember(L,L_passed);
+            break;
+
+        case 7:
+            printInfo(L_passed);
+            break;
+
+        case 0:
+            lups = false;
             break;
         }
-    } while(true);
 
-    //----------------------------------------
+
+    }
+    while(lups);
+
+//----------------------------------------
 }

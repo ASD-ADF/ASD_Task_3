@@ -5,8 +5,10 @@
 #include "my_data.h"
 
 #define first(L) L.first
+#define last(L) L.last
 #define next(P) P->next
 #define info(P) P->info
+#define prev(P) P->prev
 
 using namespace std;
 
@@ -29,15 +31,21 @@ using namespace std;
 typedef mytype infotype;
 typedef struct elmlist *address;
 
-struct elmlist{
+struct elmlist
+{
     //------------- your code here -----------
+    infotype info;
+    address next;
+    address prev;
 
     //----------------------------------------
 };
 
-struct List{
+struct List
+{
     //------------- your code here -----------
-
+    address first;
+    address last;
 
     //----------------------------------------
 };

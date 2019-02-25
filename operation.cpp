@@ -3,7 +3,8 @@
 #include "my_data.h"
 
 
-void insertAndSort(List &L, infotype x) {
+void insertAndSort(List &L, infotype x)
+{
     /**
     * IS : List may be empty
     * PR : insert a new element into an already sorted-by-ID List L
@@ -13,38 +14,104 @@ void insertAndSort(List &L, infotype x) {
     * FS : elements in List L sorted by ID, P is inside List L
     */
 
-    //-------------your code here-------------
-    your code here
+    //------------- -------------
+    if (first(L) != NULL)
+    {
+        address Q = findElm(L,x);
+        if (Q == NULL)
+        {
+            address P = allocate(x);
+            if (info(P).ID < info(first(L)).ID)
+            {
+                insertFirst(L,P);
+            }
+            else if (info(P).ID > info(last(L)).ID)
+            {
+                insertLast(L,P);
+            }
+            else
+            {
+                Q = first(L);
+                while ((next(Q) != NULL) && (info(next(Q)).ID < info(P).ID))
+                {
+                    Q = next(Q);
+                }
+                insertAfter(L,Q,P);
+            }
+        }
+    }
+    else
+    {
+        address P = allocate(x);
+        insertFirst(L, P);
+    }
 
 
     //----------------------------------------
 }
 
 
-void deletebyID(List &L, int id_x) {
+void deletebyID(List &L, int id_x)
+{
     /**
     * IS : List L may be empty
     * FS : an element with ID info = id_x is deleted from List L (deallocate)
     */
 
     address Prec, P;
-    //-------------your code here-------------
-    your code here
-
+    //------------- -------------
+    infotype x;
+    x.ID = id_x;
+    P = findElm(L,x);
+    if (P != NULL)
+    {
+        if (P == first(L))
+        {
+            deleteFirst(L,P);
+        }
+        else if (P == last(L))
+        {
+            deleteLast(L,P);
+        }
+        else
+        {
+            Prec = prev(P);
+            deleteAfter(L,Prec,P);
+        }
+        deallocate(P);
+    }
+    else
+    {
+        cout << "ID NOT FOUND" << endl;
+    }
 
     //----------------------------------------
 }
 
 
-void savePassedMember(List &L, List &L2){
+void savePassedMember(List &L, List &L2)
+{
     /**
     * IS : List L and L2 may be empty
     * FS : any element with score greater than 80 is moved to L2
     */
     address P;
-    //-------------your code here-------------
-    your code here
-
+    //------------- -------------
+    List temp;
+    createList(temp);
+    while (first(L) != NULL)
+    {
+        deleteFirst(L, P);
+        if (info(P).score > 80)
+        {
+            insertLast(L2,P);
+        }
+        else
+        {
+            insertLast(temp,P);
+        }
+    }
+    L = temp;
 
     //----------------------------------------
 }
