@@ -7,9 +7,10 @@
 #define first(L) L.first
 #define next(P) P->next
 #define info(P) P->info
+#define last(L) L.last
+#define prev(P) P->prev
 
 using namespace std;
-
 
 /**
 * Type infotype : mytype
@@ -31,17 +32,16 @@ typedef struct elmlist *address;
 
 struct elmlist{
     //------------- your code here -----------
-
+    mytype info;
+    address next;
     //----------------------------------------
 };
 
 struct List{
     //------------- your code here -----------
-
-
+    address first;
     //----------------------------------------
 };
-
 
 
 // define a function and a procedure to allocate and deallocate an element list
@@ -60,6 +60,4 @@ void deleteAfter(List&L, address Prec, address &P);
 // define search-by-ID function and view procedure
 address findElm(List L, infotype x);
 void printInfo(List L);
-
-
 #endif // LIST_H_INCLUDED
