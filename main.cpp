@@ -20,6 +20,8 @@ int main() {
 void mainMenu() {
     address P;
     infotype X;
+    int ID_X;
+    bool loop = true;
     /**
     * IS : List has been created
     * PR : prints menu to user
@@ -49,11 +51,47 @@ void mainMenu() {
         switch(choice) {
         case 1:
             X = create_data();
-            P = allocate(X);
-            insertFirst(L,P)
+            insertAndSort(L, X);
+            break;
+        case 2:
+            printInfo(L);
+            break;
+        case 3:
+            cout << "Input ID : ";
+            cin >> X.ID;
+            P = findElm(L, X);
+            if (P!=NULL) {
+                view_data(info(P));
+            } else {
+                cout << "ID not found" << endl;
+            }
+            break;
+        case 4:
+            cout << "Input ID : ";
+            cin >> X.ID;
+            P = findElm(L, X);
+            if (P!=NULL) {
+                edit_data(info(P));
+            } else {
+                cout << "ID not found" << endl;
+            }
+            break;
+        case 5:
+            cout << "Input ID : ";
+            cin >> ID_X;
+            deletebyID(L, ID_X);
+            break;
+        case 6:
+            savePassedMember(L, L_passed);
+            break;
+        case 7:
+            printInfo(L_passed);
+            break;
+        case 0:
+            loop = false;
             break;
         }
-    } while(true);
+    } while(loop);
 
     //----------------------------------------
 }
