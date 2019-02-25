@@ -14,8 +14,34 @@ void insertAndSort(List &L, infotype x) {
     */
 
     //-------------your code here-------------
-    your code here
-
+    //your code here
+    address P;
+    address Q;
+    P = allocate(x);
+    if(first(L) == NULL) {
+        insertFirst(L,P);
+    } else {
+        Q = findElm(L,info(P));
+        if (Q == NULL) {
+            address last = first(L);
+            while (next(last) != NULL) {
+                last = next(last);
+            }
+            if(info(P).id <= info(first(L)).id) {
+                insertFirst(L,P);
+            } else if (info(P).id >= info(first(L)).id) {
+                insertLast(L,P);
+            } else {
+                Q = first(L);
+                while (info(next(Q)).id < info(P).id) {
+                    Q = next(Q);
+                }
+                insertAfter(L,Q,P);
+            }
+        } else {
+            cout<<"ID Duplikat"<<endl;
+        }
+    }
 
     //----------------------------------------
 }
@@ -29,22 +55,48 @@ void deletebyID(List &L, int id_x) {
 
     address Prec, P;
     //-------------your code here-------------
-    your code here
-
+    //your code here
+    infotype x;
+    x.id = id_x;
+    P = findElm(L,x);
+    if (first(L) != NULL) {
+        if (P==first(L)) {
+            deleteFirst(L,P);
+            deallocate(P);
+        } else if(next(P)==NULL) {
+            deleteLast(L,P);
+            deallocate(P);
+        } else {
+            Prec = first(L);
+            while(next(Prec) != P) {
+                Prec = next(Prec);
+            }
+            deleteAfter(L,Prec,P);
+        }
+    }
 
     //----------------------------------------
 }
 
 
-void savePassedMember(List &L, List &L2){
+void savePassedMember(List &L, List &L2) {
     /**
     * IS : List L and L2 may be empty
     * FS : any element with score greater than 80 is moved to L2
     */
     address P;
     //-------------your code here-------------
-    your code here
-
-
+    //your code here
+    List Ltmp;
+    createList(Ltmp);
+    while (first(L) != NULL) {
+        deleteFirst(L,P);
+        if (info(P).score > 80) {
+            insertAndSort(L2,info(P));
+        } else {
+            insertAndSort(Ltmp,info(P));
+        }
+    }
+    L = Ltmp;
     //----------------------------------------
 }

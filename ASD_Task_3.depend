@@ -52,3 +52,31 @@
 	"operation.h"
 	"my_data.h"
 
+1551113422 source:c:\users\ajeung\downloads\asd_task_3\operation.cpp
+	"list.h"
+	"operation.h"
+	"my_data.h"
+
+1551110893 c:\users\ajeung\downloads\asd_task_3\list.h
+	<iostream>
+	"my_data.h"
+
+1551105225 c:\users\ajeung\downloads\asd_task_3\my_data.h
+	<iostream>
+
+1550992119 c:\users\ajeung\downloads\asd_task_3\operation.h
+	"list.h"
+
+1551107768 source:c:\users\ajeung\downloads\asd_task_3\my_data.cpp
+	"my_data.h"
+
+1551113422 source:c:\users\ajeung\downloads\asd_task_3\main.cpp
+	<iostream>
+	"list.h"
+	"operation.h"
+	"my_data.h"
+
+1551113422 source:c:\users\ajeung\downloads\asd_task_3\list.cpp
+	"list.h"
+	"my_data.h"
+

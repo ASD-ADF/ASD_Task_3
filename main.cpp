@@ -19,7 +19,8 @@ int main() {
 
 void mainMenu() {
     address P;
-    infotype X;
+    infotype x;
+    bool lanjut = true;
     /**
     * IS : List has been created
     * PR : prints menu to user
@@ -48,12 +49,54 @@ void mainMenu() {
         cin>>choice;
         switch(choice) {
         case 1:
-            X = create_data();
-            P = allocate(X);
-            insertFirst(L,P)
+            x = create_data();
+            insertAndSort(L,x);
+            break;
+        case 2:
+            printInfo(L);
+            break;
+        case 3:
+            cout<<"ID : ";
+            cin>>x.id;
+            P = findElm(L,x);
+            if (P != NULL){
+                view_data(info(P));
+            } else {
+                cout<<"Data tidak ada"<<endl;
+            }
+            break;
+        case 4:
+            cout<<"ID : ";
+            cin>>x.id;
+            if (P != NULL){
+                P = findElm(L,x);
+                edit_data(info(P));
+            } else {
+                cout<<"Data tidak ada"<<endl;
+            }
+            break;
+        case 5:
+            cout<<"ID : ";
+            cin>>x.id;
+            if (P != NULL){
+                P = findElm(L,x);
+                deletebyID(L,x.id);
+            } else {
+                cout<<"Data tidak ada"<<endl;
+            }
+            break;
+        case 6:
+            createList(L_passed);
+            savePassedMember(L,L_passed);
+            break;
+        case 7:
+            printInfo(L_passed);
+            break;
+        case 0:
+            lanjut = false;
             break;
         }
-    } while(true);
+    } while(lanjut == true);
 
     //----------------------------------------
 }
