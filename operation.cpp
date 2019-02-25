@@ -82,28 +82,16 @@ void savePassedMember(List &L, List &L2){
     */
     address P;
     //-------------your code here-------------
-    if (first(L) != NULL) {
-        address Q = first(L);
-        while (Q != NULL) {
-            while (Q != NULL && info(Q).Score <= 80) {
-                Q = next(Q);
-            }
-            if (info(Q).Score > 80) {
-                P = Q;
-                Q = next(Q);
-                if (P == first(L)) {
-                    deleteFirst(L,P);
-                    insertLast(L2,P);
-                } else if (P == last(L)) {
-                    deleteLast(L,P);
-                    insertLast(L2,P);
-                } else {
-                    address Prec = prev(P);
-                    deleteAfter(L2,Prec,P);
-                    insertLast(L2,P);
-                }
-            }
+    List LTemp;
+    createList(LTemp);
+    while (first(L) != NULL) {
+        deleteFirst(L,P);
+        if (info(P).Score > 80) {
+            insertAndSort(L2,info(P));
+        } else {
+            insertAndSort(LTemp,info(P));
         }
     }
+    L = LTemp;
     //----------------------------------------
 }
