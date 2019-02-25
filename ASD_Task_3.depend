@@ -52,3 +52,31 @@
 	"operation.h"
 	"my_data.h"
 
+1551106303 source:d:\sayangstrukdat\asd_task_3\my_data.cpp
+	"my_data.h"
+
+1551104720 d:\sayangstrukdat\asd_task_3\my_data.h
+	<iostream>
+
+1551105626 source:d:\sayangstrukdat\asd_task_3\list.cpp
+	"list.h"
+	"my_data.h"
+
+1551104338 d:\sayangstrukdat\asd_task_3\list.h
+	<iostream>
+	"my_data.h"
+
+1551107021 source:d:\sayangstrukdat\asd_task_3\main.cpp
+	<iostream>
+	"list.h"
+	"operation.h"
+	"my_data.h"
+
+1551024998 d:\sayangstrukdat\asd_task_3\operation.h
+	"list.h"
+
+1551104918 source:d:\sayangstrukdat\asd_task_3\operation.cpp
+	"list.h"
+	"operation.h"
+	"my_data.h"
+

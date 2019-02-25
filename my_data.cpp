@@ -14,11 +14,14 @@ mytype create_data() {
     */
     mytype d;
     // ===========================
-    // YOUR CODE HERE
-    your code here
-
-
-
+    cout << "masukkan id : ";
+    cin >> d.id;
+    cout<<"masukkan nama: ";
+    cin>>d.name;
+    cout<< "masukkan rank: ";
+    cin>>d.rank;
+    cout<< "masukkan score: ";
+    cin>>d.score;
 
     // ===========================
     return d;
@@ -31,12 +34,10 @@ void view_data(mytype d) {
     */
 
     // ===========================
-    // YOUR CODE HERE
-    your code here
-
-
-
-
+    cout << "id : " << d.id << endl;
+    cout << "nama :" <<d.name<<endl;
+    cout << "rank :" << d.rank<<endl;
+    cout <<"score:" << d.score <<endl;
     // ===========================
 }
 
@@ -49,12 +50,12 @@ void edit_data(mytype &d) {
     */
 
     // ===========================
-    // YOUR CODE HERE
-        your code here
-
-
-
-
+    cout << "nama : ";
+    cin >> d.name ;
+    cout << "rank :";
+    cin >>d.rank;
+    cout << "score:";
+    cin>> d.score;
     // ===========================
 }
 

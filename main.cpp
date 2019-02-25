@@ -20,6 +20,7 @@ int main() {
 void mainMenu() {
     address P;
     infotype X;
+    mytype data;
     /**
     * IS : List has been created
     * PR : prints menu to user
@@ -50,7 +51,50 @@ void mainMenu() {
         case 1:
             X = create_data();
             P = allocate(X);
-            insertFirst(L,P)
+            insertFirst(L,P);
+            break;
+        case 2:
+            printInfo(L);
+            break;
+        case 3:
+            cout << "id : ";
+            cin >> data.id;
+            P = findElm(L, data);
+            if(P == NULL)
+            {
+                cout << "tidak ditemukan.\n";
+            }
+            else
+            {
+                data = info(P);
+                view_data(data);
+            }
+            break;
+        case 4:
+            cout << "id : ";
+            cin >> data.id;
+            P = findElm(L, data);
+            if (P == NULL)
+            {
+                cout << "tidak ditemukan.\n";
+            }
+            else
+            {
+                edit_data(data);
+                info(P) = data;
+            }
+            break;
+        case 5:
+            cout << "id : ";
+            cin >> data.id;
+            deletebyID(L, data.id);
+            break;
+        case 6:
+            savePassedMember(L, L_passed);
+            cout << "dipisahkan" << endl;
+            break;
+        case 7:
+            printInfo(L_passed);
             break;
         }
     } while(true);
