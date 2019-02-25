@@ -13,14 +13,14 @@ mytype create_data() {
             and assign the value of new data
     */
     mytype d;
-    // ===========================
-    // YOUR CODE HERE
-    your code here
-
-
-
-
-    // ===========================
+    cout << "Input ID : ";
+    cin >> d.id;
+    cout << "Input Nama : ";
+    cin >> d.name;
+    cout << "Input Rank : ";
+    cin >> d.rank;
+    cout << "Input Score : ";
+    cin >> d.score;
     return d;
 }
 
@@ -30,14 +30,10 @@ void view_data(mytype d) {
      it will be called when print_info function is invoked
     */
 
-    // ===========================
-    // YOUR CODE HERE
-    your code here
-
-
-
-
-    // ===========================
+    cout<<"ID : "<<d.id<<endl;
+    cout<<"NAME : "<<d.name<<endl;
+    cout<<"RANK : "<<d.rank<<endl;
+    cout<<"SCORE : "<<d.score<<endl;
 }
 
 
@@ -47,14 +43,9 @@ void edit_data(mytype &d) {
      *       receive input FROM USER
      *       the ID must NOT be modified
     */
-
-    // ===========================
-    // YOUR CODE HERE
-        your code here
-
-
-
-
-    // ===========================
+    cout<<"ID : ";cin>>d.id;cout<<endl;
+    cout<<"NAME : ";cin>>d.name;cout<<endl;
+    cout<<"RANK : ";cin>>d.rank;cout<<endl;
+    cout<<"SCORE : ";cin>>d.score;cout<<endl;
 }
 

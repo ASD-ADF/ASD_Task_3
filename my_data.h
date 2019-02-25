@@ -18,12 +18,9 @@ struct mytype {
             - integer rank
             - float score
     */
-    //=================================================
-    // YOUR CODE STARTS HERE
-    your code here
-
-    // YOUR CODE ENDS HERE
-    //=================================================
+    int id, rank;
+    string name;
+    float score;
 };
 
 
