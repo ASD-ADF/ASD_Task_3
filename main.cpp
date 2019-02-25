@@ -7,6 +7,7 @@ using namespace std;
 
 void mainMenu();
 List L, L_passed;
+mytype data;
 
 int main() {
     createList(L);
@@ -34,6 +35,7 @@ void mainMenu() {
     */
     //-------------your code here-------------
     int choice;
+    bool exit = true;
     do {
         cout<<"Menu"<<endl;
         cout<<"1. insert"<<endl;
@@ -50,10 +52,47 @@ void mainMenu() {
         case 1:
             X = create_data();
             P = allocate(X);
-            insertFirst(L,P)
+            insertAndSort(L,X);
+            break;
+        case 2:
+            printInfo(L);
+            break;
+        case 3:
+            cout << "Masukkan ID dari data yang ingin dicari : ";
+            cin >> data.ID;
+            P = findElm(L, data);
+            if (P != NULL){
+                view_data(info(P));
+            }else{
+                cout << "ID tidak ditemukan." << endl;
+            }
+            break;
+        case 4:
+            cout << "Masukkan ID dari data yang ingin diubah : ";
+            cin >> data.ID;
+            P = findElm(L, data);
+            if (P != NULL){
+                edit_data(info(P));
+            }else{
+                cout << "ID tidak ditemukan." << endl;
+            }
+            break;
+        case 5:
+            cout << "Masukkan ID dari data yang ingin dihapus : ";
+            cin >> data.ID;
+            deletebyID(L, data.ID);
+            break;
+        case 6:
+            savePassedMember(L, L_passed);
+            break;
+        case 7:
+            printInfo(L_passed);
+            break;
+        case 0:
+            exit = false;
             break;
         }
-    } while(true);
+    } while(exit);
 
     //----------------------------------------
 }
