@@ -18,7 +18,7 @@ int main() {
 }
 
 void mainMenu() {
-    address P;
+    address P,Prec;
     infotype X;
     /**
     * IS : List has been created
@@ -46,12 +46,61 @@ void mainMenu() {
         cout<<"0. exit"<<endl;
         cout<<"input choice: ";
         cin>>choice;
+        cout<<endl;
         switch(choice) {
         case 1:
             X = create_data();
             P = allocate(X);
-            insertFirst(L,P)
+            insertFirst(L,P);
+            cout << endl<<endl;
             break;
+        case 2:
+            cout<<endl;
+            cout << "======================================="<<endl;
+            printInfo(L);
+            cout << "======================================="<<endl;
+            cout <<endl<<endl;
+            break;
+        case 3 :
+            cout << "======================================="<<endl;
+            cout << "Masukkan Data yang ingin Dicari : ";
+            cin >> X.ID;
+            P=findElm(L,X);
+            cout << "======================================="<<endl;
+            view_data(info(P));
+            cout << "======================================="<<endl;
+            cout<<endl<<endl;
+            break;
+        case 4:
+            cout << "Masukkan ID Data yang ingin Diubah : ";
+            cin >> X.ID;
+            cout << "======================================="<<endl;
+            P=findElm(L,X);
+            cout << "======================================="<<endl;
+            edit_data(info(P));
+            cout << "======================================="<<endl;
+            cout << "Hasil Data setelah Diubah : "<<endl;
+            view_data(info(P));
+            cout << "======================================="<<endl;
+            break;
+        case 5:
+            cout << "Masukkan Data yang ingin Di Delete : ";
+            cin >> X.ID;
+            cout << "======================================="<<endl;
+            deletebyID(L,X);
+            cout << "======================================="<<endl;
+            break;
+        case 6:
+            savePassedMember(L,L_passed);
+            cout<<endl;
+        case 7:
+            cout <<  "Passe member : ";
+            printInfo(L_passed);
+            cout<<endl;
+        case 0:
+            exit(1);
+            break;
+
         }
     } while(true);
 

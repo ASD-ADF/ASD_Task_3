@@ -20,7 +20,10 @@ struct mytype {
     */
     //=================================================
     // YOUR CODE STARTS HERE
-    your code here
+    int ID;
+    string name;
+    int ranking;
+    float score;
 
     // YOUR CODE ENDS HERE
     //=================================================
