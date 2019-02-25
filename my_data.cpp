@@ -2,9 +2,9 @@
 #include "my_data.h"
 
 /**
-    CLASS      :
-    NAME       :
-    STUDENT ID :
+    CLASS      : IF-42-04
+    NAME       : DJAFAR SHIDDIEQ RITONGA
+    STUDENT ID : 1301184367
 **/
 
 mytype create_data() {
@@ -15,10 +15,16 @@ mytype create_data() {
     mytype d;
     // ===========================
     // YOUR CODE HERE
-    your code here
 
-
-
+    cout<<"[INPUT DATA]"<<endl;
+    cout<<"ID       : ";
+    cin>>d.ID;
+    cout<<"Name     : ";
+    cin>>d.Name;
+    cout<<"Rank     : ";
+    cin>>d.Rank;
+    cout<<"Score    : ";
+    cin>>d.score;
 
     // ===========================
     return d;
@@ -32,10 +38,12 @@ void view_data(mytype d) {
 
     // ===========================
     // YOUR CODE HERE
-    your code here
 
-
-
+    cout<<"[DATA FOUND!]"<<endl;
+    cout<<"ID       : "<<d.ID<<endl;
+    cout<<"Name     : "<<d.Name<<endl;
+    cout<<"Rank     : "<<d.Rank<<endl;
+    cout<<"Score    : "<<d.score<<endl;
 
     // ===========================
 }
@@ -50,10 +58,20 @@ void edit_data(mytype &d) {
 
     // ===========================
     // YOUR CODE HERE
-        your code here
 
+    cout<<"[EDIT DATA]"<<endl;
+    cout<<"ID       : "<<d.ID<<endl;
+    cout<<"Name     : "<<d.Name<<" (Before changes)"<<endl;
+    cout<<"Rank     : "<<d.Rank<<" (Before changes)"<<endl;
+    cout<<"Score    : "<<d.score<<" (Before changes)"<<endl;
 
-
+    cout<<"[INSERT NEW CHANGES]"<<endl;
+    cout<<"Name     : ";
+    cin>>d.Name;
+    cout<<"Rank     : ";
+    cin>>d.Rank;
+    cout<<"Score    : ";
+    cin>>d.score;
 
     // ===========================
 }

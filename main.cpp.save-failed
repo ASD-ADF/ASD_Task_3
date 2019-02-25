@@ -35,7 +35,6 @@ void mainMenu() {
     //-------------your code here-------------
     address Q;
     mytype searchID;
-    bool menuLoop = true;
     int choice;
     do {
         cout<<"Menu"<<endl;
@@ -63,11 +62,6 @@ void mainMenu() {
             Q = findElm(L,searchID);
             if (Q != NULL)
             {
-                cout<<"[DATA FOUND!]"<<endl;
-                cout<<"ID       : "<<searchID.ID<<endl;
-                cout<<"Name     : "<<searchID.Name<<endl;
-                cout<<"Rank     : "<<searchID.Rank<<endl;
-                cout<<"Score    : "<<searchID.score<<endl;
                 view_data(searchID);
             }
             else
@@ -77,7 +71,7 @@ void mainMenu() {
             break;
         case 4:
             cout<<"Search ID : ";
-            cin>>searchID.ID;
+            cin>>searchID;
             Q = findElm(L,searchID);
             if (Q != NULL)
             {
@@ -90,25 +84,22 @@ void mainMenu() {
             break;
         case 5:
             cout<<"Search ID : ";
-            cin>>searchID.ID;
-            deletebyID(L,searchID.ID);
+            cin>>searchID;
+            deletebyID(L,searchID);
             break;
         case 6:
-            savePassedMember(L,L_passed);
             break;
         case 7:
             printInfo(L_passed);
-            break;
         case 0:
             cout<<"[Thank you]"<<endl;
-            menuLoop = false;
+            false;
             break;
         default:
             cout<<"[Wrong input!]"<<endl;
             break;
         }
-        cout<<endl;
-    } while(menuLoop == true);
+    } while(true);
 
     //----------------------------------------
 }
