@@ -1,0 +1,112 @@
+# depslib dependency file v1.0
+1473899619 source:c:\users\dee\documents\cpp\task3_2016\list.cpp
+	"list.h"
+
+1473899211 c:\users\dee\documents\cpp\task3_2016\list.h
+	<iostream>
+
+1473899473 source:c:\users\dee\documents\cpp\task3_2016\main.cpp
+	<iostream>
+	"list.h"
+	"operasi.h"
+
+1473899290 c:\users\dee\documents\cpp\task3_2016\operasi.h
+	"list.h"
+
+1473899596 source:c:\users\dee\documents\cpp\task3_2016\operasi.cpp
+	"list.h"
+	"operasi.h"
+
+1518066459 source:c:\users\andityaarifianto\documents\github\asd_task_3\list.cpp
+	"list.h"
+	"my_data.h"
+
+1518066361 c:\users\andityaarifianto\documents\github\asd_task_3\list.h
+	<iostream>
+	"my_data.h"
+
+1516083837 source:c:\users\andityaarifianto\documents\github\asd_task_3\operasi.cpp
+	"list.h"
+	"operasi.h"
+
+1516083837 c:\users\andityaarifianto\documents\github\asd_task_3\operasi.h
+	"list.h"
+
+1518064926 c:\users\andityaarifianto\documents\github\asd_task_3\my_data.h
+	<iostream>
+
+1518066279 source:c:\users\andityaarifianto\documents\github\asd_task_3\my_data.cpp
+	"my_data.h"
+
+1518067315 source:c:\users\andityaarifianto\documents\github\asd_task_3\operation.cpp
+	"list.h"
+	"operation.h"
+	"my_data.h"
+
+1518065831 c:\users\andityaarifianto\documents\github\asd_task_3\operation.h
+	"list.h"
+
+1518067413 source:c:\users\andityaarifianto\documents\github\asd_task_3\main.cpp
+	<iostream>
+	"list.h"
+	"operation.h"
+	"my_data.h"
+
+1550979664 source:d:\rayhan rahmanda\matkul\struktur data\asd_task_3\my_data.cpp
+	"my_data.h"
+
+1550750791 d:\rayhan rahmanda\matkul\struktur data\asd_task_3\my_data.h
+	<iostream>
+
+1550981960 source:d:\rayhan rahmanda\matkul\struktur data\asd_task_3\list.cpp
+	"list.h"
+	"my_data.h"
+
+1550977148 d:\rayhan rahmanda\matkul\struktur data\asd_task_3\list.h
+	<iostream>
+	"my_data.h"
+	<cstdlib>
+
+1550981047 source:d:\rayhan rahmanda\matkul\struktur data\asd_task_3\operation.cpp
+	"list.h"
+	"operation.h"
+	"my_data.h"
+
+1550979521 d:\rayhan rahmanda\matkul\struktur data\asd_task_3\operation.h
+	"list.h"
+
+1550982164 source:d:\rayhan rahmanda\matkul\struktur data\asd_task_3\main.cpp
+	<iostream>
+	"list.h"
+	"operation.h"
+	"my_data.h"
+
+1550990820 source:d:\tugas lab(semester 2)\asd_task_3-master\list.cpp
+	"list.h"
+	"my_data.h"
+
+1550990820 d:\tugas lab(semester 2)\asd_task_3-master\list.h
+	<iostream>
+	"my_data.h"
+	<cstdlib>
+
+1551104588 d:\tugas lab(semester 2)\asd_task_3-master\my_data.h
+	<iostream>
+
+1550990820 source:d:\tugas lab(semester 2)\asd_task_3-master\main.cpp
+	<iostream>
+	"list.h"
+	"operation.h"
+	"my_data.h"
+
+1550990820 d:\tugas lab(semester 2)\asd_task_3-master\operation.h
+	"list.h"
+
+1550990820 source:d:\tugas lab(semester 2)\asd_task_3-master\my_data.cpp
+	"my_data.h"
+
+1550990820 source:d:\tugas lab(semester 2)\asd_task_3-master\operation.cpp
+	"list.h"
+	"operation.h"
+	"my_data.h"
+
