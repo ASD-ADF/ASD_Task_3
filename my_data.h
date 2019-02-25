@@ -8,8 +8,13 @@ using namespace std;
     CLASS      :
     NAME       :
     STUDENT ID :
-**/
 
+
+    CLASS      : IF 42 04
+    NAME       : Aditya Ramadhan
+    STUDENT ID : 1301184380
+
+*/
 struct mytype {
     /**
      TODO:  create a new Data type with specification:
@@ -20,8 +25,10 @@ struct mytype {
     */
     //=================================================
     // YOUR CODE STARTS HERE
-    your code here
-
+    int id;
+    string name;
+    int rank;
+    float score;
     // YOUR CODE ENDS HERE
     //=================================================
 };

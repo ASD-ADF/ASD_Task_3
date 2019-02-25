@@ -14,14 +14,41 @@ void insertAndSort(List &L, infotype x) {
     */
 
     //-------------your code here-------------
-    your code here
+    address Prec = first(L);
+    address Q = first(L);
+    address P;
+    P = findElm(L,x);
+    if(first(L)==NULL)
+    {
+        insertFirst(L,P);
+    }else if (first(L)!=NULL)
+    {
+        while (next(Q)!=NULL)
+        {
+            Q=next(Q);
+        }
+        if (info(P).id < info(first(L)).id)
+        {
+            insertFirst(L,P);
+        }else if(info(P).id > info(Q).id)
+        {
+            insertLast(L,P);
+        }else
+        {
+            while(info(Prec).id<=info(P).id)
+            {
+                Prec = next(Prec);
+            }
+            insertAfter(L,Prec,P);
+        }
+    }
 
 
     //----------------------------------------
 }
 
 
-void deletebyID(List &L, int id_x) {
+void deletebyID(List &L, infotype x) {
     /**
     * IS : List L may be empty
     * FS : an element with ID info = id_x is deleted from List L (deallocate)
@@ -29,7 +56,18 @@ void deletebyID(List &L, int id_x) {
 
     address Prec, P;
     //-------------your code here-------------
-    your code here
+    P = findElm(L,x);
+    if(P==first(L)){
+        deleteFirst(L,P);
+    }else if (next(P)==NULL){
+        deleteLast(L,P);
+    }else{
+        Prec = first(L);
+        while(next(Prec)!= P){
+            Prec=next(Prec);
+        }
+        deleteAfter(L,Prec,P);
+    }
 
 
     //----------------------------------------
@@ -43,7 +81,19 @@ void savePassedMember(List &L, List &L2){
     */
     address P;
     //-------------your code here-------------
-    your code here
+    List LTemp;
+    createList(LTemp);
+    while(first(L) != NULL)
+    {
+        deleteFirst(L,P);
+        if (info(P).score > 80)
+        {
+            insertAndSort(L2,info(P));
+        }else{
+            insertAndSort(LTemp,info(P));
+        }
+    }
+    L = LTemp;
 
 
     //----------------------------------------
