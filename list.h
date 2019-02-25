@@ -31,14 +31,14 @@ typedef struct elmlist *address;
 
 struct elmlist{
     //------------- your code here -----------
-
+    address next;
+    mytype info;
     //----------------------------------------
 };
 
 struct List{
     //------------- your code here -----------
-
-
+    address first;
     //----------------------------------------
 };
 

@@ -19,7 +19,9 @@ int main() {
 
 void mainMenu() {
     address P;
-    infotype X;
+    infotype x;
+    mytype data;
+    List L2;
     /**
     * IS : List has been created
     * PR : prints menu to user
@@ -48,12 +50,59 @@ void mainMenu() {
         cin>>choice;
         switch(choice) {
         case 1:
-            X = create_data();
-            P = allocate(X);
-            insertFirst(L,P)
+            x = create_data();
+            insertAndSort(L,x);
+            break;
+        case 2:
+            printInfo(L);
+            break;
+        case 3:
+            cout << "ID yang dicari : ";
+            cin >> data.ID;
+            P = findElm(L, data);
+            if(P == NULL){
+                cout << "ID Not Found.";
+            } else {
+                data = info(P);
+                view_data(data);
+            }
+            break;
+        case 4:
+            cout << "ID yang ingin diubah : ";
+            cin >> data.ID;
+            P = findElm(L, data);
+            if (P == NULL){
+                cout << "ID Not Found.";
+            } else {
+                edit_data(data);
+                info(P) = data;
+            }
+            break;
+        case 5:
+            if(first(L)!=NULL){
+                cout << " Delete ID : ";
+                cin >> x.ID;
+                cout<<endl;
+               deletebyID(L,x.ID);
+                cout<<"Data Deleted"<<endl;
+            }else{
+                cout<<"List is Empty"<<endl;
+            }
+            break;
+        case 6:
+            savePassedMember(L,L2);
+            break;
+        case 7:
+            cout<<"Passed Member : ";
+            printInfo(L2);
+            break;
+        case 0:
+            cout<<"EXIT..."<<endl;
+
             break;
         }
-    } while(true);
+
+    } while(choice!=0);
 
     //----------------------------------------
 }
