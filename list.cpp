@@ -6,8 +6,7 @@ void createList(List &L) {
     * FS : set first(L) with Null
     */
     //-------------your code here-------------
-    your code here
-
+    first(L) = NULL;
 
     //----------------------------------------
 }
@@ -17,13 +16,12 @@ address allocate(infotype x) {
     * FS : return new list element with info = x and next element is Null
     */
 
-    address P;
+    address p = new elmlist;
     //-------------your code here-------------
-    your code here
-
-
+    next(p) = NULL;
+    info(p) = x;
     //----------------------------------------
-    return P;
+    return p;
 }
 
 void deallocate(address &P) {
@@ -31,9 +29,7 @@ void deallocate(address &P) {
     * FS : delete element pointed by P
     */
     //-------------your code here-------------
-    your code here
-
-
+    delete P;
     //----------------------------------------
 }
 
@@ -43,9 +39,8 @@ void insertFirst(List &L, address P) {
     * FS : element pointed by P became the first element in List L
     */
     //-------------your code here-------------
-    your code here
-
-
+    next(P) = first(L);
+    first(L) = P;
     //----------------------------------------
 }
 
@@ -55,9 +50,12 @@ void insertLast(List &L, address P) {
     * FS : element pointed by P became the last element in List L
     */
     //-------------your code here-------------
-    your code here
-
-
+    address q = first(L);
+    while (next(q) != NULL) {
+        q = next(q);
+    }
+    next(q) = P;
+    next(P) = NULL;
     //----------------------------------------
 }
 
@@ -66,13 +64,14 @@ address findElm(List L, infotype x) {
     * IS : List L may be empty
     * FS : returns element with info.ID = x.ID,
            return Null if such ID is not found
+           ID based search
     */
 
-    address P;
+    address p = first(L);
     //-------------your code here-------------
-    your code here
-
-
+    if ((next(p) != NULL) && (info(p) == x)) {
+        p = next(p);
+    } 
     //----------------------------------------
     return P;
 }
@@ -83,10 +82,9 @@ void deleteFirst(List &L, address &P) {
     * FS : first element in List L is removed and is pointed by P
     */
     //-------------your code here-------------
-    your code here
-
-
-
+    P = first(L);
+    first(L) = next(P);
+    deallocate(P);
     //----------------------------------------
 }
 

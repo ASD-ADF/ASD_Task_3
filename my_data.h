@@ -2,12 +2,13 @@
 #define MY_DATA_H_INCLUDED
 
 #include <iostream>
+#include <string>
 using namespace std;
 
 /**
-    CLASS      :
-    NAME       :
-    STUDENT ID :
+    CLASS      : IF-42-04
+    NAME       : Nabil Anwar Fauzi
+    STUDENT ID : 1301183340
 **/
 
 struct mytype {
@@ -20,7 +21,9 @@ struct mytype {
     */
     //=================================================
     // YOUR CODE STARTS HERE
-    your code here
+    int ID, rank;
+    string name;
+    float score;
 
     // YOUR CODE ENDS HERE
     //=================================================
