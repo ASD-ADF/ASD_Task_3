@@ -18,7 +18,10 @@ int main() {
 
 void mainMenu() {
     address P;
+    int ID_X;
     infotype X;
+    mytype D,Y;
+    List L,L2,L_passed;
     /**
     * IS : List has been created
     * PR : prints menu to user
@@ -45,10 +48,54 @@ void mainMenu() {
         case 1:
             X = create_data();
             P = allocate(X);
-            insertFirst(L,P)
+            insertFirst(L,P);
+            break;
+
+        case 2:
+            printInfo(L);
+            break;
+
+        case 3:
+            cout<<"Masukkan ID data yang dicari: ";
+            cin>>D.ID;
+            P = findElm(L,D);
+            if(P == NULL){
+                cout<<"Data tidak ditemukan"<<endl;
+            }
+            else{
+                view_data(info(P));
+            }
+            break;
+
+        case 4:
+            cout<<"Masukkan ID data yang akan diedit: ";
+            cin>>D.ID;
+            P = findElm(L,D);
+            if(P == NULL){
+                cout<<"Data tidak ditemukan"<<endl;
+            }
+            else{
+                edit_data(D);
+            }
+            break;
+
+        case 5:
+            cout << "Inputkan ID : ";
+            cin >> ID_X;
+            deletebyID(L,ID_X);
+            break;
+
+         case 6:
+            savePassedMember(L,L_passed);
+            break;
+
+        case 7:
+            printInfo(L_passed);
             break;
         }
     } while(true);
 
+
     //----------------------------------------
 }
+return 0;

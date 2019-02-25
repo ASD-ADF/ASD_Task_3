@@ -3,7 +3,7 @@
 #include "my_data.h"
 
 
-void insertAndSort(List &L, address P) {
+void insertAndSort(List &L, infotype x) {
     /**
     * IS : List may be empty
     * PR : insert an element pointed by P into an already sorted-by-ID List L
@@ -13,23 +13,54 @@ void insertAndSort(List &L, address P) {
     */
 
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
+    if (first(L) != NULL)
+    {
+        address Q = findElm(L,x);
+        if (Q == NULL)
+        {
+            address P = allocate(x);
+            if (info(P).ID < info(first(L)).ID)
+            {
+                insertFirst(L,P);
+            }
+            else if (info(P).ID > info(last(L)).ID)
+            {
+                insertLast(L,P);
+            }
+            else
+            {
+                Q = first(L);
+                while ((next(Q) != NULL) && (info(next(Q)).ID < info(P).ID))
+                {
+                    Q = next(Q);
+                }
+                insertAfter(L,Q,P);
+            }
+        }
+    }
+    else
+    {
+        address P = allocate(x);
+        insertFirst(L, P);
+    }
 
-
-    //----------------------------------------
 }
 
-
-void deletebyID(List &L, infotype x) {
-    /**
-    * IS : List L may be empty
-    * FS : an element with ID info = x.id is deleted from List L (deallocate)
-    */
-
-    address Prec, P;
-    //-------------your code here-------------
-    cout<<"your code here"<<endl;
-
-
-    //----------------------------------------
+void savePassedMember(List &L, List &L2){
+    address P;
+    List temp;
+    createList(temp);
+    while (first(L) != NULL)
+    {
+        deleteFirst(L, P);
+        if (info(P).score > 80)
+        {
+            insertLast(L2,P);
+        }
+        else
+        {
+            insertLast(temp,P);
+        }
+    }
+    L = temp;
 }
