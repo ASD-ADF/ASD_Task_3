@@ -14,9 +14,26 @@ void insertAndSort(List &L, infotype x) {
     */
 
     //-------------your code here-------------
-    your code here
-
-
+    if (first(L)!=NULL) {
+        address Q = findElm(L, x);
+        if (Q==NULL) {
+            address P = allocate(x);
+            if (info(P).ID<info(first(L)).ID) {
+                insertFirst(L, P);
+            } else if (info(P).ID>info(last(L)).ID) {
+                insertLast(L, P);
+            } else {
+                Q = first(L);
+                while ((next(Q)!=NULL)&&(info(next(Q)).ID<info(P).ID)) {
+                    Q = next(Q);
+                }
+                insertAfter(L, Q, P);
+            }
+        }
+    } else {
+        address P = allocate(x);
+        insertFirst(L, P);
+    }
     //----------------------------------------
 }
 
@@ -29,9 +46,27 @@ void deletebyID(List &L, int id_x) {
 
     address Prec, P;
     //-------------your code here-------------
-    your code here
-
-
+    /*
+    x : infotype
+    next.id == x_id
+    p = findelm(L,x)
+    */
+    infotype x;
+    x.ID = id_x;
+    P = findElm(L, x);
+    if (P!=NULL) {
+        if (P==first(L)) {
+            deleteFirst(L, P);
+        } else if (P==last(L)) {
+            deleteLast(L, P);
+        } else {
+            Prec = prev(P);
+            deleteAfter(L, Prec, P);
+        }
+        deallocate(P);
+    } else {
+        cout << "ID not found" << endl;
+    }
     //----------------------------------------
 }
 
@@ -43,8 +78,16 @@ void savePassedMember(List &L, List &L2){
     */
     address P;
     //-------------your code here-------------
-    your code here
-
-
+    List LTemp;
+    createList(LTemp);
+    while (first(L)!=NULL) {
+        deleteFirst(L, P);
+        if (info(P).score>80) {
+            insertLast(L2, P);
+        } else {
+            insertLast(LTemp, P);
+        }
+    }
+    L = LTemp;
     //----------------------------------------
 }
