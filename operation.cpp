@@ -13,15 +13,50 @@ void insertAndSort(List &L, infotype x) {
     * FS : elements in List L sorted by ID, P is inside List L
     */
 
-    //-------------your code here-------------
-    your code here
+    //-------------your code AChere-------------
+   address P;
+    P = allocate(x);
+    if (first(L)== NULL)
+    {
+        insertFirst(L,P);
+    }
+    else
+    {
+        address Q = findElm(L, info(P));
+        if (Q == NULL)
+        {
+            address last = first(L);
+            while (next(last)!= NULL)
+            {
+                last = next(last);
+            }
 
-
-    //----------------------------------------
+            if (info(P).id <= info(first(L)).id)
+            {
+                insertFirst(L,P);
+            }
+            else if (info(P).id >= info(last).id)
+            {
+                insertLast(L,P);
+            }
+            else
+            {
+                Q = first(L);
+                while (info(next(Q)).id < info(P).id)
+                {
+                    Q = next(Q);
+                }
+                insertAfter(L,Q,P);
+            }
+        }
+        else
+        {
+            cout << "Duplikat";
+        }
+    }
 }
 
-
-void deletebyID(List &L, int id_x) {
+void deletebyID(List &L, infotype x) {
     /**
     * IS : List L may be empty
     * FS : an element with ID info = id_x is deleted from List L (deallocate)
@@ -29,9 +64,18 @@ void deletebyID(List &L, int id_x) {
 
     address Prec, P;
     //-------------your code here-------------
-    your code here
-
-
+    P = findElm(L,x);
+    if(P==first(L)){
+        deleteFirst(L,P);
+    }else if (next(P)==NULL){
+        deleteLast(L,P);
+    }else{
+        Prec = first(L);
+        while(next(Prec)!= P){
+            Prec=next(Prec);
+        }
+        deleteAfter(L,Prec,P);
+    }
     //----------------------------------------
 }
 
@@ -43,8 +87,16 @@ void savePassedMember(List &L, List &L2){
     */
     address P;
     //-------------your code here-------------
-    your code here
+    createList(L2);
+    P = first(L);
+    while (P!=NULL)
+    {
+        if (info(P).score >= 80)
+        {
+            insertFirst(L2,P);
 
-
+        }
+        P = next(P);
+    }
     //----------------------------------------
 }

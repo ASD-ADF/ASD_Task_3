@@ -52,3 +52,26 @@
 	"operation.h"
 	"my_data.h"
 
+1551110672 source:d:\std\asd_task_3\list.cpp
+	"list.h"
+	"my_data.h"
+
+1551110672 d:\std\asd_task_3\list.h
+	<iostream>
+	"my_data.h"
+	<cstdlib>
+
+1551110672 d:\std\asd_task_3\my_data.h
+	<iostream>
+
+1551110672 source:d:\std\asd_task_3\my_data.cpp
+	"my_data.h"
+
+1551110767 source:d:\std\asd_task_3\operation.cpp
+	"list.h"
+	"operation.h"
+	"my_data.h"
+
+1551110907 d:\std\asd_task_3\operation.h
+	"list.h"
+
