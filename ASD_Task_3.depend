@@ -52,3 +52,32 @@
 	"operation.h"
 	"my_data.h"
 
+1551109389 source:c:\users\okama\documents\kuliah\github\asd_task_3\asd_task_3\operation.cpp
+	"list.h"
+	"operation.h"
+	"my_data.h"
+
+1551108159 c:\users\okama\documents\kuliah\github\asd_task_3\asd_task_3\list.h
+	<iostream>
+	"my_data.h"
+
+1551108159 c:\users\okama\documents\kuliah\github\asd_task_3\asd_task_3\my_data.h
+	<iostream>
+
+1551019699 c:\users\okama\documents\kuliah\github\asd_task_3\asd_task_3\operation.h
+	"list.h"
+
+1551109919 source:c:\users\okama\documents\kuliah\github\asd_task_3\asd_task_3\my_data.cpp
+	"my_data.h"
+
+1551109654 source:c:\users\okama\documents\kuliah\github\asd_task_3\asd_task_3\main.cpp
+	<iostream>
+	"list.h"
+	"operation.h"
+	"my_data.h"
+
+1551109884 source:c:\users\okama\documents\kuliah\github\asd_task_3\asd_task_3\list.cpp
+	"list.h"
+	"my_data.h"
+	<iostream>
+

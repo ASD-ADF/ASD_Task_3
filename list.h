@@ -6,6 +6,7 @@
 
 #define first(L) L.first
 #define next(P) P->next
+#define prev(P) P->prev
 #define info(P) P->info
 
 using namespace std;
@@ -29,16 +30,19 @@ using namespace std;
 typedef mytype infotype;
 typedef struct elmlist *address;
 
-struct elmlist{
+struct elmlist
+{
     //------------- your code here -----------
-
+    infotype info;
+    address next;
+    address prev;
     //----------------------------------------
 };
 
-struct List{
+struct List
+{
     //------------- your code here -----------
-
-
+    address first;
     //----------------------------------------
 };
 

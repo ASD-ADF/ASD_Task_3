@@ -7,8 +7,10 @@ using namespace std;
 
 void mainMenu();
 List L, L_passed;
+mytype data;
 
-int main() {
+int main()
+{
     createList(L);
     createList(L_passed);
 
@@ -17,7 +19,8 @@ int main() {
     return 0;
 }
 
-void mainMenu() {
+void mainMenu()
+{
     address P;
     infotype X;
     /**
@@ -34,7 +37,9 @@ void mainMenu() {
     */
     //-------------your code here-------------
     int choice;
-    do {
+    bool exit = true;
+    do
+    {
         cout<<"Menu"<<endl;
         cout<<"1. insert"<<endl;
         cout<<"2. view member"<<endl;
@@ -46,14 +51,59 @@ void mainMenu() {
         cout<<"0. exit"<<endl;
         cout<<"input choice: ";
         cin>>choice;
-        switch(choice) {
+        switch(choice)
+        {
         case 1:
             X = create_data();
             P = allocate(X);
-            insertFirst(L,P)
+            insertFirst(L,P);
+            break;
+        case 2:
+            printInfo(L);
+            break;
+        case 3:
+            cout<<"Masukkan ID untuk mencari data: ";
+            cin>>data.id;
+            P = findElm(L, data);
+            if (P != NULL)
+            {
+                view_data(P->info);
+            }
+            else
+            {
+                cout << "ID NOT FOUND" << endl;
+            }
+            break;
+        case 4:
+            cout<<"Masukkan ID untuk mengedit data: ";
+            cin>>data.id;
+            P = findElm(L, data);
+            if (P != NULL)
+            {
+                edit_data(P->info);
+            }
+            else
+            {
+                cout << "ID NOT FOUND" << endl;
+            }
+            break;
+        case 5:
+            cout<<"Masukkan ID untuk menghapus data: ";
+            cin>>data.id;
+            deletebyID(L,data.id);
+            break;
+        case 6:
+            savePassedMember(L, L_passed);
+            break;
+        case 7:
+            printInfo(L_passed);
+            break;
+        case 0:
+            exit = false;
             break;
         }
-    } while(true);
+    }
+    while(exit);
 
     //----------------------------------------
 }

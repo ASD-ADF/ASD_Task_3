@@ -4,9 +4,7 @@
 #include "list.h"
 
 void insertAndSort(List &L, infotype x);
-
 void deletebyID(List &L, int id_x);
-
 void savePassedMember(List &L, List &L2);
 
 

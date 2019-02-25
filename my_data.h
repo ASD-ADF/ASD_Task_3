@@ -2,15 +2,17 @@
 #define MY_DATA_H_INCLUDED
 
 #include <iostream>
+
 using namespace std;
 
 /**
-    CLASS      :
-    NAME       :
-    STUDENT ID :
+    CLASS      :    IF-42-04
+    NAME       :    HAURA ATHAYA SALKA
+    STUDENT ID :    1301183454
 **/
 
-struct mytype {
+struct mytype
+{
     /**
      TODO:  create a new Data type with specification:
             - an integer variable acted as an ID
@@ -20,8 +22,10 @@ struct mytype {
     */
     //=================================================
     // YOUR CODE STARTS HERE
-    your code here
-
+    int id;
+    string name;
+    int ranking;
+    float score;
     // YOUR CODE ENDS HERE
     //=================================================
 };
