@@ -1,6 +1,6 @@
 #ifndef OPERATION_H_INCLUDED
 #define OPERATION_H_INCLUDED
-
+ 
 #include "list.h"
 
 void insertAndSort(List &L, infotype x);

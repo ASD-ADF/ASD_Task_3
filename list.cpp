@@ -3,7 +3,7 @@
 
 void createList(List &L) {
     /**
-    * FS : set first(L) with Null
+    * FS : set first(L) and last(L) with Null
     */
     //-------------your code here-------------
     your code here

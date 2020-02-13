@@ -5,8 +5,10 @@
 #include "my_data.h"
 
 #define first(L) L.first
-#define next(P) P->next
-#define info(P) P->info
+#define last(L)  L.last
+#define next(P)  P->next
+#define prev(P)  P->prev
+#define info(P)  P->info
 
 using namespace std;
 
@@ -18,9 +20,13 @@ using namespace std;
 * Type ElmList <
 *	info : infotype
 *	next : address
+*	prev : address
 * >
 *
-* Type List : < First : address >
+* Type List : < 
+*   first : address 
+*   last : address 
+* >
 *
 **/
 

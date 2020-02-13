@@ -1,7 +1,7 @@
 #include "list.h"
 #include "operation.h"
 #include "my_data.h"
-
+ 
 
 void insertAndSort(List &L, infotype x) {
     /**
