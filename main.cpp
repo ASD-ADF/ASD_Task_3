@@ -81,7 +81,11 @@ void mainMenu() {
         case 5:
             cout << "Masukkan ID yang ingin didelete : ";
             cin >> X.ID;
-            deletebyID(L, X.ID);
+            if (findElm(L, X) != NULL) {
+				deletebyID(L, X.ID);
+			} else {
+				cout << "DATA TIDAK DITEMUKAN" << endl;
+			}
             break;
         case 6:
             savePassedMember(L, L_passed);

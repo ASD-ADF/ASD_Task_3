@@ -38,16 +38,16 @@ void deletebyID(List &L, int id_x) {
     address Prec, P;
     //-------------your code here-------------
     P = first(L);
-    if (P == first(L) && id_x == info(P).ID) {
-        deleteFirst(L, P);
-    } else {
-        while (P != NULL) {
-            if (id_x == info(P).ID && first(L) != last(L)) {
-                deleteAfter(L, prev(P), P);
-            }
-        P = next(P);
-        }
-    }
+	if (P == first(L) && id_x == info(P).ID) {
+		deleteFirst(L, P);
+	} else {
+		while (P != NULL) {
+			if (id_x == info(P).ID && first(L) != last(L)) {
+				deleteAfter(L, prev(P), P);
+			}
+		P = next(P);
+		}
+	}
 
     //----------------------------------------
 }
