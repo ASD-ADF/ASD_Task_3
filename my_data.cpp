@@ -1,10 +1,10 @@
- 
+
 #include "my_data.h"
 
 /**
-    CLASS      :
-    NAME       :
-    STUDENT ID :
+    CLASS      : IF-43-05
+    NAME       : MUHAMMAD KHIYARUS SYIAM
+    STUDENT ID : 1301194242
 **/
 
 mytype create_data() {
@@ -15,7 +15,15 @@ mytype create_data() {
     mytype d;
     // ===========================
     // YOUR CODE HERE
-    your code here
+    cout << "ID anda : ";
+    cin >> d.ID;
+    cout << "Nama anda : ";
+    cin >> d.name;
+    cout << "Rangking anda : ";
+    cin >> d.ranking;
+    cout << "Score anda : ";
+    cin >> d.score;
+
 
 
 
@@ -32,7 +40,10 @@ void view_data(mytype d) {
 
     // ===========================
     // YOUR CODE HERE
-    your code here
+    cout << "ID : " << d.ID << endl;
+    cout << "Nama : " << d.name << endl;
+    cout << "Rank : " << d.ranking << endl;
+    cout << "Score : " << d.score << endl;
 
 
 
@@ -50,7 +61,19 @@ void edit_data(mytype &d) {
 
     // ===========================
     // YOUR CODE HERE
-        your code here
+    cout <<"ID       : "<< d.ID<<endl;
+    cout <<"Nama     : "<< d.name<<endl;
+    cout <<"Rangking : "<< d.ranking<<endl;
+    cout <<"Score    : "<< d.score<<endl;
+    cout << endl;
+    cout << "Masukkan Data Baru  : "<<endl;
+    cout <<"ID anda: " << d.ID<<endl;
+    cout << "Nama Baru : ";
+    cin >> d.name;
+    cout << "Ranking Baru : ";
+    cin >> d.ranking;
+    cout << "Score Baru : ";
+    cin >> d.score;
 
 
 
