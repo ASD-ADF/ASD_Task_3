@@ -23,9 +23,9 @@ using namespace std;
 *	prev : address
 * >
 *
-* Type List : < 
-*   first : address 
-*   last : address 
+* Type List : <
+*   first : address
+*   last : address
 * >
 *
 **/
@@ -37,14 +37,16 @@ typedef struct elmlist *address;
 
 struct elmlist{
     //------------- your code here -----------
-
+    infotype info;
+    address next;
+    address prev;
     //----------------------------------------
 };
 
 struct List{
     //------------- your code here -----------
-
-
+    address first;
+    address last;
     //----------------------------------------
 };
 
@@ -61,7 +63,7 @@ void insertLast(List &L, address P);
 void deleteFirst(List &L, address &P);
 void deleteLast(List &L, address &P);
 void insertAfter(List &L, address Prec, address P);
-void deleteAfter(List&L, address Prec, address &P);
+void deleteAfter(List &L, address Prec, address &P);
 
 // define search-by-ID function and view procedure
 address findElm(List L, infotype x);

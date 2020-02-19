@@ -52,3 +52,31 @@
 	"operation.h"
 	"my_data.h"
 
+1582092314 source:c:\users\computer\documents\github\asd_task_3\my_data.cpp
+	"my_data.h"
+
+1582092003 c:\users\computer\documents\github\asd_task_3\my_data.h
+	<iostream>
+
+1582094351 source:c:\users\computer\documents\github\asd_task_3\list.cpp
+	"list.h"
+	"my_data.h"
+
+1582091930 c:\users\computer\documents\github\asd_task_3\list.h
+	<iostream>
+	"my_data.h"
+
+1582093443 source:c:\users\computer\documents\github\asd_task_3\operation.cpp
+	"list.h"
+	"operation.h"
+	"my_data.h"
+
+1582025216 c:\users\computer\documents\github\asd_task_3\operation.h
+	"list.h"
+
+1582094335 source:c:\users\computer\documents\github\asd_task_3\main.cpp
+	<iostream>
+	"list.h"
+	"operation.h"
+	"my_data.h"
+
