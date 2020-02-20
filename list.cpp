@@ -6,7 +6,8 @@ void createList(List &L) {
     * FS : set first(L) and last(L) with Null
     */
     //-------------your code here-------------
-    your code here
+    first(L) = NULL;
+    last(L) = NULL;
 
 
     //----------------------------------------
@@ -19,7 +20,7 @@ address allocate(infotype x) {
 
     address P;
     //-------------your code here-------------
-    your code here
+    P = new elmlist;
 
 
     //----------------------------------------
@@ -31,7 +32,7 @@ void deallocate(address &P) {
     * FS : delete element pointed by P
     */
     //-------------your code here-------------
-    your code here
+    delete P;
 
 
     //----------------------------------------

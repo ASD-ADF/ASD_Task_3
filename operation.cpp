@@ -1,7 +1,7 @@
 #include "list.h"
 #include "operation.h"
 #include "my_data.h"
- 
+
 
 void insertAndSort(List &L, infotype x) {
     /**
@@ -43,7 +43,13 @@ void savePassedMember(List &L, List &L2){
     */
     address P;
     //-------------your code here-------------
-    your code here
+    P = first(L);
+    while (P != NULL){
+        if (info(P).score > 80){
+            insertLast(L2,P);
+        }
+        P = next(P);
+    }
 
 
     //----------------------------------------
