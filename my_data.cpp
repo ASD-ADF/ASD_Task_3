@@ -2,9 +2,9 @@
 #include "my_data.h"
 
 /**
-    CLASS      :
-    NAME       :
-    STUDENT ID :
+    CLASS      : IF-43-05
+    NAME       : DAFFA BARIN TIZARD RIYADI
+    STUDENT ID : 1301190369
 **/
 
 mytype create_data() {
