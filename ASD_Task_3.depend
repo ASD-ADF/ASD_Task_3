@@ -52,3 +52,31 @@
 	"operation.h"
 	"my_data.h"
 
+1582301231 source:/home/vincent/Documents/Struktur Data/ASD_Task_3/list.cpp
+	"list.h"
+	"my_data.h"
+
+1582288083 /home/vincent/Documents/Struktur Data/ASD_Task_3/list.h
+	<iostream>
+	"my_data.h"
+
+1582301798 /home/vincent/Documents/Struktur Data/ASD_Task_3/my_data.h
+	<iostream>
+
+1582296128 source:/home/vincent/Documents/Struktur Data/ASD_Task_3/my_data.cpp
+	"my_data.h"
+
+1582288616 source:/home/vincent/Documents/Struktur Data/ASD_Task_3/operation.cpp
+	"list.h"
+	"operation.h"
+	"my_data.h"
+
+1582287934 /home/vincent/Documents/Struktur Data/ASD_Task_3/operation.h
+	"list.h"
+
+1582289564 source:/home/vincent/Documents/Struktur Data/ASD_Task_3/main.cpp
+	<iostream>
+	"list.h"
+	"operation.h"
+	"my_data.h"
+
