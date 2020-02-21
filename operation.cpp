@@ -46,7 +46,8 @@ void savePassedMember(List &L, List &L2){
     P = first(L);
     while (P != NULL){
         if (info(P).score > 80){
-            insertLast(L2,P);
+            insertAndSort(L2,info(P));
+            dele
         }
         P = next(P);
     }

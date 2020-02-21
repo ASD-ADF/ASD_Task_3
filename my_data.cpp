@@ -15,10 +15,14 @@ mytype create_data() {
     mytype d;
     // ===========================
     // YOUR CODE HERE
-    your code here
-
-
-
+    cout<<"ID : ";
+    cin>>d.id;
+    cout<<"Nama : ";
+    cin>>d.name;
+    cout<<"Rank : ";
+    cin>>d.rank;
+    cout<<"Score : ";
+    cin>>d.score;
 
     // ===========================
     return d;
@@ -32,7 +36,7 @@ void view_data(mytype d) {
 
     // ===========================
     // YOUR CODE HERE
-    your code here
+   cout<<d.id<<" "<<d.name<<" "<<d.rank<<" "<<d.score<<endl;
 
 
 

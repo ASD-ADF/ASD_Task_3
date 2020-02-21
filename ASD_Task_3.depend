@@ -52,3 +52,19 @@
 	"operation.h"
 	"my_data.h"
 
+1582307332 source:d:\informatika\semester 2\struktur data\asd_task_3\main.cpp
+	<iostream>
+	"list.h"
+	"operation.h"
+	"my_data.h"
+
+1582196628 d:\informatika\semester 2\struktur data\asd_task_3\list.h
+	<iostream>
+	"my_data.h"
+
+1582196706 d:\informatika\semester 2\struktur data\asd_task_3\my_data.h
+	<iostream>
+
+1581592462 d:\informatika\semester 2\struktur data\asd_task_3\operation.h
+	"list.h"
+
