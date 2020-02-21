@@ -51,7 +51,45 @@ void mainMenu() {
         case 1:
             X = create_data();
             P = allocate(X);
-            insertFirst(L,P)
+            insertFirst(L,P);
+            break;
+        case 2:
+            printInfo(L);
+            break;
+        case 3:
+            cout << "Masukkan ID yang ingin dicari : ";
+            cin >> X.ID;
+            P = findElm(L, X);
+            if (P != NULL) {
+                view_data(info(P));
+            } else {
+                cout << "DATA TIDAK DITEMUKAN!\n";
+            }
+            break;
+        case 4:
+            cout << "Masukkan ID yang ingin diedit : ";
+            cin >> X.ID;
+            P = findElm(L, X);
+            if (P != NULL) {
+                edit_data(info(P));
+            } else {
+                cout << "DATA TIDAK DITEMUKAN!\n";
+            }
+            break;
+        case 5:
+            cout << "Masukkan ID yang ingin didelete : ";
+            cin >> X.ID;
+            if (findElm(L, X) != NULL) {
+		deletebyID(L, X.ID);
+	    } else {
+		cout << "DATA TIDAK DITEMUKAN" << endl;
+	    }
+            break;
+        case 6:
+            savePassedMember(L, L_passed);
+            break;
+        case 7:
+            printInfo(L_passed);
             break;
         }
     } while(true);
