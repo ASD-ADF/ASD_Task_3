@@ -93,10 +93,10 @@ void mainMenu() {
         case 7:
             printInfo(L_passed);
             break;
-        if(choice == 0){
+         }
+         if (choice == 0){
             break;
-        }
-        }
+         }
     }
     while(true);
 
