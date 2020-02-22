@@ -6,8 +6,9 @@ void createList(List &L) {
     * FS : set first(L) and last(L) with Null
     */
     //-------------your code here-------------
-    your code here
 
+     first(L) = NULL;
+     last(L) = NULL;
 
     //----------------------------------------
 }
@@ -19,9 +20,8 @@ address allocate(infotype x) {
 
     address P;
     //-------------your code here-------------
-    your code here
-
-
+    P = new elmlist;
+    info(P) = x;
     //----------------------------------------
     return P;
 }
@@ -31,9 +31,7 @@ void deallocate(address &P) {
     * FS : delete element pointed by P
     */
     //-------------your code here-------------
-    your code here
-
-
+    delete P;
     //----------------------------------------
 }
 
@@ -43,9 +41,16 @@ void insertFirst(List &L, address P) {
     * FS : element pointed by P became the first element in List L
     */
     //-------------your code here-------------
-    your code here
-
-
+    if (first(L) == NULL && last(L) == NULL)
+    {
+        last(L) = P;
+    }
+    else
+    {
+        next(P) = first(L);
+        prev(first(L)) = P;
+    }
+    first(L) = P;
     //----------------------------------------
 }
 
@@ -55,9 +60,17 @@ void insertLast(List &L, address P) {
     * FS : element pointed by P became the last element in List L
     */
     //-------------your code here-------------
-    your code here
-
-
+     if (last(L) != NULL)
+    {
+        prev(P) = last(L);
+        next(last(L)) = P;
+        last(L) = P;
+    }
+    else
+    {
+        first(L) = P;
+        last(L) = P;
+    }
     //----------------------------------------
 }
 
@@ -70,8 +83,11 @@ address findElm(List L, infotype x) {
 
     address P;
     //-------------your code here-------------
-    your code here
-
+    P = first(L);
+    while ((P != NULL) && (x.ID != info(P).ID))
+    {
+        P = next(P);
+    }
 
     //----------------------------------------
     return P;
@@ -83,9 +99,18 @@ void deleteFirst(List &L, address &P) {
     * FS : first element in List L is removed and is pointed by P
     */
     //-------------your code here-------------
-    your code here
-
-
+    P = first(L);
+    if (first(L) != NULL)
+    {
+        first(L) = next(P);
+        next(P) = NULL;
+        prev(first(L)) = NULL;
+    }
+    else if (first(L) == last(L))
+    {
+        first(L) = NULL;
+        last(L) = NULL;
+    }
 
     //----------------------------------------
 }
@@ -96,10 +121,19 @@ void deleteLast(List &L, address &P) {
     * FS : last element in List L is removed and is pointed by P
     */
     //-------------your code here-------------
-    your code here
-
-
-
+    if (last(L) != NULL)
+    {
+        P = last(L);
+        last(L) = prev(P);
+        prev(P) = NULL;
+        next(last(L)) = NULL;
+    }
+    else if (last(L) == first(L))
+    {
+        P = last(L);
+        last(L) = NULL;
+        first(L) = NULL;
+    }
     //----------------------------------------
 }
 
@@ -109,9 +143,14 @@ void printInfo(List L) {
     *      call the view_data function from my_data.h to print the info
     */
     //-------------your code here-------------
-    your code here
-
-
+    address P;
+    P = first(L);
+    while (P != NULL)
+    {
+        view_data(info(P));
+        P = next(P);
+    }
+    cout << endl;
     //----------------------------------------
 }
 
@@ -123,8 +162,10 @@ void insertAfter(List &L, address Prec, address P) {
     *      pointed by pointer Prec
     */
     //-------------your code here-------------
-    your code here
-
+     next(P) = next(Prec);
+    prev(P) = Prec;
+    prev(next(Prec)) = P;
+    next(Prec) = P;
     //----------------------------------------
 
 }
@@ -135,9 +176,9 @@ void deleteAfter(List &L, address Prec, address &P) {
     *      is removed and pointed by pointer P
     */
     //-------------your code here-------------
-    your code here
-
-
+    P = next(Prec);
+    next(Prec) = next(P);
+    next(P) = NULL;
     //----------------------------------------
 }
 
