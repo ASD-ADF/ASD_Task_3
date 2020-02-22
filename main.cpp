@@ -9,7 +9,8 @@ using namespace std;
 void mainMenu();
 List L, L_passed;
 
-int main() {
+int main()
+{
     createList(L);
     createList(L_passed);
 
@@ -18,7 +19,8 @@ int main() {
     return 0;
 }
 
-void mainMenu() {
+void mainMenu()
+{
     address P;
     infotype X;
     /**
@@ -35,7 +37,8 @@ void mainMenu() {
     */
     //-------------your code here-------------
     int choice;
-    do {
+    do
+    {
         cout<<"Menu"<<endl;
         cout<<"1. insert"<<endl;
         cout<<"2. view member"<<endl;
@@ -47,14 +50,88 @@ void mainMenu() {
         cout<<"0. exit"<<endl;
         cout<<"input choice: ";
         cin>>choice;
-        switch(choice) {
+        switch(choice)
+        {
         case 1:
             X = create_data();
             P = allocate(X);
-            insertFirst(L,P)
+            insertFirst(L, P);
             break;
+        case 2:
+            printInfo(L);
+            break;
+        case 3:
+        {
+
+            infotype id;
+            cout<<"Search by ID : ";
+            cin>>id.ID;
+            cout<<endl;
+            address a = findElm(L, id);
+            if( a == NULL)
+            {
+                cout<<"NOT FOUND"<<endl;
+            }
+            else
+            {
+                cout<<"----DATA----"<<endl;
+                cout<<" ID    : "<<a->info.ID<<endl;
+                cout<<" Name  : "<<a->info.name<<endl;
+                cout<<" Rank  : "<<a->info.rank<<endl;
+                cout<<" Score : "<<a->info.score<<endl;
+            }
         }
-    } while(true);
+        break;
+        case 4:
+            {
+                infotype id;
+                cout<<"Search by ID : ";
+                cin>>id.ID;
+                address cari = findElm(L, id);
+                edit_data(id);
+                info(cari) = id;
+            }
+            break;
+
+        case 5 :
+        {
+            infotype b;
+            address Search;
+            cout<<"Search by ID : ";
+            cin>>b.ID;
+            Search = findElm(L, b);
+            if(Search == first(L))
+            {
+                deleteFirst(L, Search);
+            }
+            else if(Search == last(L))
+            {
+                deleteLast(L, Search);
+            }
+            else
+            {
+                deleteAfter(L, prev(Search), Search);
+            }
+            cout<<"DATA TELAH TERHAPUS"<<endl;
+        }
+        break;
+        case 6 :
+            {
+                savePassedMember(L, L_passed);
+
+            }
+            break;
+        case 7 :
+            {
+                printInfo(L_passed);
+            }
+            break;
+
+        }
+        cout<<endl;
+    }
+    while(choice != 0);
+
 
     //----------------------------------------
 }
