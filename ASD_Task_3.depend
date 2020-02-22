@@ -52,7 +52,7 @@
 	"operation.h"
 	"my_data.h"
 
-1582301231 source:/home/vincent/Documents/Struktur Data/ASD_Task_3/list.cpp
+1582342515 source:/home/vincent/Documents/Struktur Data/ASD_Task_3/list.cpp
 	"list.h"
 	"my_data.h"
 
@@ -63,7 +63,7 @@
 1582301798 /home/vincent/Documents/Struktur Data/ASD_Task_3/my_data.h
 	<iostream>
 
-1582296128 source:/home/vincent/Documents/Struktur Data/ASD_Task_3/my_data.cpp
+1582301767 source:/home/vincent/Documents/Struktur Data/ASD_Task_3/my_data.cpp
 	"my_data.h"
 
 1582288616 source:/home/vincent/Documents/Struktur Data/ASD_Task_3/operation.cpp
@@ -74,8 +74,9 @@
 1582287934 /home/vincent/Documents/Struktur Data/ASD_Task_3/operation.h
 	"list.h"
 
-1582289564 source:/home/vincent/Documents/Struktur Data/ASD_Task_3/main.cpp
+1582352145 source:/home/vincent/Documents/Struktur Data/ASD_Task_3/main.cpp
 	<iostream>
+	<cstdlib>
 	"list.h"
 	"operation.h"
 	"my_data.h"
