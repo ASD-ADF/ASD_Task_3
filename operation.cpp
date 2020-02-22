@@ -1,7 +1,7 @@
 #include "list.h"
 #include "operation.h"
 #include "my_data.h"
- 
+
 
 void insertAndSort(List &L, infotype x) {
     /**
@@ -14,9 +14,19 @@ void insertAndSort(List &L, infotype x) {
     */
 
     //-------------your code here-------------
-    your code here
-
-
+    address P,Q;
+    P = first(L);
+    if (P == NULL || info(P).ID >= x.ID) {
+        insertFirst(L, allocate(x));
+    }else if(info(last(L)).ID <= x.ID){
+        insertLast(L,allocate(x));
+    }else{
+        while (P != NULL && info(P).ID < x.ID) {
+            Q = P;
+            P = next(P);
+        }
+        insertAfter(L, Q, allocate(x));
+    }
     //----------------------------------------
 }
 
@@ -29,9 +39,17 @@ void deletebyID(List &L, int id_x) {
 
     address Prec, P;
     //-------------your code here-------------
-    your code here
-
-
+    P = first(L);
+	if (P == first(L) && id_x == info(P).ID) {
+		deleteFirst(L, P);
+	} else {
+		while (P != NULL) {
+			if (id_x == info(P).ID && first(L) != last(L)) {
+				deleteAfter(L, prev(P), P);
+			}
+		P = next(P);
+		}
+	}
     //----------------------------------------
 }
 
@@ -43,8 +61,12 @@ void savePassedMember(List &L, List &L2){
     */
     address P;
     //-------------your code here-------------
-    your code here
-
-
+    P = first(L);
+    while (P != NULL){
+        if(info(P).score >= 80){
+            insertFirst(L2,allocate(info(P)));
+        }
+        P = next(P);
+    }
     //----------------------------------------
 }
