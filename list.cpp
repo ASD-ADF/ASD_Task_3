@@ -7,6 +7,8 @@ void createList(List &L) {
     */
     //-------------your code here-------------
     your code here
+    first(L) = NULL;
+    last(L) == NULL;
 
 
     //----------------------------------------
@@ -20,6 +22,13 @@ address allocate(infotype x) {
     address P;
     //-------------your code here-------------
     your code here
+    P = new elmlist;
+    info(P).ID = x.ID;
+    info(P).name = x.name;
+    info(P).rank = x.rank;
+    info(P).score = x.score;
+    next(P) = NULL;
+    prev(P) = NULL;
 
 
     //----------------------------------------
@@ -32,6 +41,7 @@ void deallocate(address &P) {
     */
     //-------------your code here-------------
     your code here
+     delete P;
 
 
     //----------------------------------------
@@ -44,6 +54,14 @@ void insertFirst(List &L, address P) {
     */
     //-------------your code here-------------
     your code here
+    if (first(L) != NULL) {
+        next(P) = first(L);
+        prev(first(L)) = P;
+        first(L) = P;
+    } else {
+        first(L) = P;
+        last(L) = P;
+    }
 
 
     //----------------------------------------
@@ -56,6 +74,9 @@ void insertLast(List &L, address P) {
     */
     //-------------your code here-------------
     your code here
+    next(last(L)) = P;
+    prev(P) = last(L);
+    last(L) = P;
 
 
     //----------------------------------------
@@ -71,6 +92,10 @@ address findElm(List L, infotype x) {
     address P;
     //-------------your code here-------------
     your code here
+    P = first(L);
+    while (P != NULL && info(P).ID != x.ID) {
+        P = next(P);
+    }
 
 
     //----------------------------------------
@@ -84,6 +109,16 @@ void deleteFirst(List &L, address &P) {
     */
     //-------------your code here-------------
     your code here
+    if (first(L) == last(L)) {
+        P = first(L);
+        first(L) = NULL;
+        last(L) = NULL;
+    } else if (first(L) != NULL) {
+        P = first(L);
+        first(L) = next(P);
+        next(P) = NULL;
+        prev(first(L)) = NULL;
+    }
 
 
 
@@ -97,6 +132,16 @@ void deleteLast(List &L, address &P) {
     */
     //-------------your code here-------------
     your code here
+    if (last(L) != NULL) {
+        P = last(L);
+        last(L) = prev(P);
+        prev(P) = NULL;
+        next(last(L)) = NULL;
+    } else if (first(L) == last(L)) {
+        P = first(L);
+        first(L) = NULL;
+        last(L) = NULL;
+    }
 
 
 
@@ -110,6 +155,12 @@ void printInfo(List L) {
     */
     //-------------your code here-------------
     your code here
+    address P = first(L);
+    while (P != NULL) {
+        view_data(info(P));
+        P = next(P);
+    }
+    cout << endl;
 
 
     //----------------------------------------
@@ -124,6 +175,16 @@ void insertAfter(List &L, address Prec, address P) {
     */
     //-------------your code here-------------
     your code here
+    if (first(L) == NULL) {
+        insertFirst(L, P);
+    } else if (first(L) != last(L) && Prec != NULL) {
+        next(P) = next(Prec);
+        P -> prev = Prec;
+        prev(next(Prec)) = P;
+        next(Prec) = P;
+    } else if (Prec != NULL) {
+        insertLast(L, P);
+    }
 
     //----------------------------------------
 
@@ -136,6 +197,17 @@ void deleteAfter(List &L, address Prec, address &P) {
     */
     //-------------your code here-------------
     your code here
+    if (first(L) == last(L) && Prec != NULL) {
+        deleteFirst(L, P);
+    } else if (next(Prec) != last(L) && Prec != NULL) {
+        P = next(Prec);
+        next(Prec) = next(P);
+        prev(next(P)) = Prec;
+        next(P) = NULL;
+        prev(P) = NULL;
+    } else if (Prec != NULL) {
+        deleteLast(L, P);
+    }
 
 
     //----------------------------------------
