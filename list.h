@@ -23,9 +23,9 @@ using namespace std;
 *	prev : address
 * >
 *
-* Type List : < 
-*   first : address 
-*   last : address 
+* Type List : <
+*   first : address
+*   last : address
 * >
 *
 **/
@@ -37,14 +37,16 @@ typedef struct elmlist *address;
 
 struct elmlist{
     //------------- your code here -----------
-
+    address prev;
+    address next;
+    infotype info;
     //----------------------------------------
 };
 
 struct List{
     //------------- your code here -----------
-
-
+    address first;
+    address last;
     //----------------------------------------
 };
 
