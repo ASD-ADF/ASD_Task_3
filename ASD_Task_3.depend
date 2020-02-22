@@ -52,3 +52,31 @@
 	"operation.h"
 	"my_data.h"
 
+1582438463 source:d:\telkom university\informatika\semester 2\struktur data\latihan_1301190328-master\asd_task_3\list.cpp
+	"list.h"
+	"my_data.h"
+
+1582435213 d:\telkom university\informatika\semester 2\struktur data\latihan_1301190328-master\asd_task_3\list.h
+	<iostream>
+	"my_data.h"
+
+1582433367 d:\telkom university\informatika\semester 2\struktur data\latihan_1301190328-master\asd_task_3\my_data.h
+	<iostream>
+
+1582435929 source:d:\telkom university\informatika\semester 2\struktur data\latihan_1301190328-master\asd_task_3\main.cpp
+	<iostream>
+	"list.h"
+	"operation.h"
+	"my_data.h"
+
+1582403452 d:\telkom university\informatika\semester 2\struktur data\latihan_1301190328-master\asd_task_3\operation.h
+	"list.h"
+
+1582433848 source:d:\telkom university\informatika\semester 2\struktur data\latihan_1301190328-master\asd_task_3\my_data.cpp
+	"my_data.h"
+
+1582437080 source:d:\telkom university\informatika\semester 2\struktur data\latihan_1301190328-master\asd_task_3\operation.cpp
+	"list.h"
+	"operation.h"
+	"my_data.h"
+

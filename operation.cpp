@@ -1,7 +1,7 @@
 #include "list.h"
 #include "operation.h"
 #include "my_data.h"
- 
+
 
 void insertAndSort(List &L, infotype x) {
     /**
@@ -14,9 +14,19 @@ void insertAndSort(List &L, infotype x) {
     */
 
     //-------------your code here-------------
-    your code here
-
-
+    address Prec;
+    Prec = first(L);
+    if (Prec == NULL || info(first(L)).ID >= x.ID){
+        insertFirst(L, allocate(x));
+    }else if(info(last(L)).ID < x.ID){
+        insertLast(L, allocate(x));
+    }else{
+        while(Prec != NULL && info(Prec).ID <x.ID){
+            Prec = next(Prec);
+        }
+        Prec = prev(Prec);
+        insertAfter(L, Prec, allocate(x));
+    }
     //----------------------------------------
 }
 
@@ -29,12 +39,21 @@ void deletebyID(List &L, int id_x) {
 
     address Prec, P;
     //-------------your code here-------------
-    your code here
-
-
+    P = first(L);
+    if(first(L) == last(L) && id_x == info(P).ID){
+        deleteFirst(L,P);
+        deallocate(P);
+    }else {
+        while(P != NULL ){
+            if(info(P).ID == id_x && first(L) != last(L)){
+                deleteAfter(L, prev(P), P);
+                deallocate(P);
+            }
+            P = next(P);
+            }
+        }
     //----------------------------------------
 }
-
 
 void savePassedMember(List &L, List &L2){
     /**
@@ -43,8 +62,12 @@ void savePassedMember(List &L, List &L2){
     */
     address P;
     //-------------your code here-------------
-    your code here
-
-
+    P = first(L);
+    while(P != NULL){
+        if(info(P).score >= 80){
+            insertFirst(L2, allocate(info(P)));
+        }
+        P = next(P);
+    }
     //----------------------------------------
 }
