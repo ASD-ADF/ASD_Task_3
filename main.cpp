@@ -55,11 +55,8 @@ void mainMenu()
         {
         case 1:
             X = create_data();
-            P = allocate(X);
-            if (findElm(L, info(P)) == NULL)
-            {
-                insertFirst(L, P);
-            }
+            insertAndSort(L,X);
+            cout<<endl;
             break;
         case 2:
             printInfo(L);

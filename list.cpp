@@ -8,7 +8,7 @@ void createList(List &L)
     */
     //-------------your code here-------------
     first(L) = NULL;
-    last(L) == NULL;
+    last(L) = NULL;
     //----------------------------------------
 }
 
@@ -168,21 +168,10 @@ void insertAfter(List &L, address Prec, address P)
     *      pointed by pointer Prec
     */
     //-------------your code here-------------
-    if (first(L) == NULL)
-    {
-        insertFirst(L, P);
-    }
-    else if (first(L) != last(L) && Prec != NULL)
-    {
-        next(P) = next(Prec);
-        prev(P) = Prec;
-        prev(next(Prec)) = P;
-        next(Prec) = P;
-    }
-    else if (Prec != NULL)
-    {
-        insertLast(L, P);
-    }
+    next(P) = next(Prec);
+    prev(P) = Prec;
+    prev(next(Prec)) = P;
+    next(Prec) = P;
     //----------------------------------------
 
 }
@@ -194,24 +183,11 @@ void deleteAfter(List &L, address Prec, address &P)
     *      is removed and pointed by pointer P
     */
     //-------------your code here-------------
-    if (first(L) == last(L) && Prec != NULL)
-    {
-        deleteFirst(L, P);
-    }
-    else if (next(Prec) != last(L) && Prec != NULL)
-    {
-        P = next(Prec);
-        next(Prec) = next(P);
-        prev(next(P)) = Prec;
-        next(P) = NULL;
-        prev(P) = NULL;
-    }
-    else if (Prec != NULL)
-    {
-        deleteLast(L, P);
-    }
-
-
+    P = next(Prec);
+    next(Prec) = next(P);
+    prev(next(P)) = Prec;
+    next(P) = NULL;
+    prev(P) = NULL;
     //----------------------------------------
 }
 
