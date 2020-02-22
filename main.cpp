@@ -20,7 +20,7 @@ int main() {
 
 void mainMenu() {
     address P;
-    infotype X;
+    infotype x;
     /**
     * IS : List has been created
     * PR : prints menu to user
@@ -49,9 +49,84 @@ void mainMenu() {
         cin>>choice;
         switch(choice) {
         case 1:
-            X = create_data();
-            P = allocate(X);
-            insertFirst(L,P)
+            {
+                x = create_data();
+                P = allocate(x);
+                insertFirst(L,P);
+                break;
+            }
+        case 2 :
+            {
+                printInfo(L);
+                break;
+            }
+        case 3 :
+            {
+                cout<<"ID yang dicari :";
+                cin>> x.ID;
+                address temu ;
+                temu = findElm(L,x);
+                if ( temu != NULL)
+                {
+                    view_data(info(P));
+                }
+                else
+                {
+                    cout<<"Maaf data tidak ditemukan"<<endl;
+                }
+                break;
+            }
+        case 4 :
+            {
+                cout<<"ID yang akan diedit :";
+                cin>> x.ID;
+                address ubah;
+                ubah = findElm(L,x);
+                if ( ubah != NULL)
+                {
+                    edit_data(info(P));
+                }
+                else
+                {
+                    cout<<"Maaf ID anda tidak dapat diedit."<<endl;
+                }
+                break;
+            }
+        case 5 :
+            {
+                infotype a;
+                address cari;
+                cari  = findElm(L, a);
+                cout<"Mencari ID : ";
+                cin>>a.ID;
+                if ( cari == first(L))
+                {
+                    deleteFirst(L,cari);
+                }
+                else if ( cari == last(L))
+                {
+                    deleteLast(L, cari);
+                }
+                else
+                {
+                    deleteAfter(L, prev(cari), cari);
+                }
+                cout<<"Penghapusan Berhasil";
+                break;
+            }
+        case 6 :
+            {
+                savePassedMember(L,L_passed);
+                break;
+            }
+        case 7 :
+            {
+                printInfo(L_passed);
+                break;
+            }
+        }
+        if (choice == 0)
+        {
             break;
         }
     } while(true);
