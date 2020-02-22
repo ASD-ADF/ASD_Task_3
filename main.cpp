@@ -21,6 +21,7 @@ int main() {
 void mainMenu() {
     address P;
     infotype X;
+    mytype member;
     /**
     * IS : List has been created
     * PR : prints menu to user
@@ -50,8 +51,56 @@ void mainMenu() {
         switch(choice) {
         case 1:
             X = create_data();
-            P = allocate(X);
-            insertFirst(L,P)
+            insertAndSort(L,X);
+            break;
+        case 2:
+            if (L.first!=NULL){
+            cout<<"Data Member :"<<endl;
+            printInfo(L);
+            }else {
+                cout<<"Tidak ada member"<<endl;
+            }
+            cout<<endl;
+            break;
+        case 3:
+            cout<<"Masukkan ID member yang ingin dicari :";
+            cin>>member.ID;
+            if (findElm(L,member)!=NULL){
+                view_data(findElm(L,member)->info);
+            }else {
+                cout<<"ID Member tidak ditemukan"<<endl;
+            }
+            cout<<endl;
+            break;
+        case 4:
+            cout<<"Masukkan ID member yang ingin diedit :";
+            cin>>member.ID;
+            if (findElm(L,member)!=NULL){
+                edit_data(findElm(L,member)->info);
+            }else {
+                cout<<"ID Member tidak ditemukan"<<endl;
+            }
+            cout<<endl;
+            break;
+        case 5:
+            cout<<"Masukkan ID member yang ingin dihapus :";
+            cin>>member.ID;
+            if (findElm(L,member)!=NULL){
+                deletebyID(L,member.ID);
+                cout<<"Data member telah dihapus";
+            }else {
+                cout<<"ID Member tidak ditemukan"<<endl;
+            }
+            cout<<endl;
+            break;
+        case 6:
+            savePassedMember(L,L_passed);
+            cout<<"Pemindahan data member yang Lulus berhasil..."<<endl;
+            break;
+        case 7:
+            cout<<"Data Mahasiswa yang telah Lulus:"<<endl;
+            printInfo(L_passed);
+            cout<<endl;
             break;
         }
     } while(true);
