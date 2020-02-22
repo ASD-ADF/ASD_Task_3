@@ -20,7 +20,7 @@ struct mytype {
     */
     //=================================================
     // YOUR CODE STARTS HERE
-    your code here
+
     int ID;
     string name;
     int rangking;

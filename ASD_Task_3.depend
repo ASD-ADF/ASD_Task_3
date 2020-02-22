@@ -52,3 +52,22 @@
 	"operation.h"
 	"my_data.h"
 
+1582381821 source:d:\github\latihan\asd_task_3\list.cpp
+	"list.h"
+	"my_data.h"
+
+1582330300 d:\github\latihan\asd_task_3\list.h
+	<iostream>
+	"my_data.h"
+
+1582381690 d:\github\latihan\asd_task_3\my_data.h
+	<iostream>
+
+1582381876 source:d:\github\latihan\asd_task_3\operation.cpp
+	"list.h"
+	"operation.h"
+	"my_data.h"
+
+1582327055 d:\github\latihan\asd_task_3\operation.h
+	"list.h"
+

@@ -14,7 +14,7 @@ void insertAndSort(List &L, infotype x) {
     */
 
     //-------------your code here-------------
-    your code here
+
     address P;
     address Q;
     P = allocate(x);
@@ -59,7 +59,7 @@ void deletebyID(List &L, int id_x) {
 
     address Prec, P;
     //-------------your code here-------------
-    your code here
+
     infotype x;
     x.ID = id_x;
     P = findElm(L, x);
@@ -93,7 +93,7 @@ void savePassedMember(List &L, List &L2){
     */
     address P;
     //-------------your code here-------------
-    your code here
+
     List tmp;
     createList(tmp);
     while(first(L) != NULL){

@@ -15,7 +15,7 @@ mytype create_data() {
     mytype d;
     // ===========================
     // YOUR CODE HERE
-    your code here
+
     cout<< "ID mahasiswa : ";
     cin<< d.ID;
     cout<< "Nama Mahasiswa : ";

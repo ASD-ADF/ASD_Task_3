@@ -9,7 +9,8 @@ using namespace std;
 void mainMenu();
 List L, L_passed;
 
-int main() {
+int main()
+{
     createList(L);
     createList(L_passed);
 
@@ -18,7 +19,8 @@ int main() {
     return 0;
 }
 
-void mainMenu() {
+void mainMenu()
+{
     address P;
     infotype X;
     /**
@@ -35,7 +37,8 @@ void mainMenu() {
     */
     //-------------your code here-------------
     int choice;
-    do {
+    do
+    {
         cout<<"Menu"<<endl;
         cout<<"1. insert"<<endl;
         cout<<"2. view member"<<endl;
@@ -47,14 +50,72 @@ void mainMenu() {
         cout<<"0. exit"<<endl;
         cout<<"input choice: ";
         cin>>choice;
-        switch(choice) {
-        case 1:
-            X = create_data();
-            P = allocate(X);
-            insertFirst(L,P)
-            break;
-        }
-    } while(true);
+        P = allocate(X);
+        insertFirst(L,P)
+        break;
 
-    //----------------------------------------
+            case 1 :
+        X = create_data();
+        P = allocate(X);
+        insertFirst(L,P)
+        if (findElm(L, info(P)) == NULL)
+        {
+            insertFirst(L, P);
+        }
+        break;
+    case 2:
+        printInfo(L);
+        break;
+    case 3:
+        cout << "Masukkan ID yang ingin dicari : ";
+        cin >> X.ID;
+        P = findElm(L, X);
+        if (P != NULL)
+        {
+            view_data(info(P));
+        }
+        else
+        {
+            cout << "DATA TIDAK DITEMUKAN!\n";
+        }
+        break;
+    case 4:
+        cout << "Masukkan ID yang ingin diedit : ";
+        cin >> X.ID;
+        P = findElm(L, X);
+        if (P != NULL)
+        {
+            edit_data(info(P));
+        }
+        else
+        {
+            cout << "DATA TIDAK DITEMUKAN!\n";
+        }
+        break;
+    case 5:
+        cout << "Masukkan ID yang ingin didelete : ";
+        cin >> X.ID;
+        if (findElm(L, X) != NULL)
+        {
+            deletebyID(L, X.ID);
+        }
+        else
+        {
+            cout << "DATA TIDAK DITEMUKAN" << endl;
+        }
+        break;
+    case 6:
+        savePassedMember(L, L_passed);
+        break;
+    case 7:
+        printInfo(L_passed);
+        break;
+        }
+    if (choice == 0)
+    {
+        break;
+    }
+}
+} while(true);
+//----------------------------------------
 }
