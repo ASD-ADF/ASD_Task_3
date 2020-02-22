@@ -51,10 +51,52 @@ void mainMenu() {
         case 1:
             X = create_data();
             P = allocate(X);
-            insertFirst(L,P)
+            if(findElm(L, info(P)) == NULL){
+                insertFirst(L,P);
+            }
+            break;
+        case 2:
+            printInfo(L);
+            break;
+        case 3:
+            cout<<"ID that you want to know: ";
+            cin>>X.ID;
+            P = findElm(L, X);
+            if(P != NULL){
+                view_data(info(P));
+            } else {
+                cout<<"Data doesn't exist"<<endl;
+            }
+            break;
+        case 4:
+            cout<<"ID you want to edit: ";
+            cin>>X.ID;
+            P = findElm(L, X);
+            if(P != NULL) {
+                edit_data(info(P));
+            } else {
+                cout<<"Data doesn't exist"<<endl;
+            }
+            break;
+        case 5:
+            cout<<"ID you want to delete: ";
+            cin>>X.ID;
+            if(findElm(L, X) != NULL){
+                deletebyID(L, X.ID);
+            } else {
+                cout<<"Data doesn't exist"<<endl;
+            }
+            break;
+        case 6:
+            savePassedMember(L, L_passed);
+            break;
+        case 7:
+            printInfo(L_passed);
+            break;
+        }
+        if(choice == 0) {
             break;
         }
     } while(true);
-
     //----------------------------------------
 }

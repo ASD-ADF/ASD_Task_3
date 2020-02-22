@@ -1,4 +1,4 @@
- 
+
 #include "my_data.h"
 
 /**
@@ -15,11 +15,14 @@ mytype create_data() {
     mytype d;
     // ===========================
     // YOUR CODE HERE
-    your code here
-
-
-
-
+    cout<<"Your ID: ";
+    cin>>d.ID;
+    cout<<"Your name: ";
+    cin>>d.name;
+    cout<<"Your rank: ";
+    cin>>d.rank;
+    cout<<"Your score: ";
+    cin>>d.score;
     // ===========================
     return d;
 }
@@ -32,14 +35,14 @@ void view_data(mytype d) {
 
     // ===========================
     // YOUR CODE HERE
-    your code here
-
-
-
-
+    cout<<"=============================="<<endl;
+    cout<<"Your ID: "<<d.ID<<endl;
+    cout<<"Your name: "<<d.name<<endl;
+    cout<<"Your rank: "<<d.rank<<endl;
+    cout<<"Your score: "<<d.score<<endl;
+    cout<<"=============================="<<endl;
     // ===========================
 }
-
 
 void edit_data(mytype &d) {
     /**
@@ -50,11 +53,15 @@ void edit_data(mytype &d) {
 
     // ===========================
     // YOUR CODE HERE
-        your code here
-
-
-
-
+    cout<<"Your New name: ";
+    cin>>d.name;
+    cout<<endl;
+    cout<<"Your New rank: ";
+    cin>>d.rank;
+    cout<<endl;
+    cout<<"Your New score: ";
+    cin>>d.score;
+    cout<<endl;
     // ===========================
 }
 
