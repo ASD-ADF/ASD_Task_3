@@ -105,8 +105,10 @@ void mainMenu() {
             printInfo(L_passed);
             cout<<endl;
             break;
-        case 0:
-            true;
+        }
+        if (choice == 0)
+        {
+            break;
         }
     } while(true);
 
