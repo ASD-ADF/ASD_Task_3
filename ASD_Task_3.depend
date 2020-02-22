@@ -52,3 +52,32 @@
 	"operation.h"
 	"my_data.h"
 
+1582346390 source:d:\kuliah\semester 2\asd_task_3\list.cpp
+	"list.h"
+	"my_data.h"
+	<iostream>
+
+1582345192 d:\kuliah\semester 2\asd_task_3\list.h
+	<iostream>
+	"my_data.h"
+
+1581926406 d:\kuliah\semester 2\asd_task_3\my_data.h
+	<iostream>
+
+1582347753 source:d:\kuliah\semester 2\asd_task_3\main.cpp
+	<iostream>
+	"list.h"
+	"operation.h"
+	"my_data.h"
+
+1581918600 d:\kuliah\semester 2\asd_task_3\operation.h
+	"list.h"
+
+1582383090 source:d:\kuliah\semester 2\asd_task_3\my_data.cpp
+	"my_data.h"
+
+1582382247 source:d:\kuliah\semester 2\asd_task_3\operation.cpp
+	"list.h"
+	"operation.h"
+	"my_data.h"
+

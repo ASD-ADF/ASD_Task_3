@@ -19,8 +19,9 @@ int main() {
 }
 
 void mainMenu() {
-    address P;
+    address P,R;
     infotype X;
+    mytype idpeserta;
     /**
     * IS : List has been created
     * PR : prints menu to user
@@ -50,8 +51,63 @@ void mainMenu() {
         switch(choice) {
         case 1:
             X = create_data();
-            P = allocate(X);
-            insertFirst(L,P)
+            insertAndSort(L,X);
+            cout<<endl;
+            break;
+        case 2:
+            cout<<"Data semua member: "<<endl;
+            printInfo(L);
+            cout<<endl;
+            break;
+        case 3:
+            cout<<"Masukkan ID member yang ingin dilihat: ";
+            cin>>idpeserta.ID;
+            P= findElm(L, idpeserta);
+            if(P!=NULL){
+                view_data(info(P));
+            }else{
+                cout << "ID yang anda cari TIDAK ADA.." << endl;
+            }
+            cout<<endl;
+            break;
+        case 4:
+            cout << "Masukkan ID member yang ingin di edit: ";
+            cin >> idpeserta.ID;
+            P = findElm(L, idpeserta);
+            if (P!=NULL){
+                cout<<"Silahkan mengedit data member: "<<endl;
+                edit_data(info(P));
+                cout<<"Data berhasil diperbarui"<<endl;
+            }else{
+                cout<<"ID yang anda cari TIDAK ADA.."<<endl;
+            }
+            cout<<endl;
+            break;
+        case 5:
+            cout << "Masukkan ID member yang ingin di hapus: ";
+            cin >> idpeserta.ID;
+            P = findElm(L, idpeserta);
+            if (P!=NULL){
+                deletebyID(L, idpeserta.ID);
+                cout<<"Data berhasil dihapus.."<<endl;
+            }else{
+                cout<<"Data Tidak ada.."<<endl;
+            }
+            cout<<endl;
+            break;
+        case 6:
+            savePassedMember(L, L_passed);
+            cout<<"Pemindahan Member yang LULUS selesai.."<<endl;
+            cout<<endl;
+            break;
+        case 7:
+            cout<<"Data Mahasiswa yang LULUS:"<<endl;
+            printInfo(L_passed);
+            cout<<endl;
+            break;
+        }
+        if (choice == 0)
+        {
             break;
         }
     } while(true);
