@@ -52,3 +52,31 @@
 	"operation.h"
 	"my_data.h"
 
+1582385350 source:d:\tugas kuliah\github\asd_task_3\list.cpp
+	"list.h"
+	"my_data.h"
+
+1582381225 d:\tugas kuliah\github\asd_task_3\list.h
+	<iostream>
+	"my_data.h"
+
+1582385243 d:\tugas kuliah\github\asd_task_3\my_data.h
+	<iostream>
+
+1582385547 source:d:\tugas kuliah\github\asd_task_3\main.cpp
+	<iostream>
+	"list.h"
+	"operation.h"
+	"my_data.h"
+
+1582266085 d:\tugas kuliah\github\asd_task_3\operation.h
+	"list.h"
+
+1582385561 source:d:\tugas kuliah\github\asd_task_3\my_data.cpp
+	"my_data.h"
+
+1582385903 source:d:\tugas kuliah\github\asd_task_3\operation.cpp
+	"list.h"
+	"operation.h"
+	"my_data.h"
+

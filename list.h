@@ -12,42 +12,20 @@
 
 using namespace std;
 
-
-/**
-* Type infotype : mytype
-* Type address  : pointer to ElmList
-*
-* Type ElmList <
-*	info : infotype
-*	next : address
-*	prev : address
-* >
-*
-* Type List : < 
-*   first : address 
-*   last : address 
-* >
-*
-**/
-
-
-
 typedef mytype infotype;
 typedef struct elmlist *address;
 
-struct elmlist{
-    //------------- your code here -----------
-
-    //----------------------------------------
+struct elmlist
+{
+    infotype info;
+    address next;
+    address prev;
 };
-
-struct List{
-    //------------- your code here -----------
-
-
-    //----------------------------------------
-};
-
+ struct List
+ {
+     address first;
+     address last;
+ };
 
 
 // define a function and a procedure to allocate and deallocate an element list
