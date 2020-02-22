@@ -52,3 +52,31 @@
 	"operation.h"
 	"my_data.h"
 
+1582336450 source:c:\latihan coding\asd_task_3\my_data.cpp
+	"my_data.h"
+
+1582336450 c:\latihan coding\asd_task_3\my_data.h
+	<iostream>
+
+1582336235 source:c:\latihan coding\asd_task_3\main.cpp
+	<iostream>
+	"list.h"
+	"operation.h"
+	"my_data.h"
+
+1582295284 c:\latihan coding\asd_task_3\list.h
+	<iostream>
+	"my_data.h"
+
+1582270112 c:\latihan coding\asd_task_3\operation.h
+	"list.h"
+
+1582334491 source:c:\latihan coding\asd_task_3\operation.cpp
+	"list.h"
+	"operation.h"
+	"my_data.h"
+
+1582336535 source:c:\latihan coding\asd_task_3\list.cpp
+	"list.h"
+	"my_data.h"
+
