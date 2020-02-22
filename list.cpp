@@ -21,7 +21,7 @@ address allocate(infotype x) {
     address P;
     //-------------your code here-------------
     P = new elmlist;
-    info(P).ID = x.id;
+    info(P).ID = x.ID;
     info(P).name = x.name;
     info(P).rank = x.rank;
     info(P).score = x.score;
@@ -38,8 +38,6 @@ void deallocate(address &P) {
     */
     //-------------your code here-------------
     delete P;
-
-
     //----------------------------------------
 }
 
@@ -83,7 +81,7 @@ address findElm(List L, infotype x) {
     //-------------your code here-------------
     P = first(L);
 
-    while (P != NULL && info(P).id != x.ID){
+    while (P != NULL && info(P).ID != x.ID){
         P = next(P);
     }
     //----------------------------------------
@@ -136,7 +134,7 @@ void printInfo(List L) {
     //-------------your code here-------------
     address P = first(L);
 
-    while (P != NULL && info(P) != NULL){
+    while (P != NULL ){
         view_data(info(P));
         P = next(P);
     }
