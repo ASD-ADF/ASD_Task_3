@@ -42,7 +42,7 @@ void deletebyID(List &L, int id_x) {
     //-------------your code here-------------
     address P,R;
     P = L.first;
-    
+
     if (L.first==NULL){
         deleteFirst(L,R);
         deallocate(R);
@@ -68,7 +68,7 @@ void deletebyID(List &L, int id_x) {
             deallocate(R);
         }
     }
-    
+
     //----------------------------------------
 }
 
@@ -83,7 +83,7 @@ void savePassedMember(List &L, List &L2){
     P = L.first;
     while(P!=NULL){
         if (info(P).score>=80){
-            insertLast(L2, P);
+            insertLast(L2, allocate(info(P)));
         }
         P = next(P);
     }

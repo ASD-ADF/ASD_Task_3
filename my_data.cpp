@@ -17,13 +17,13 @@ mytype create_data() {
     // YOUR CODE HERE
     cout<<"ID member: ";
     cin>>d.ID;
-    cout<<endl;
+
     cout<<"Nama: ";
     cin>>d.name;
-    cout<<endl;
+
     cout<<"Rank: ";
     cin>>d.rank;
-    cout<<endl;
+
     cout<<"Score: ";
     cin>>d.score;
     // ===========================
