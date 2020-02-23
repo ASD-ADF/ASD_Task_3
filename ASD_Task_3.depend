@@ -52,3 +52,17 @@
 	"operation.h"
 	"my_data.h"
 
+1582465119 source:c:\users\dell\documents\github\asd_task_3\list.cpp
+	"list.h"
+	"my_data.h"
+
+1582465119 c:\users\dell\documents\github\asd_task_3\list.h
+	<iostream>
+	"my_data.h"
+
+1582465119 c:\users\dell\documents\github\asd_task_3\my_data.h
+	<iostream>
+
+1582465119 source:c:\users\dell\documents\github\asd_task_3\my_data.cpp
+	"my_data.h"
+
