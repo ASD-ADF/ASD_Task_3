@@ -1,7 +1,5 @@
-# Task_3 [2020]
+# Task_3 [2026-1]
 Task 3 : Double Linked List 
-
-# DEADLINE = FEBRUARY 22ND, 2020 - 23:59
 
 ## Reading Material
 * [git cheat sheet](https://education.github.com/git-cheat-sheet-education.pdf)
