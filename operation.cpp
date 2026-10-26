@@ -14,7 +14,28 @@ void insertAndSort(List &L, infotype x) {
     */
 
     //-------------your code here-------------
-    your code here
+    if (findElm(L, x) != nullptr){
+        return;
+    }
+
+    address P = new elmlist;
+    p->info = x;
+    p->next = nullptr;
+    p->prev = nullptr;
+
+    if (L.first == nullptr || x.ID < L.first->info.ID){
+        insertFirst(L, P);
+    } else {
+        address Prec = L.first;
+        while (Prec->next != nullptr && Prec->next->info.ID < x.ID){
+            Prec = Prec->next;
+        }
+        if (Prec == L.last){
+            insertLast(L, P);
+        } else {
+            insertAfter(L, Prec, P);
+        }
+    }
 
 
     //----------------------------------------
@@ -29,7 +50,31 @@ void deletebyID(List &L, int id_x) {
 
     address Prec, P;
     //-------------your code here-------------
-    your code here
+    P = L.first;
+    while (P != nullptr && P->info.ID != id_x){
+        P = P->next;
+    }
+    if (P == nullptr){
+        return;
+    }
+
+    Prec = P->prev;
+    if (P == L.first && P == L.last){
+        L.first = nullptr;
+        L.last = nullptr;
+    } else if (P == L.first){
+        L.first = P->next;
+        L.first->prev = nullptr;
+    } else if (P == L.last){
+        L.last = Prec;
+        L.last->next = nullptr;
+    } else {
+        Prec->next = P->next;
+        P->next->prev = Prec;
+    }
+    P->next = nullptr;
+    P->prev = nullptr;
+    deallocate(P);
 
 
     //----------------------------------------
@@ -43,7 +88,30 @@ void savePassedMember(List &L, List &L2){
     */
     address P;
     //-------------your code here-------------
-    your code here
+    P = L.first;
+    while (P != nullptr){
+        address Q = P->next;
+
+        if (P->info.score > 80){
+            if (P == L.first && P == L.last){
+                L.first = nullptr;
+                L.last = nullptr;
+            } else if (P == L.first){
+                L.first = P->next;
+                L.first->prev = nullptr;
+            } else if (P == L.last) {
+                L.last = P->prev;
+                L.last->next = nullptr;
+            } else {
+                P->prev->next = P->next;
+                P->next->prev = P->prev;
+            }
+            P->next = nullptr;
+            P->prev = nullptr;
+            insertLast(L2, P);
+        }
+        P= Q;
+    }
 
 
     //----------------------------------------
