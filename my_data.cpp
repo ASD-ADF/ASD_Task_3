@@ -1,6 +1,5 @@
- 
 #include "my_data.h"
-
+using namespace std;
 /**
     CLASS      :
     NAME       :
@@ -15,11 +14,17 @@ mytype create_data() {
     mytype d;
     // ===========================
     // YOUR CODE HERE
-    your code here
+    cout << "ID: ";
+    cin >> d.ID;
 
+    cout << "Name: ";
+    cin >> d.name;
 
+    cout << "Rank: ";
+    cin >> d.rank;
 
-
+    cout << "Score: ";
+    cin >> d.score;
     // ===========================
     return d;
 }
@@ -32,11 +37,10 @@ void view_data(mytype d) {
 
     // ===========================
     // YOUR CODE HERE
-    your code here
-
-
-
-
+    cout << "ID: " << d.ID << endl;
+    cout << "Name: " << d.name << endl;
+    cout << "Rank: " << d.rank << endl;
+    cout << "Score: " << d.score << endl;
     // ===========================
 }
 
@@ -50,10 +54,14 @@ void edit_data(mytype &d) {
 
     // ===========================
     // YOUR CODE HERE
-        your code here
+    cout << "Name: ";
+    cin >> d.name;
 
+    cout << "Rank: ";
+    cin >> d.rank;
 
-
+    cout << "Score: ";
+    cin >> d.score;
 
     // ===========================
 }
