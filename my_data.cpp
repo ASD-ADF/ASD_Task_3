@@ -15,8 +15,17 @@ mytype create_data() {
     mytype d;
     // ===========================
     // YOUR CODE HERE
-    your code here
-
+    mytype d;
+    cout << "Masukkan ID    : ";
+    cin >> d.id;
+    cout << "Masukkan Nama  : ";
+    cin.ignore();
+    getline(cin, d.name);
+    cout << "Masukkan Rank  : ";
+    cin >> d.rank;
+    cout << "Masukkan Score : ";
+    cin >> d.score;
+    return d;
 
 
 
@@ -32,8 +41,10 @@ void view_data(mytype d) {
 
     // ===========================
     // YOUR CODE HERE
-    your code here
-
+    cout << "ID    : " << d.id << endl;
+    cout << "Nama  : " << d.name << endl;
+    cout << "Rank  : " << d.rank << endl;
+    cout << "Score : " << d.score << endl;
 
 
 
@@ -50,8 +61,14 @@ void edit_data(mytype &d) {
 
     // ===========================
     // YOUR CODE HERE
-        your code here
-
+       cout << "--- Edit Data (ID: " << d.id << " tidak dapat diubah) ---" << endl;
+    cout << "Masukkan Nama baru  : ";
+    cin.ignore();
+    getline(cin, d.name);
+    cout << "Masukkan Rank baru  : ";
+    cin >> d.rank;
+    cout << "Masukkan Score baru : ";
+    cin >> d.score;
 
 
 

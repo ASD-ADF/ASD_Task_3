@@ -54,6 +54,64 @@ void mainMenu() {
             insertFirst(L,P)
             break;
         }
+        case 2:
+                printInfo(L);
+                break;
+                
+            case 3: {
+                int idCari;
+                cout << "Masukkan ID yang dicari: ";
+                cin >> idCari;
+                P = findElm(L, idCari);
+                if (P != nullptr) {
+                    cout << "Data Ditemukan!" << endl;
+                    view_data(info(P));
+                } else {
+                    cout << "Data tidak ditemukan." << endl;
+                }
+                break;
+            }
+            
+            case 4: {
+                int idCari;
+                cout << "Masukkan ID yang akan diedit: ";
+                cin >> idCari;
+                P = findElm(L, idCari);
+                if (P != nullptr) {
+                    cout << "Masukkan data baru:" << endl;
+                    edit_data(info(P));
+                    cout << "Data berhasil diubah." << endl;
+                } else {
+                    cout << "Data tidak ditemukan." << endl;
+                }
+                break;
+            }
+            
+            case 5: {
+                int idCari;
+                cout << "Masukkan ID yang akan dihapus: ";
+                cin >> idCari;
+                deleteByID(L, idCari);
+                cout << "Proses hapus selesai." << endl;
+                break;
+            }
+            
+            case 6:
+                savePassedMember(L, L2);
+                cout << "Member passed berhasil dipisahkan." << endl;
+                break;
+                
+            case 7:
+                printInfo(L2);
+                break;
+                
+            case 0:
+                return 0;
+                
+            default:
+                cout << "Pilihan tidak valid!" << endl;
+                break;
+        }
     } while(true);
 
     //----------------------------------------
