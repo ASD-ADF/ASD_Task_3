@@ -14,7 +14,26 @@ void insertAndSort(List &L, infotype x) {
     */
 
     //-------------your code here-------------
-    your code here
+    if (findElm(L, x) != nullptr) {
+        cout << "Gagal: ID " << x.id << " sudah terdaftar (ID harus unik)!" << endl;
+        return;
+    }
+
+    address P = allocate(x);
+    if (L.first == nullptr) {
+        insertFirst(L, P);
+    } else if (x.id < L.first->info.id) {
+        insertFirst(L, P);
+    } else if (x.id > L.last->info.id) {
+        insertLast(L, P);
+    } else {
+        address Q = L.first;
+        while (Q != nullptr && Q->info.id < x.id) {
+            Q = Q->next;
+        }
+        insertAfter(L, Q->prev, P);
+    }
+    cout << "Data berhasil ditambahkan secara terurut." << endl;
 
 
     //----------------------------------------
@@ -29,7 +48,25 @@ void deletebyID(List &L, int id_x) {
 
     address Prec, P;
     //-------------your code here-------------
-    your code here
+    infotype temp;
+    temp.id = x_id;
+    address P = findElm(L, temp);
+    
+    if (P == nullptr) {
+        cout << "Data dengan ID " << x_id << " tidak ditemukan." << endl;
+        return;
+    }
+
+    address delP = nullptr;
+    if (P == L.first) {
+        deleteFirst(L, delP);
+    } else if (P == L.last) {
+        deleteLast(L, delP);
+    } else {
+        deleteAfter(L, P->prev, delP);
+    }
+    deallocate(delP);
+    cout << "Data dengan ID " << x_id << " berhasil dihapus." << endl;
 
 
     //----------------------------------------
@@ -43,7 +80,22 @@ void savePassedMember(List &L, List &L2){
     */
     address P;
     //-------------your code here-------------
-    your code here
+   address P = L.first;
+    while (P != nullptr) {
+        address nextP = P->next;
+        if (P->info.score > 80) {
+            address delP = nullptr;
+            if (P == L.first) {
+                deleteFirst(L, delP);
+            } else if (P == L.last) {
+                deleteLast(L, delP);
+            } else {
+                deleteAfter(L, P->prev, delP);
+            }
+            insertLast(L2, delP);
+        }
+        P = nextP;
+    }
 
 
     //----------------------------------------
