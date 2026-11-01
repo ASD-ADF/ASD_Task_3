@@ -50,6 +50,7 @@ void deletebyID(List &L, int id_x) {
 
     address Prec, P;
     //-------------your code here-------------
+<<<<<<< HEAD
     P = L.first;
     while (P != nullptr && P->info.ID != id_x){
         P = P->next;
@@ -75,8 +76,24 @@ void deletebyID(List &L, int id_x) {
     P->next = nullptr;
     P->prev = nullptr;
     deallocate(P);
+=======
+    Prec = nullptr;
+    P = L.first;
+>>>>>>> 784cfd11a6c871ca31620a20bc5134a0dbb602b8
 
+    while (P != nullptr && P->info.id != id_x) {
+        Prec = P;
+        P = P->next;
+    }
 
+    if (P != nullptr) {
+        if (Prec == nullptr) {
+            deleteFirst(L, P); 
+        } else {
+            deleteAfter(L, Prec, P);
+        }
+        deallocate(P);
+    }
     //----------------------------------------
 }
 
@@ -88,6 +105,7 @@ void savePassedMember(List &L, List &L2){
     */
     address P;
     //-------------your code here-------------
+<<<<<<< HEAD
     P = L.first;
     while (P != nullptr){
         address Q = P->next;
@@ -112,7 +130,28 @@ void savePassedMember(List &L, List &L2){
         }
         P= Q;
     }
+=======
+    address Q = L.first;
+    address Prec = nullptr; 
+    address nextQ;
+>>>>>>> 784cfd11a6c871ca31620a20bc5134a0dbb602b8
 
+    while (Q != nullptr) {
+        nextQ = Q->next;  
+
+        if (Q->info.score > 80) {
+            if (Prec == nullptr) {
+                deleteFirst(L, P);
+            } else {
+                deleteAfter(L, Prec, P);
+            }
+            insertLast(L2, P);
+        } else {
+            Prec = Q;
+        }
+
+        Q = nextQ;
+    }
 
     //----------------------------------------
 }
