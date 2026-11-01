@@ -6,9 +6,8 @@ void createList(List &L) {
     * FS : set first(L) and last(L) with Null
     */
     //-------------your code here-------------
-    your code here
-
-
+    first(L) = nullptr;
+    last(L) = nullptr;
     //----------------------------------------
 }
 
@@ -19,9 +18,10 @@ address allocate(infotype x) {
 
     address P;
     //-------------your code here-------------
-    your code here
-
-
+    P = new elmlist;
+    info(P) = x;
+    next(P) = nullptr;
+    prev(P) = nullptr;
     //----------------------------------------
     return P;
 }
@@ -31,8 +31,8 @@ void deallocate(address &P) {
     * FS : delete element pointed by P
     */
     //-------------your code here-------------
-    your code here
-
+    delete P;
+    P = nullptr;
 
     //----------------------------------------
 }
@@ -43,9 +43,14 @@ void insertFirst(List &L, address P) {
     * FS : element pointed by P became the first element in List L
     */
     //-------------your code here-------------
-    your code here
-
-
+    if (first(L) == nullptr) {
+        first(L) = P;
+        last(L) = P;
+    } else {
+        next(P) = first(L);
+        prev(first(L)) = P;
+        first(L) = P;
+    }
     //----------------------------------------
 }
 
@@ -55,9 +60,14 @@ void insertLast(List &L, address P) {
     * FS : element pointed by P became the last element in List L
     */
     //-------------your code here-------------
-    your code here
-
-
+    if (first(L) == nullptr) {
+        first(L) = P;
+        last(L) = P;
+    } else {
+        prev(P) = last(L);
+        next(last(L)) = P;
+        last(L) = P;
+    }
     //----------------------------------------
 }
 
@@ -109,9 +119,12 @@ void printInfo(List L) {
     *      call the view_data function from my_data.h to print the info
     */
     //-------------your code here-------------
-    your code here
+    address P = first(L);
 
-
+    while (P != nullptr) {
+        view_data(info(P));
+        P = next(P);
+    }
     //----------------------------------------
 }
 
@@ -123,7 +136,16 @@ void insertAfter(List &L, address Prec, address P) {
     *      pointed by pointer Prec
     */
     //-------------your code here-------------
-    your code here
+    if (Prec != nullptr) {
+        if (Prec == last(L)) {
+            insertLast(L, P);
+        } else {
+            next(P) = next(Prec);
+            prev(P) = Prec;
+            prev(next(Prec)) = P;
+            next(Prec) = P;
+        }
+    }
 
     //----------------------------------------
 
