@@ -1,7 +1,7 @@
 #include "list.h"
 #include "operation.h"
 #include "my_data.h"
- 
+
 
 void insertAndSort(List &L, infotype x) {
     /**
@@ -14,7 +14,31 @@ void insertAndSort(List &L, infotype x) {
     */
 
     //-------------your code here-------------
-    your code here
+    if (findElm(L, x) != nullptr)
+    {
+        address P;
+        P = allocate(x);
+        if (L.first == nullptr)
+        {
+            insertFirst(L, P);
+        } else
+        {
+            address Q;
+            Q = L.first;
+            if (x.id < Q->info.id)
+            {
+                insertFirst(L, P);
+            } else
+            {
+                while (Q != nullptr && Q->info.id < x.id)
+                {
+                    Q = Q->next;
+                }
+                insertAfter(L, Q->prev, P);
+            }
+
+        }
+    }
 
 
     //----------------------------------------
@@ -29,7 +53,24 @@ void deletebyID(List &L, int id_x) {
 
     address Prec, P;
     //-------------your code here-------------
-    your code here
+    infotype temp;
+    temp.id = id_x;
+    P = findElm(L, temp);
+    if (P != nullptr)
+    {
+        if (P == L.first)
+        {
+            deleteFirst(L, P);
+        } else if (P == L.last)
+        {
+            deleteLast(L, P);
+        } else
+        {
+            Prec = P->prev;
+            deleteAfter(L, Prec, P);
+        }
+        deallocate(P);
+    }
 
 
     //----------------------------------------
@@ -43,7 +84,27 @@ void savePassedMember(List &L, List &L2){
     */
     address P;
     //-------------your code here-------------
-    your code here
+    P = L.first;
+    while (P != nullptr)
+    {
+        if (P->info.score > 80)
+        {
+            address Q;
+            Q = nullptr;
+            if (P == L.first)
+            {
+                deleteFirst(L, Q);
+            } else if (P == L.last)
+            {
+                deleteLast(L, Q);
+            } else
+            {
+                deleteAfter(L, P->prev, Q);
+            }
+            insertLast(L2, Q);
+        }
+        P = P->next;
+    }
 
 
     //----------------------------------------

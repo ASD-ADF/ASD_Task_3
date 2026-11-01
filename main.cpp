@@ -21,6 +21,7 @@ int main() {
 void mainMenu() {
     address P;
     infotype X;
+    int idcari;
     /**
     * IS : List has been created
     * PR : prints menu to user
@@ -51,9 +52,50 @@ void mainMenu() {
         case 1:
             X = create_data();
             P = allocate(X);
-            insertFirst(L,P)
+            insertFirst(L,P);
+            break;
+        case 2:
+            printInfo(L);
+            break;
+        case 3:
+            cout << "Masukkan id yg dicari: ";
+            cin >> idcari;
+            X.id = idcari;
+            P = findElm(L, X);
+            if (P != nullptr)
+            {
+                view_data(P->info);
+            } else
+            {
+                cout << "Data tidak ditemukan." << endl;
+            }
+            break;
+        case 4:
+            cout << "Masukkan ID yang akan diedit: ";
+            cin >> idcari;
+            X.id = idcari;
+            P = findElm(L, X);
+            if (P != nullptr)
+            {
+                edit_data(P->info);
+            } else
+            {
+                cout << "Data tidak ditemukan." << endl;
+            }
+            break;
+        case 5:
+            cout << "Masukkan ID yang akan dihapus";
+            cin >> idcari;
+            deletebyID(L, idcari);
+            break;
+        case 6:
+            savePassedMember(L, L_passed);
+            break;
+        case 7:
+            printInfo(L_passed);
             break;
         }
+        break;
     } while(true);
 
     //----------------------------------------
