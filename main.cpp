@@ -47,14 +47,66 @@ void mainMenu() {
         cout<<"0. exit"<<endl;
         cout<<"input choice: ";
         cin>>choice;
-        switch(choice) {
+        switch (choice) {
         case 1:
             X = create_data();
-            P = allocate(X);
-            insertFirst(L,P)
+            insertAndSort(L, X);
+            break;
+
+        case 2:
+            printInfo(L);
+            break;
+
+        case 3: {
+            cout << "Input ID to find: ";
+            cin >> X.id;
+            P = findElm(L, X);
+            if (P != nullptr) {
+                view_data(P->info);
+            } else {
+                cout << "Member not found!" << endl;
+            }
             break;
         }
-    } while(true);
+
+        case 4: {
+            cout << "Input ID to edit: ";
+            cin >> X.id;
+            P = findElm(L, X);
+            if (P != nullptr) {
+                edit_data(P->info);
+            } else {
+                cout << "Member not found!" << endl;
+            }
+            break;
+        }
+
+        case 5: {
+            int id_x;
+            cout << "Input ID to delete: ";
+            cin >> id_x;
+            deletebyID(L, id_x);
+            break;
+        }
+
+        case 6:
+            savePassedMember(L, L_passed);
+            cout << "Passed members separated!" << endl;
+            break;
+
+        case 7:
+            printInfo(L_passed);
+            break;
+
+        case 0:
+            cout << "Thank you!" << endl;
+            break;
+
+        default:
+            cout << "Invalid choice!" << endl;
+            break;
+        }
+    } while (choice != 0);
 
     //----------------------------------------
 }

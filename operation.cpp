@@ -1,7 +1,7 @@
 #include "list.h"
 #include "operation.h"
 #include "my_data.h"
- 
+
 
 void insertAndSort(List &L, infotype x) {
     /**
@@ -14,9 +14,31 @@ void insertAndSort(List &L, infotype x) {
     */
 
     //-------------your code here-------------
-    your code here
+    infotype searchKey;
+    searchKey.id = x.id;
+    if (findElm(L, searchKey) != nullptr) {
+        cout << "ID sudah terdaftar!" << endl;
+        return;
+    }
 
+    address P = allocate(x);
 
+    if (L.first == nullptr || x.id < L.first->info.id) {
+        insertFirst(L, P);
+        return;
+    }
+
+    if (x.id > L.last->info.id) {
+        insertLast(L, P);
+        return;
+    }
+
+    address Q = L.first;
+    while (Q->next != nullptr && Q->next->info.id < x.id) {
+        Q = Q->next;
+    }
+
+    insertAfter(L, Q, P);
     //----------------------------------------
 }
 
@@ -29,9 +51,23 @@ void deletebyID(List &L, int id_x) {
 
     address Prec, P;
     //-------------your code here-------------
-    your code here
+    infotype searchKey;
+    searchKey.id = id_x;
+    P = findElm(L, searchKey);
 
-
+    if (P != nullptr) {
+        if (P == L.first) {
+            deleteFirst(L, P);
+        } else if (P == L.last) {
+            deleteLast(L, P);
+        } else {
+            Prec = P->prev;
+            deleteAfter(L, Prec, P);
+        }
+        deallocate(P);
+    } else {
+        cout << "ID tidak ditemukan!" << endl;
+    }
     //----------------------------------------
 }
 
@@ -43,8 +79,22 @@ void savePassedMember(List &L, List &L2){
     */
     address P;
     //-------------your code here-------------
-    your code here
-
-
+    address current = L.first;
+    while (current != nullptr) {
+        address nextNode = current->next;
+        if (current->info.score > 80) {
+            if (current == L.first) {
+                deleteFirst(L, P);
+            } else if (current == L.last) {
+                deleteLast(L, P);
+            } else {
+                address Prec = current->prev;
+                deleteAfter(L, Prec, P);
+            }
+            insertAndSort(L2, P->info);
+            deallocate(P);
+        }
+        current = nextNode;
+    }
     //----------------------------------------
 }
