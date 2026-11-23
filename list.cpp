@@ -142,7 +142,7 @@ void printInfo(List L) {
     address p;
     p = L.first;
     while (p != nullptr){
-        cout << view_data(p->info) << endl;
+        view_data(p->info);
         p = p->next;
     }
     //----------------------------------------

@@ -17,11 +17,11 @@ void insertAndSort(List &L, infotype x) {
     if (findElm(L, x) == nullptr) {
         address P = allocate(x);
 
-        if(L.first == nullptr || x.id < L.first -> info.id) {
+        if(L.first == nullptr || x.ID < L.first -> info.ID) {
             insertFirst(L,P);
         }else{
             address Prec = L.first;
-            while (Prec -> next != nullptr && Prec -> next -> info.id < x.id) {
+            while (Prec -> next != nullptr && Prec -> next -> info.ID < x.ID) {
                 Prec = Prec -> next;
             }
             insertAfter(L, Prec, P);
@@ -42,13 +42,13 @@ void deletebyID(List &L, int id_x) {
     address Prec, P;
     //-------------your code here-------------
     if (L.first != nullptr) {
-        if (L.first->info.id == id_x) {
+        if (L.first->info.ID == id_x) {
             deleteFirst(L, P);
             deallocate(P);
             cout << "Data berhasil dihapus." << endl;
         }else{
             Prec = L.first;
-            while (Prec->next != NULL && Prec->next->info.id != id_x) {
+            while (Prec->next != NULL && Prec->next->info.ID != id_x) {
                 Prec = Prec->next;
             }
             if (Prec->next != NULL) {

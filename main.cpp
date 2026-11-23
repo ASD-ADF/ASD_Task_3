@@ -50,11 +50,50 @@ void mainMenu() {
         switch(choice) {
         case 1:
             X = create_data();
-            P = allocate(X);
-            insertFirst(L,P)
+            insertAndSort(L, X);
+            break;
+        case 2:
+            printInfo(L);
+            break;
+        case 3: {
+            cout << "Input ID: ";
+            cin >> X.ID;
+            P = findElm(L, X);
+            if (P != nullptr) {
+                view_data(info(P));
+            } else {
+                cout << "Data tidak ditemukan!" << endl;
+            }
             break;
         }
-    } while(true);
-
-    //----------------------------------------
+        case 4: {
+            cout << "Input ID: ";
+            cin >> X.ID;
+            P = findElm(L, X);
+            if (P != nullptr) {
+                edit_data(info(P));
+            } else {
+                cout << "Data tidak ditemukan!" << endl;
+            }
+            break;
+        }
+        case 5:
+            cout << "Input ID: ";
+            cin >> X.ID;
+            deletebyID(L, X.ID);
+            break;
+        case 6:
+            savePassedMember(L, L_passed);
+            cout << "Anggota dengan score lebih dari 80 dipindahkan." << endl;
+            break;
+        case 7:
+            printInfo(L_passed);
+            break;
+        case 0:
+            cout << "Keluar dari program." << endl;
+            return;
+        default:
+            cout << "Pilihan tidak valid!" << endl;
+        }
+    } while (choice != 0);
 }
