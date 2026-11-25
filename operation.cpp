@@ -14,7 +14,7 @@ void insertAndSort(List &L, infotype x) {
     */
 
     //-------------your code here-------------
-    your code here
+     // your code here
 
 
     //----------------------------------------
@@ -29,7 +29,7 @@ void deletebyID(List &L, int id_x) {
 
     address Prec, P;
     //-------------your code here-------------
-    your code here
+     // your code here
 
 
     //----------------------------------------
@@ -43,7 +43,7 @@ void savePassedMember(List &L, List &L2){
     */
     address P;
     //-------------your code here-------------
-    your code here
+     // your code here
 
 
     //----------------------------------------
