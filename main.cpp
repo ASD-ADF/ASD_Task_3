@@ -21,6 +21,8 @@ int main() {
 void mainMenu() {
     address P;
     infotype X;
+    infotype x;
+    infotype x_edit;
     /**
     * IS : List has been created
     * PR : prints menu to user
@@ -47,6 +49,7 @@ void mainMenu() {
         cout<<"0. exit"<<endl;
         cout<<"input choice: ";
         cin>>choice;
+
         switch(choice) {
         case 1:
             X = create_data();
@@ -57,7 +60,7 @@ void mainMenu() {
             printInfo(L);
             break;
         case 3:
-            infotype x;
+            
             cout<<"input ID to find: ";
             cin>>x.ID;
             P = findElm(L, x);
@@ -67,7 +70,31 @@ void mainMenu() {
                 cout<<"Data not found"<<endl;
             }
             break;
+        case 4:
+            
+            cout<<"input ID to edit: ";
+            cin>>x_edit.ID;
+            P = findElm(L, x_edit);
+            if(P != NULL) {
+                edit_data(P->info);
+            } else {
+                cout<<"Data not found"<<endl;
+            }
+            break;
+        case 5:
+            int id_delete;
+            cout<<"input ID to delete: ";
+            cin>>id_delete;
+            deletebyID(L, id_delete);
+            break;
+        case 6:
+            savePassedMember(L, L_passed);
+            break;
+        case 7:
+            printInfo(L_passed);
+            break;
         }
+
     } while(choice != 0);
 
     //----------------------------------------
