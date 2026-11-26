@@ -53,8 +53,22 @@ void mainMenu() {
             P = allocate(X);
             insertFirst(L,P);
             break;
+        case 2:
+            printInfo(L);
+            break;
+        case 3:
+            infotype x;
+            cout<<"input ID to find: ";
+            cin>>x.ID;
+            P = findElm(L, x);
+            if(P != NULL) {
+                view_data(P->info);
+            } else {
+                cout<<"Data not found"<<endl;
+            }
+            break;
         }
-    } while(true);
+    } while(choice != 0);
 
     //----------------------------------------
 }
