@@ -57,9 +57,12 @@ void edit_data(mytype &d) {
 
     // ===========================
     // YOUR CODE HERE
-    
-
-
+    cout << "Enter new name: ";
+    cin >> d.name;
+    cout << "Enter new rank: ";
+    cin >> d.rank;
+    cout << "Enter new score: ";
+    cin >> d.score;
 
     // ===========================
 }
